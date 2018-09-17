@@ -9,7 +9,10 @@ with open('words.txt', 'r') as f:
 dic.meaning('void')
 
 for word in words:
-    print(word+':\n')
-    for meaning in dic.meaning(word)['Adjective'][:3]:
-        print(meaning)
+    print(word+':')
+    for part_of_speech in dic.meaning(word).keys():
+        print('\n'+part_of_speech+':\n')
+        for meaning in dic.meaning(word)[part_of_speech]:
+            print(meaning)
     print('-------------------------------------------------------------------------------')
+
