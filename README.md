@@ -1,2 +1,2 @@
 # EssayTools
-Probably useless but sometimes helpful gizmos to write stuff
+"Useful" tools for school
