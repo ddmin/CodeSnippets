@@ -1,6 +1,6 @@
 def titleize(title):
     exceptions = ['a', 'he', 'for', 'the', 'and', 'in',
-                  'to', 'of', 'from', 'with']
+                  'to', 'she', 'of', 'from', 'with']
 
     if ':' in title:
         double = title.split(':')
