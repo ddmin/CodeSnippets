@@ -1,2 +1,2 @@
-# EssayTools
-"Useful" tools for school
+# SchoolTools
+"Useful" things
