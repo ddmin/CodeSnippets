@@ -1,4 +1,5 @@
 ##Bunch of Words Definer##
+#Defines a bunch of words from a text file#
 
 from PyDictionary import PyDictionary 
 
