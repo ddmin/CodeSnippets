@@ -1,5 +1,5 @@
-# SchoolTools
-"Useful" things
+# Misc
+"Useful" things that aren't deemed important enough for a seperate repository
 
 * **AnyBaseConverter** - Converts a number from a base to any other base; hence Any Base Converter
 * **PLD** - Polynomial Long Division: Performs polynomial long division
