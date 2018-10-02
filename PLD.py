@@ -1,4 +1,4 @@
-##Polynomial Long DIvision##
+##Polynomial Long Division##
 #Performs polynomial long division#
 
 def broadcast(polynomial, constant):
