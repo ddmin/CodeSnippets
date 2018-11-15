@@ -10,3 +10,4 @@
 * **mirror_encryption** - Uses mirror encryption to encrypt a message
 * **pw** - Password Manager: Generates a random password and stores passwords for each account in a JSON file
 * **titleize** - Title capitalizes a sentence; hence Titleize
+* **usb_bomb** - USB Bomb - Waits for USB to be plugged in; proceeds to dump files into USB
