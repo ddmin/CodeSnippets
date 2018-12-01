@@ -1,7 +1,6 @@
 # Misc
 "Useful" things that aren't deemed important enough for a seperate repository
 
-* **AlexaCopy** - Copy of AlexaPlayBot 
 * **AnyBaseConverter** - Converts a number from a base to any other base; hence Any Base Converter
 * **PLD** - Polynomial Long Division: Performs polynomial long division
 * **bfv2** - Don't worry about this 
