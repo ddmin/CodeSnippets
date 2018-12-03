@@ -3,7 +3,7 @@
 
 * **AnyBaseConverter** - Converts a number from a base to any other base; hence Any Base Converter
 * **PLD** - Polynomial Long Division: Performs polynomial long division
-* **bfv2** - Don't worry about this 
+* **bfv2** - Brute Force Version 2. Don't ask why
 * **bowd** - Bunch of Words Definer: Uses PyDictionary to define a list of words from a text file
 * **folder_propagation** - Creates a bunch of folders within folders.
 * **hangman_redux** - Efficient implementation of Hangman in Python
