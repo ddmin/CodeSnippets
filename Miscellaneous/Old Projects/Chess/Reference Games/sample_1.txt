@@ -1,0 +1,27 @@
+1. e2 to e4
+2. e7 to e5
+3. g1 to f3
+4. f7 to f6
+5. f3 to e5
+6. f6 to e5
+7. d1 to h5 # CHECK
+8. e8 to e7
+9. h5 to e5 # CHECK
+10. e7 to f7
+11. f1 to c4 # CHECK
+12. d7 to d5
+13. c4 to d5 # CHECK
+14. f7 to g6
+15. h2 to h4
+16. h7 to h5
+17. d5 to b7
+18. c8 to b7
+19. e5 to f5 # CHECK
+20. g6 to h6
+21. d2 to d4 # CHECK
+22. g7 to g5
+23. f5 to f7
+24. d8 to e7
+25. h4 to g5 # CHECK
+26. e7 to g5
+27. h1 to h5 # MATE
