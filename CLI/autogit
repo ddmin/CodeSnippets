@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# autogit: automatically download git repositories in /tmp directory.
+
+CONFIG="/home/ddmin/.config/autogit/autogit.config"
+
+vim $CONFIG
+
+cat "$CONFIG" | while read line
+do
+
+    REPO=$(echo "$line" | cut -d ' ' -f 1)
+    FILE=$(echo "$line" | cut -d ' ' -f 2)
+
+# Delete already existing directories
+    rm -rf $FILE
+
+    COLOR='\033[0;32m'
+    NOCOL='\033[0m'
+    echo -e "${COLOR}Cloning $REPO at $FILE${NOCOL}"
+    echo
+    git clone $REPO $FILE
+    echo
+
+done

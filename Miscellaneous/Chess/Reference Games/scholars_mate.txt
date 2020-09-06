@@ -1,7 +1,0 @@
-1. e2 to e4
-2. e7 to e5
-3. f1 to c4
-4. b8 to c6
-5. d1 to h5
-6. g8 to f6
-7. h5 to f7

@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+
+# blu: Python Mail Client TUI
+
+import os
+import sys
+import smtplib
+import ssl
+
+PATH_TO_CONFIG = '/home/ddmin/.config/mail/mail.conf'
+
+edit_email = lambda : os.system("vim /tmp/mail.txt")

@@ -1,0 +1,8 @@
+Conway's Game of Life
+Bitcoin Miner
+Monty Carlo Simulation
+Spaghetti Hammer
+Chess Boxing Game
+Rubik's Cube
+UrbanDictionaryBot with Heroku
+Django Blog

@@ -1,0 +1,7 @@
+C++
+JavaScript
+C#
+Google Apps Scripts
+Powershell
+Batch
+ExceLang
