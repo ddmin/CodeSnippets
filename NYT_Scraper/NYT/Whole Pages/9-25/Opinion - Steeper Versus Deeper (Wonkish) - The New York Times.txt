@@ -1,0 +1,26 @@
+Source: https://www.nytimes.com/2018/09/22/opinion/steeper-versus-deeper-wonkish.html
+
+Title: Opinion | Steeper Versus Deeper (Wonkish) - The New York Times
+
+By Paul Krugman
+
+Well, this feels a bit like the good old days of econblogging. Ben Bernanke wrote a paper arguing that the financial crisis and the resulting credit crunch were central to the Great Recession. I wrote a piece raising questions about that verdict; now Bernanke has replied to those questions. Dean Baker has already weighed in. But I should say some more, particularly because it still seems to me that we’re somewhat talking past each other. He’s talking about steeper, while Dean and I are talking about deeper.
+
+My starting point in thinking about the Great Recession and aftermath is that we clearly had a very large housing bubble. Here’s the ratio of housing prices to owner’s equivalent rent, the sort of housing equivalent of the P/E ratio for stocks:
+
+Housing prices went extremely high relative to rental rates (and consumer prices more generally), then suffered a long and protracted fall. This decline started well before the period of severe financial distress, which was a fairly short episode from September 2008 to around June 2009. And prices were still way down years later, which suggests that while the credit crisis surely accelerated the pace of decline, prices were going to come down and stay down regardless of what happened to the financial system.
+
+Given a housing price slump of this magnitude, you had to expect large macroeconomic impacts: a big decline in residential investment spending, a fall in consumer spending because of the wealth effect, and a decline in nonresidential investment because of the slump in demand brought on by the first two effects.
+
+In other words, something very much like the Great Recession seems like an inevitable consequence of the bursting of the housing bubble. And the magnitude of the shocks — around 4 percent of GDP for housing investment, perhaps around 2 percent for the wealth effects of the decline in home equity — looks well within the range needed to explain the whole thing.
+
+What Bernanke offers is, as I read it, mainly evidence that the pace of decline accelerated a lot during 2008-2009. Indeed it did — and no reasonable person would deny that the combination of financial disruption and sheer fear that gripped the world after September 2008 brought the slump forward and made the decline steeper than it would otherwise have been.
+
+But did it make the decline deeper as well as steeper? The unemployment rate averaged 9.6 percent in 2010 and 8.9 percent in 2011. How much did the financial crisis contribute to these extremely high levels of economic slack, long after the disruption had ended? I still don’t see how to make it the main story.
+
+Now, does this mean that rescuing the financial system was pointless? Here Dean Baker and I disagree, I think. Dean says yes, because finance didn’t cause the slump. I think that the slump we had didn’t have much to do with finance — but the slump we would have had if the financial system had been allowed to implode might have been much worse. On precautionary grounds, bailouts were in my view the right thing to do, although the terms were too sweet for the bankers.
+
+On the other hand, the fact that we suffered such a deep, prolonged slump despite rescuing banks shows the limits of a finance-centered view.
+
+Follow The New York Times Opinion section on Facebook and Twitter (@NYTopinion), and sign up for the Opinion Today newsletter. 
+

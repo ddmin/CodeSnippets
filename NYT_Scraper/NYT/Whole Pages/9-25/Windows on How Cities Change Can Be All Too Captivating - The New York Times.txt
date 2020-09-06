@@ -1,0 +1,42 @@
+Source: https://www.nytimes.com/2018/09/19/technology/personaltech/windows-on-how-cities-change-can-be-all-too-captivating.html
+
+Title: Windows on How Cities Change Can Be All Too Captivating - The New York Times
+
+By Emily Badger
+
+How do New York Times journalists use technology in their jobs and in their personal lives? Emily Badger, who writes about cities and urban policy for The Upshot in Washington, discussed the tech she’s using.
+
+Q. As a writer for The Upshot, you do a lot of analysis, including on the effects and consequences of technology. What are the best websites and tech tools that you use regularly for that coverage?
+
+A. I write about cities and urban policy, so I spend a lot of time trying to get a feel for communities other than the one where I live. I look at other cities in satellite maps. I walk around their neighborhoods on Google Street View. I particularly like the time-lapse feature in Street View that lets you see how neighborhoods have changed as Google’s cars have passed over time. 
+
+In many places, the images go back to 2007, which is enough time to see substantial change — for example, along H Street Northeast in Washington or in the Mission Bay neighborhood of San Francisco. You can watch the Trump International Hotel and Tower under construction in Chicago and see when, by 2015, Donald J. Trump prominently stuck his name on the building, offending a lot of Chicago architecture buffs.
+
+I also like to know how places vote. For the 2016 election, I refer to a pretty incredible interactive precinct-level map The Times published this year. I draw information from the Census Bureau on things like demographics, population change and housing stock. The University of Virginia’s Racial Dot Map, based on the 2010 census, is a fantastic resource for eyeballing patterns of racial segregation; also, it’s just beautiful to look at. And I spend a lot of time lurking on the housing market in other cities through sites like Trulia and Zillow.
+
+What have you found are some of the main unintended consequences of technology on how we live?
+
+For nearly every form of technology I use for work, or use for myself, I have mixed feelings. (These mixed feelings are also a good source of story ideas.) I love apps, like Redfin, that make public information about the housing market incredibly accessible. But I wonder if they also reinforce the unhealthy American expectation that we should all make money off our homes.
+
+Redfin emails me probably once a month with its estimate of what my house is worth. (I assume the company figured out which house is mine based on what I’ve clicked on in the past.) The subtext is that I can watch my investment grow, just as someone might check on a stock portfolio. And I suspect that for a lot of people, this becomes addictive. But fretting about property values is at the root of a lot of political problems in cities — fights over where to open homeless shelters, how to draw school boundaries, whether to build new housing. I’m not sure these fights are helped by this addictive live feed of data about housing values.
+
+Tech advances in transportation have major unintended consequences, too. We clearly see this in the fight in New York City over whether Uber and Lyft have made traffic worse. Studies in several cities suggest that they’re putting cars on the road for trips people might otherwise have taken by foot or transit, or not at all. And they’ve certainly made the curb more crowded. Now, all of a sudden, cities have to figure out how to manage that space where people hop in and out of cars — as if at a cab stand, but everywhere.
+
+My favorite transportation apps help me navigate public transit, telling me when the next bus is coming, for instance. That little piece of information can radically transform your sense of the quality of public transit. But people who don’t have smartphones don’t benefit from this. And that means that while I can run out of my house just when the bus is coming, someone else may wait on a corner for 20 minutes for the same bus. And now we’re having very different experiences of the same public service. Mine is much better, because I have a smartphone.
+
+Tech is also transforming transportation with the proliferation of electric scooters and dockless bikes. Do you use those?
+
+I use old-school docked bike share (which is funny to say, because these systems are less than 10 years old in the United States). But mostly I just use a regular old bike. 
+
+I do wear a very souped-up bike helmet, a Christmas gift from my husband a couple of years ago. It has built-in lights controlled by a little panel attached to my handlebar, designed to allow me to signal that I’m turning left or right — essentially, it lets me behave like a car, with taillights. I have mixed feelings about this, too. (So many mixed feelings!) I don’t think I should have to behave like a car when I’m on a bike, although I appreciate anyone who is trying to make cycling safer.
+
+In general, my bias is toward assuming that many problems are solved better by policy than by technology. So if you asked me what would really make me safer on my bike, I’d say more protected bike lanes, not more gadgets on bikes (or on cars to detect them). But my husband sadly doesn’t have the power to give me bike lanes for Christmas.
+
+You recently moved from San Francisco to Washington. What have you observed about how Washingtonians and San Franciscans use tech differently or the same?
+
+I have definitely seen fewer AirPods. And I have yet to see a driverless-car-in-training in Washington, something that was a near daily sight in San Francisco. 
+
+As a source in San Francisco pointed out to me before I left: D.C. is a city full of people who would regulate this new technology — or hold think-tank symposiums on how to regulate it — but few here have seen it in action, let alone gone for a ride in a driverless car.
+
+Follow Emily Badger on Twitter: @emilymbadger.
+

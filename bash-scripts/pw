@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# pw: a password manager
+# pw [-a account] [-c account]
+
+if [ ! -f "~/.pw" ]
+then {
+    touch ~/.pw
+}
+fi
+
+ADD=false
+GET=false
+
+while getopts a:c: option
+do
+    case "${option}"
+        in
+        a) ADD=true;
+        c) GET=true;
+    esac
+done
+
+if [ "$ADD" = true ]
+

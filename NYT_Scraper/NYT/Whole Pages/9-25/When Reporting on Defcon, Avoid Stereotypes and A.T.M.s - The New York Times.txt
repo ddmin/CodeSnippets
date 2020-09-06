@@ -1,0 +1,34 @@
+Source: https://www.nytimes.com/2018/09/24/insider/covering-hackers-defcon-cybersecurity.html
+
+Title: When Reporting on Defcon, Avoid Stereotypes and A.T.M.s - The New York Times
+
+By Stephen Hiltner
+
+As one of The New York Times’s three Surfacing residents, I’ve grown accustomed to entering unfamiliar places. My job is to shed light on the world’s offbeat and often misunderstood communities and subcultures, and that necessarily means stepping outside what’s familiar. Still, when I decided to attend Defcon, a freewheeling hacking and cybersecurity conference held each year in Las Vegas, disconcerting advice began pouring in from all sides.
+
+Bring a loaner laptop, said Runa Sandvik, the senior director of information security for The Times, referring to a temporary machine that could be wiped clean upon my return.
+
+Be wary of the A.T.M.s in and around the conference, said Rachel Tobac, a Defcon veteran who first suggested the story idea to me. (In the past, nearby A.T.M.s have been targeted; in 2009, a fraudulent A.T.M., aimed at stealing data, was discovered at the Riviera Hotel Casino.) Oh, and make sure all your software is up-to-date, she added.
+
+Above all else: Avoid the public Wi-Fi, several people cautioned. It can make you an easy target.
+
+The anxiety surrounding Defcon and its crowds is, of course, partly justified. (See above regarding the A.T.M.) But the general public’s apprehension about the hacking world is also a result of a persistent and pervasive characterization — in the news, in films, in novels — of hackers as uniformly nefarious characters, prone to stealing our banking information and weaponizing our private data.
+
+As is often the case, the truth is much more nuanced.
+
+Within a few hours of arriving in Vegas, I found myself seated at the front of a conference room with Chris Hadnagy, a pioneer in the field of social engineering — a branch of hacking that involves manipulating people (instead of just computer systems) to gain access to information. A social-engineering hacker, for example, might call up your cellular provider and impersonate your spouse, in hopes of hijacking your text messages — which could then be used to bypass the two-step authentication on your email account.
+
+Mr. Hadnagy, who for many years operated under the alias loganWHD, now works as a cybersecurity professional, consulting with and training companies to bolster their defenses. He also founded a nonprofit organization, Innocent Lives Foundation, that combats child predation.
+
+In other words: In a world that tends to focus on villainous hackers, he’s one of the good guys.
+
+The transition that people like Mr. Hadnagy have made — from underground hacking, using aliases, to aboveboard forms of hacking, using their real names — is the main thrust of the article that resulted from my attending Defcon. “Our clients are the Fortune 500 companies of the world,” Mr. Hadnagy said, referring to his consulting work. “You’re not going to get a giant bank to pay you if they’re hiring ‘loganWHD.’”
+
+But as is true with many of our Surfacing pieces, another goal was to broaden reader appreciation of something that’s become increasingly apparent to me this year: that many of the world’s underrepresented communities are all too often painted with a broad brush. When reporting on what’s different, it’s easy to be distracted by what’s dramatic — and to suggest that the most dramatic elements of a community represent the whole. This trap can sometimes result in reporting that caricatures and stereotypes.
+
+Engaging with virtuous hackers hasn’t blinded me to the threat of cyber criminals. The reach of Russian hackers during the 2016 presidential election, for example, is truly stunning — and the details are still coming to light. But now, every time I imagine a nefarious hacker targeting a voting database to commit a crime, I can counterbalance the thought by recalling a thoughtful conversation I had with Nick Bishop and Mike Westmacott, two hackers I met at Defcon who were diligently taking apart and testing a Diebold voting machine in an attempt to identify — and increase awareness of — its vulnerabilities.
+
+They weren’t wearing masks, nor were they hoping to undermine anyone’s vote. Freely offering up their names, they said that their goal was to help ensure the integrity of our elections.
+
+And what made our conversation dangerous wasn’t the looming threat of the public Wi-Fi. It was the power I had to misrepresent their community.
+

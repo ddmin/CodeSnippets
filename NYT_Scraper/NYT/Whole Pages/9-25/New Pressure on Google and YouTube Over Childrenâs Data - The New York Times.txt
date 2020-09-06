@@ -1,0 +1,42 @@
+Source: https://www.nytimes.com/2018/09/20/business/media/google-youtube-children-data.html
+
+Title: New Pressure on Google and YouTube Over Children’s Data - The New York Times
+
+By Sapna Maheshwari
+
+In the context of a growing national debate on tech and privacy, Google has come under increased scrutiny for how it may be tracking and targeting children for advertising.
+
+Two House members sent a letter this week to the company’s chief executive, Sundar Pichai, expressing concern that the collection practices of YouTube, a Google subsidiary, may not comply with the Children’s Online Privacy Protection Act, known as Coppa.
+
+The letter on Monday — from David Cicilline, Democrat of Rhode Island, and Jeff Fortenberry, Republican of Nebraska — followed up on a complaint filed in April by more than 20 advocacy groups. The groups sought an investigation by the Federal Trade Commission, which enforces Coppa.
+
+In addition to the complaint and the lawmakers’ letter, Google is facing pressure from the New Mexico attorney general on how it may collect children’s location data. The state official named the tech giant as a defendant in a lawsuit filed last week against the developer of Fun Kid Racing and other gaming apps, along with advertisers involved with them, claiming that they were sharing children’s data without their parents’ permission.
+
+YouTube has said its practices are in line with Coppa, which requires companies to obtain explicit, verifiable permission from parents before collecting personal information from children under 13 or targeting them with ads tied to their online behavior.
+
+“There’s more interest in children’s privacy than there has been in a long time, and that’s related to the broader privacy conversations that we’re having,” said Josh Golin, executive director of the Campaign for a Commercial-Free Childhood, who was involved with the April complaint and the new push by lawmakers. “Whether that leads to Google being held to account is yet to be seen.”
+
+YouTube’s terms of service state that its main app and website are meant only for viewers 13 and older, which means that the site does not have to comply with Coppa. The company directs those under 13 to the YouTube Kids app, which pulls its videos from the main site.  Google’s website says YouTube Kids prohibits “interest-based advertising” and ads with “tracking pixels.”
+
+But advocates have contended that YouTube is aware that plenty of children watch videos on the main site, and Representatives Cicilline and Fortenberry are pressing Google to provide details of how it may collect data from children’s videos on the site.
+
+“In light of the kind of content that is on YouTube focused on attracting young users, it raises serious questions about what efforts are being made to make sure that information is not being collected about children and mined and sold,” Mr. Cicilline said.
+
+Google, the biggest seller of online advertising, said its policies did not allow advertisers to deliver personalized ads to children under 13 or collect their personal information.
+
+“We’re committed to protecting children online with a combination of family-friendly products and strict policies,” a Google spokeswoman said in a statement.
+
+Several of the most-viewed channels on YouTube are aimed at children, including ChuChu TV and Ryan ToysReview, according to Social Blade, which compiles social media data. The channels, according to the site, have attracted billions of views. That’s good for ad revenue, which YouTube splits with video makers.
+
+Mr. Golin said he was disappointed that the Federal Trade Commission, which met with children’s rights advocates in May after they filed their complaint, hadn’t acted on the issue. Lawmakers and the New Mexico attorney general “are really stepping up and putting pressure on the companies that should be coming from the F.T.C.,” he added.
+
+Still, Mr. Golin said he was optimistic that the congressmen could glean information from Google.
+
+“These are not questions we’ve ever gotten answers to, and it would be great to get on the record what Google and YouTube actually know about this,” he said.
+
+The Federal Trade Commission declined to comment.
+
+The letter from the two lawmakers concludes with a series of pointed questions that ask Google to explain how it determines the age of its users, whether or not it collects the same personal data from children and adults and why YouTube includes channels that are “clearly child-directed.”
+
+Mr. Cicilline and Mr. Fortenberry gave Google a deadline of Oct. 17 to reply.
+

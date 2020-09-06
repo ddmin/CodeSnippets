@@ -1,0 +1,48 @@
+Source: https://www.nytimes.com/2018/09/24/technology/instagram-cofounders-resign.html
+
+Title: Instagram’s Co-Founders to Step Down From Company - The New York Times
+
+By Mike Isaac
+
+SAN FRANCISCO — Kevin Systrom and Mike Krieger, the co-founders of the photo-sharing app Instagram, have resigned and plan to leave the company in the coming weeks, adding to the challenges facing Instagram’s parent company, Facebook.
+
+Mr. Systrom, Instagram’s chief executive, and Mr. Krieger, the chief technical officer, notified Instagram’s leadership team and Facebook on Monday of their decision to leave, said people with direct knowledge of the matter, who spoke on condition of anonymity because they were not authorized to discuss the matter publicly.
+
+Mr. Systrom and Mr. Krieger did not give a reason for stepping down, according to the people, but said they planned to take time off after leaving Instagram. Mr. Systrom, 34, and Mr. Krieger, 32, have known each other since 2010, when they met and transformed a software project built by Mr. Systrom into what eventually became Instagram, which now has more than one billion users.
+
+In a statement late Monday, Mr. Systrom said he and Mr. Krieger were “ready for our next chapter,” and hinted that they would create something new.
+
+“We’re planning on taking some time off to explore our curiosity and creativity again,” Mr. Systrom said. “Building new things requires that we step back, understand what inspires us and match that with what the world needs; that’s what we plan to do.”
+
+Mark Zuckerberg, Facebook’s chief executive, praised the Instagram founders in a statement and said that he wished them “all the best and I’m looking forward to seeing what they build next.”
+
+The departures raise questions about Instagram’s future at a time when Facebook faces its most sustained set of crises in its 14-year history. For much of the past two years, critics have railed against Facebook for being careless with user data and for not preventing foreign interference across its network of more than two billion people. The issues have started taking a toll on Facebook’s business, with the company saying in July that growth in digital advertising sales and in the number of its users had slowed down.
+
+Against those problems, Instagram has been one of the jewels of Facebook. The social network acquired Instagram in 2012 for $1 billion, when the photo-sharing site was used by around 30 million people. Since then, Instagram’s reach has ballooned and it has widely been seen as one of Facebook’s most successful acquisitions.
+
+Facebook has lost other founders of businesses it has acquired. In April, Jan Koum, a Facebook board member and a founder of WhatsApp, the messaging app that the social network purchased in 2014, said he was leaving. Mr. Koum had grown increasingly concerned about Facebook’s position on user data in recent years, people with knowledge of the situation said at the time.
+
+In Silicon Valley, reaction to the Instagram founders’ resignation was swift.
+
+“Wow,” tweeted John Lilly, a venture capitalist at Greylock, calling the exits “a real moment.” He added, “What an impact they’ve had on all of us.”
+
+Instagram was founded in 2010 and at first was a location check-in app called Burbn. Mr. Krieger, an enthusiastic user of Burbn, met Mr. Systrom at a Stanford University fellowship program and they decided to work together. Eventually, Burbn was retooled and renamed Instagram.
+
+Instagram became popular in Silicon Valley almost immediately. The app heavily emphasized the use of a smartphone camera as iPhones were being widely adopted, turning everyday people into amateur photographers. Mr. Systrom and Mr. Krieger popularized photo filters and camera lenses, spurring a wave of copycat apps for the iPhone and Android-based smartphones.
+
+The duo worked out of a small office in the South Park neighborhood of San Francisco. Instagram spent a lot of money in its early years just trying to keep its app online as its servers struggled under the constant stream of new user sign-ups.
+
+Instagram eventually caught the eye of Mr. Zuckerberg, who realized how powerful Instagram’s nascent photo-sharing network would become, and saw the wealth of photo-sharing activity across his own social network. Mr. Zuckerberg handled the negotiations with Mr. Systrom and Mr. Krieger largely on his own.
+
+Facebook purchased Instagram for $1 billion in cash and stock (though the final cost was closer to $715 million because the stock on which part of the deal was based declined in value). It was Facebook’s biggest acquisition to date, and came a month before the social network’s initial public offering.
+
+“For years, we’ve focused on building the best experience for sharing photos with your friends and family,” Mr. Zuckerberg wrote in a blog post about the deal. “Now, we’ll be able to work even more closely with the Instagram team to also offer the best experiences for sharing beautiful mobile photos with people based on your interests.”
+
+The deal immediately turned Mr. Systrom and Mr. Krieger into millionaires many times over. Instagram has since been valued at 100 times that $1 billion acquisition price by Bloomberg Intelligence, a sizable return on investment on paper.
+
+Facebook went on to purchase Parse, a service that provided tools for mobile developers, and Oculus, a virtual reality hardware start-up, branching into new areas beyond the original social network. Mr. Zuckerberg also spent $19 billion to buy WhatsApp.
+
+But Instagram remained Mr. Zuckerberg’s main success story. As Facebook saw a threat in young people departing the network for Snapchat, a rival photo-sharing network, Instagram was quick to shift and recreate one of Snapchat’s key features of online stories. Since then, Instagram has surged further in popularity, while Snapchat’s growth has been inconsistent.
+
+The departures of Mr. Systrom and Mr. Krieger create uncertainty around the app. It is unclear who will lead the company on the founders’ departures, and if that person can continue Instagram’s longstanding success streak. Marne Levine, who was previously Instagram’s chief operating officer, left her role at Instagram earlier this month to return to Facebook and lead partnerships.
+

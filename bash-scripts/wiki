@@ -1,0 +1,129 @@
+#!/usr/bin/python3
+
+# wiki: Wikipedia snippet in the terminal
+# usage: wiki [article] [-h] [-d] [--link]
+
+# Webscraping
+from bs4 import BeautifulSoup
+import requests
+import re
+
+# UI
+import os
+import sys
+
+# Display help message
+
+def help():
+    print()
+    print('usage: wiki [article] [-h] [-d] [--link]')
+    print()
+    print('article               : the article to look up')
+    print('-h                    : display this message and exit')
+    print('-d                    : search the disambiguation page for the topic')
+    print('--link                : format the link for the Wikipedia page and exit')
+    print()
+
+def format_link(topic):
+    link = 'https://en.wikipedia.org/wiki/' + '_'.join(topic.split())
+    return link
+
+def disambig(topic, link):
+    source = requests.get(link).text
+    soup = BeautifulSoup(source, 'lxml')
+
+    par = soup.find('div', id='mw-content-text')
+    bu = par
+    par = par.find('ul')
+
+    f = topic.split()[0]
+    if f not in par.text:
+        ln = 0
+
+        while True:
+            if f not in bu.find_all('ul')[ln].text:
+                ln += 1
+                if ln == len(bu.find_all('ul')):
+                    return 0
+            else:
+                par = bu.find_all('ul')[ln]
+                break
+
+    print()
+    print(f'{topic} may refer to:')
+    print('\n'.join(list(map(lambda x: '\t' + x, par.text.split('\n')))))
+
+
+def scrape(topic):
+    link = format_link(topic)
+    topic = ' '.join(list(map(lambda x: x.capitalize(), topic.split())))
+
+    source = requests.get(link).text
+    soup = BeautifulSoup(source, 'lxml')
+
+    par = soup.find('div', id='mw-content-text')
+    par = par.find_all('p')
+
+    ln = 0
+    for i in range(len(par)):
+        if len(par[i].text.split()) > 5:
+            ln = i
+            break
+
+    txt = par[ln].text
+    if txt == "Other reasons this message may be displayed:\n":
+        print()
+        print(f'Could not find an appropriate article for "{topic}". Try again.')
+        help()
+        sys.exit()
+
+    if txt.split()[-2:] == ['refer', 'to:'] or txt.split()[-2:] == ['refers', 'to:']:
+        print()
+        print(f'"{topic}" is too ambiguous. Try to be more specific.')
+        disambig(topic, link)
+        help()
+        sys.exit()
+
+    # Formatting text
+    txt = re.sub('\[.*?\]', '', txt)
+    txt = re.sub('\n', ' ', txt)
+
+    print()
+    print(f'{topic} ({link}):\n')
+    print(txt + '\n')
+
+# Require an article to be passed in as an argument
+if len(sys.argv) == 1:
+    print('You must provide an article as the first argument')
+    help()
+    sys.exit()
+
+else:
+    topic = sys.argv[1]
+
+# option -h: print help message and exit
+if len(sys.argv) > 1 and '-h' in sys.argv:
+    help()
+    sys.exit()
+
+elif '-d' in sys.argv:
+    if len(sys.argv) > 2:
+        topic = sys.argv[1]
+        topic += ' (disambiguation)'
+
+    else:
+        print('You must provide an article as the first argument')
+        help()
+        sys.exit()
+
+if '--link' in sys.argv:
+    if len(sys.argv) > 2:
+        print(format_link(topic))
+        sys.exit()
+
+    else:
+        print('You must provide an article as the first argument.')
+        help()
+        sys.exit()
+
+scrape(topic)

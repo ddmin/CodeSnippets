@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Automatically copy bash scripts directory to here
+echo "Copying ~/Code/Bash Directory..."
+cp ~/Code/Bash/* .
+echo "Copying text files"
+cp ~/Documents/Text/* ./Text
+echo "Copying ~/Code/Python/CLI Directory..."
+cp ~/Code/Python/CLI/* .
+echo "Success!"

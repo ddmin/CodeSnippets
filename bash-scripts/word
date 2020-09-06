@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# word: sdcv wrapper and vocabulary tester
+# word [word]
+
+# Add word to the top
+echo "$1:" | tr a-z A-Z > /tmp/entry.txt
+echo "" >> /tmp/entry.txt
+
+# Get rid of useless lines
+sdcv "$1" | sed -e "1,4"d >> /tmp/entry.txt
+
+# Remove last two lines
+sed -i "$"d /tmp/entry.txt
+sed -i "$"d /tmp/entry.txt
+
+# Open vim buffer with definition in read-only mode
+vim -R /tmp/entry.txt
+
+# Remove after close
+rm /tmp/entry.txt

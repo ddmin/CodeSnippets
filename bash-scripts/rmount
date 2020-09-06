@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Don't use this, just use a normal backup utility
+# rmount: tool to mount remote folder and copy contents
+# rmount [user] [machine]
+
+# Requires sshfs in order to work
+
+# Verification message
+echo "Copying files from $1@$2"
+echo "Is this ok? [y/N]"
+read -n 1 -s choice
+
+if [ "$choice" != "y" ]; then
+    exit
+fi
+
+# Create directory in order to serve as mount point
+MOUNTPOINT="/mnt/$2"
+
+# Delete directory if it already exists
+sudo rm -rf "$MOUNTPOINT"
+sudo mkdir "$MOUNTPOINT"
+echo "Created $MOUNTPOINT"
+
+# Mount the remote machine files
+sudo sshfs "$1@$2:/home/$1" "$MOUNTPOINT"
+
+# Copy the files
+sudo rsync -ravh --progress "$MOUNTPOINT" "/home/$USER/Desktop/"
+
+# Unmount file
+sudo umount "$MOUNTPOINT"
+
+echo Done.

@@ -1,0 +1,52 @@
+Source: https://www.nytimes.com/2018/09/24/obituaries/charles-kuen-kao-dead.html
+
+Title: Charles Kao, Nobel Laureate Who Revolutionized Fiber Optics, Dies at 84 - The New York Times
+
+By Mike Ives
+
+HONG KONG — Charles Kuen Kao, a Nobel laureate in physics whose research in the 1960s revolutionized the field of fiber optics and helped lay the technical groundwork for the information age, died on Sunday in Hong Kong. He was 84.
+
+His was confirmed by the Hong Kong-based Charles K. Kao Foundation for Alzheimer’s Disease, which he and his wife, Gwen Kao, founded in 2010. The foundation declined to specify a cause but said that Dr. Kao learned he had the disease in 2002.
+
+Working in Britain in the late 1960s, Dr. Kao and a colleague played a crucial role in discovering that the fiber optic cables in use at the time were limited by impurities in their glass. They also outlined the cables’ potential capacity for storing information — one that was far superior to that of copper wires or radio waves.
+
+“The word ‘visionary’ is overused, but I think in the case of Charles Kao, it’s entirely appropriate because he really did see a world that was connected, by light, using the medium of optical fiber,” said John Dudley, a researcher in fiber optics based in France and a former president of the European Physical Society. “And I think society today owes him a great deal for that work.”
+
+In the early 1960s, light pulses carrying telephone and television signals could travel only about 20 meters, or about 65 feet, through glass fibers before nearly all the light dissipated. But by 1970, four years after Dr. Kao and the British engineer George Alfred Hockham published a landmark study on the subject, a group of researchers had produced an ultrapure optical fiber more than a half-mile long.
+
+Fiber optic cables, which look like fishing wire, later enabled the proliferation of broadband communications, biomedical informatics and countless other digital applications. When Dr. Kao shared the Nobel Prize in Physics in 2009, the Royal Swedish Academy of Sciences estimated that the optical cables in use worldwide, if unraveled, would equal a fiber more than 600 million miles long.
+
+“It’s one of these things where, when you study technology, you start working on one thing, and the impact of it just fans out into all sorts of areas,” Dr. Dudley said by telephone.
+
+He added that it might have taken decades for Dr. Kao to receive the Nobel Prize because the importance of his work was not apparent to the general public until the 2000s.
+
+Carrie Lam, the chief executive of Hong Kong, a semiautonomous Chinese territory, said in a statement on Sunday that Dr. Kao’s work on fiber optics had made a “tremendous contribution to Hong Kong, the world and mankind.” She added that he had also played a prominent role in shaping local higher education and scientific research.
+
+“An eminent figure, Professor Kao is the pride of Hong Kong people,” Ms. Lam said.
+
+Charles Kuen Kao was born in Shanghai on Nov. 4, 1933, to a wealthy family, according to an autobiographical sketch published by the Nobel Foundation. His father, Kao Chun Hsin, was a judge, and his grandfather, Kao Hsieh, had been a Confucian scholar active in a movement to bring down the Qing dynasty during the Chinese Revolution of 1911.
+
+Dr. Kao described his early life in Shanghai as “very pampered and protected.” His family moved to Hong Kong when he was 14, on the brink of China’s Communist Revolution of 1949, and at 19 he sailed to England to study electrical engineering at Woolwich Polytechnic, now known as the University of Greenwich.
+
+Dr. Kao would later admit that he had not been the most diligent university student. “In those days the degrees were awarded as a First, Second, Pass or Fail,” he said. “As I spent more time on the tennis court than with my books, my degree was a Second.”
+
+After graduation, he joined a British subsidiary of International Telephone & Telegraph, and spent the next three decades working for the company in Britain, Europe and the United States. It was during his stint in England that he met his future wife, Gwen Wong, a fellow engineer who worked on an upper floor.
+
+In their landmark paper on fiber optics in 1966, “Dielectric-Fiber Surface Waveguides for Optical Frequencies,” Dr. Kao and Dr. Hockham noted in their conclusion that “a fiber of glassy material” and certain dimensions “represents a possible practical optical waveguide with important potential as a new form of communication medium.”
+
+Dr. Kao received a half share of  the 2009 Nobel Prize in Physics; the other half was split between Willard S. Boyle and George E. Smith, both affiliated with Bell Laboratories at the time. They had invented a semiconductor sensor known as the charge-coupled device, the device behind digital photos and film.
+
+The Royal Swedish Academy of Sciences said that the work by all three men had collectively “built the foundation to our modern information society.”
+
+Dr. Kao was knighted in 2010 and received an honorary degree from Princeton and many awards from engineering associations across the world. He was a professor and later vice chancellor at the Chinese University of Hong Kong, where he founded the department of electronics in 1970.
+
+Dr. Kao is survived by his wife and two children, Amanda and Simon, who live in the United States, a spokeswoman for his Alzheimer’s foundation said.
+
+“As one of the last wishes of Professor Kao, our foundation will keep up our work in supporting people with Alzheimer’s disease and their families,” Mrs. Kao, the foundation’s chairwoman, said in a statement.
+
+Dr. Kao said in the autobiographical sketch that his scientific breakthrough had not resulted from a “eureka” moment but rather from years of trial-and-error experiments. “Transmission of light through glass is an old, old idea,” he wrote.
+
+In a 2004 interview with the IEEE History Center, he was similarly self-effacing.
+
+“I think it was a very respectable bit of detective work as well as good theory and good fundamentals,” he said of his contribution to the fiber optics field. “So there was really nothing spectacular.”
+

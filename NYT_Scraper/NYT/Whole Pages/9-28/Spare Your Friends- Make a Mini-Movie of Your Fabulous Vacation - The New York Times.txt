@@ -1,0 +1,40 @@
+Source: https://www.nytimes.com/2018/09/26/technology/personaltech/how-to-make-mini-vacation-movie.html
+
+Title: Spare Your Friends: Make a Mini-Movie of Your Fabulous Vacation - The New York Times
+
+By J. D. Biersdorfer
+
+Let’s be honest, no one wants to see all of your little vacation video clips one at a time on your phone. 
+
+Sure, grabbing a quick video instead of snapping a photo is second nature now to many travelers — a slow pan around that medieval castle or that gorgeous ocean sunset. It’s a dynamic way to preserve those memories for yourself.
+
+But the videos — and photos — add up quickly and showing them all off is cumbersome. Rest assured, everyone else just wants to see a highlight reel. 
+
+Never edited a movie before? Not to worry, as there’s a wide variety of beginner-friendly video apps that will stitch your snippets into share-worthy vacation “trailers” with just a few taps or clicks on your part. And here’s the best news of all: Making a video can take less than an hour. Here’s how to do it.
+
+You’ll want an app that does everything you want to do in your movie, like the ability to add photos or audio, but not so complicated that it is tough to use. 
+
+You may even have one already. Good options include Microsoft’s Movie Maker 10 for Windows, Cyberlink ActionDirector for Android, Apple’s iMovie for macOS and iOS, Adobe Premiere Clip for Android and iOS — or any of the dozens of video apps in the Google Play and iOS App Store. Read the reviews or dabble around until you find one you like. 
+
+While the design of these apps vary, most work the same way — once you add clips to your project, you put them in the order you want to see them by dragging them around a visual timeline. (But if that sounds like too much work, look for an app like Magisto that automatically combines a batch of clips to crank out an instant movie.)
+
+If you’re working on the smartphone you used to film your scenes, this is easy. Just open your video-editing app, create a new project or movie, look for an Import or Create button and select the clips you want to use. 
+
+If you’d rather do your editing on a tablet or desktop system because it’s easier to see what you’re doing, it’ll take another step or two because you’ll need pull in the clips there from your camera or smartphone. You can do this in several ways: connecting the devices by USB cable; wirelessly slinging them with Apple’s AirDrop, Android Beam or Bluetooth; or transferring them via cloud drive.
+
+The timeline or storyboard area in a video-editing app shows the sequence of the separate scenes in your movie. Once you add the clips to the timeline, you can drag them into a different order, trim off the boring parts and the beginning and end, or split one clip into two. 
+
+As you move the different parts around, think of the narrative you want to show your audience as each scene passes by. Do you want to go in chronological order or mix it up? And keep in mind, long scenes where not much happens can be boring for the viewer. (Vimeo has a blog full of tips for video newbies.)
+
+Video-editing apps like iMovie and Windows Movie Maker include text tools so you can insert title cards and add identifying captions. Some can apply Hollywood-style transitions (like wipes, fades and dissolves) to glide between scenes, too. 
+
+To add a title or transition between scenes, look in your app’s toolbar for the appropriate element and drag the icon for a title or transition you want onto the timeline between scenes. Click a clip with the text tool to add a caption. Got a gorgeous photograph you want to add to the video tour? If your app supports photos, add it to your timeline and set it to linger for a few seconds to vary the video’s pace. 
+
+KineMaster for Android and iOS and iMovie are among the apps that let you record your own documentary-style narration. 
+
+Look for a menu item or button to add an audio track along your timeline. For better audio quality, consider getting a USB microphone. You can also add a song as a soundtrack, but be mindful of copyright when using someone else’s music.
+
+Once you get all the elements in order, preview your creation within the program and make any last-minute adjustments before you finalize the project. When you’re satisfied, save the video and select an output size if asked. Just a few minutes of high-definition or 4K video can make for a hefty file, but you can pick a smaller output size for sharing or streaming. 
+
+When the app pops out your finished masterpiece, share away. And now you can start planning for your next vacation.
+

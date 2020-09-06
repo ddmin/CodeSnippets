@@ -1,0 +1,30 @@
+Source: https://www.nytimes.com/2018/09/26/science/manta-ray-filters.html
+
+Title: The Marvelous Filters in the Manta Ray’s Mouth - The New York Times
+
+By Veronique Greenwood
+
+It all began with a simple question: Why don’t manta rays clear their throats?
+
+The car-size, kite-shaped fishes filter their plankton food from seawater, but they don’t pause, close their mouths and snort clogs from their filters nearly as often as you would expect, according to Misty Paig-Tran, a marine biologist and a professor at California State University, Fullerton. If their filters work like sieves, then they must get clogged over time, like all similar systems, from vacuum cleaners to your water-filter pitcher.
+
+But Dr. Paig-Tran and her colleagues’ latest research, published Wednesday in Science Advances, shows that the manta ray is using a previously unknown method of filtration that causes particles to glide over its straining system, rather than go through it. It doesn’t need to clear its filters much because they’re rarely clogged.
+
+To understand how the manta’s filters work, imagine a series of tiny angled slats lined up in its mouth. When seawater rushes over these structures, according to experiments by Raj Divi, a student in Dr. Paig-Tran’s lab, it forms whirlpools between each pair of slats. These vortices don’t suck particles down. Instead they push up, keeping the fragments of plankton and other seaborne particles from falling into the crevices.
+
+As a result the particles ricochet off the slats, growing concentrated in the mouth while the water drains away. They never actually get in the filter, according to both lab experiments washing colored dye and particles over plastic versions of the structures, and mathematical models of what’s going on. They are bounced out before they get the chance, and then are swallowed by the ray.
+
+This is not the first time that researchers have found that filter feeders are probably not simply sieving. According to one study looking at this question in whales, water may rush across the front and back of the giant mammals’ baleens at different speeds, causing a pressure difference that allows plankton to build up on the interior of the mouth. But other marine creatures do seem to be sieving, such as the basking shark, which sometimes closes its mouth and clears clogs in its filters with a kind of cough.
+
+Understanding how the manta ray is feeding and what it is eating may assist conservation efforts. “This is a protected animal that is being harvested like crazy. And we don’t even have a good handle on what they’re feeding on,” Dr. Paig-Tran said, noting that this could aid in understanding what organisms they depend on and whether they are ingesting plastic particles floating in the ocean.
+
+[Like the Science Times page on Facebook. | Sign up for the Science Times newsletter.]
+
+It could also lead to filters for human use, relying on this method. In the past, machines that use clever engineering to avoid the buildup of obstructions while filtering have met with striking success: some vacuum cleaners, for instance, separate dust from the air using centrifugal force, rather than a filter that grows caked with grit.
+
+Dr. Paig-Tran hopes that this discovery will aid in the battle against microplastics in the ocean.
+
+Tiny plastic pieces may wind up in wastewater, she said, “but they don’t get treated in wastewater treatment because they’re not equipped for that size particle.” Manta rays, in contrast, are good at filtering at such a scale.
+
+Imagine a clog-resistant filter modeled on the manta’s mouth and placed in a treatment plant to catch plastic fragments before they are released into the environment. To Dr. Paig-Tran, that seems like an intriguing potential use for the system she and her colleagues have described.
+

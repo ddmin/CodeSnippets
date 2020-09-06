@@ -1,0 +1,44 @@
+Source: https://www.nytimes.com/2018/09/18/opinion/economy-debt-markets-crash.html
+
+Title: How the Next Downturn Will Surprise Us
+Subtitle: In their campaign to contain the risks that caused the Great Recession, central bankers may have planted the seeds for the next global economic crisis.
+By Ruchir Sharma
+
+After the fall of Lehman Brothers 10 years ago, there was a public debate about how the leading American banks had grown “too big to fail.” But that debate overlooked the larger story, about how the global markets where stocks, bonds and other financial assets are traded had grown worrisomely large. 
+
+By the eve of the 2008 crisis, global financial markets dwarfed the global economy. Those markets had tripled over the previous three decades to 347 percent of the world’s gross economic output, driven up by easy money pouring out of central banks. That is one major reason that the ripple effects of Lehman’s fall were large enough to cause the worst downturn since the Great Depression.
+
+Today the markets are even larger, having grown to 360 percent of global G.D.P., a record high. And financial authorities — trained to focus more on how markets respond to economic risk than on the risks that markets pose to the economy — have been inadvertently fueling this new threat. 
+
+Over the past decade, the world’s largest central banks — in the United States, Europe, China and Japan — have expanded their balance sheets from less than $5 trillion to more than $17 trillion in an effort to promote the recovery. Much of that newly printed money has found its way into the financial markets, where it often follows the path of least regulation. 
+
+Central bankers and other regulators have largely succeeded in containing the practice that caused disaster in 2008: risky mortgage lending by big banks. But with so much easy money sloshing around in global markets, new threats were bound to emerge — in places the regulators aren’t watching as closely.
+
+Within the $290 trillion global financial markets, there are hundreds of new risks, pools of potentially troubled debt. Among the most troubling: corporate borrowers and so-called non-bank lenders all over the world.
+
+As bank lending dried up, more and more companies began raising money by selling bonds, and many of those bonds are now held by these non-bank lenders — mainly money managers such as bond funds, pension funds or insurance companies.
+
+Among corporations listed on the S.&P. 500 index, debt has tripled since 2010 to one and a half times annual earnings — near the historic peaks reached during the recessions of the early 1990s and 2000s. And in some parts of the bond markets, debt loads are much higher.
+
+One of the big corporate risks is developing largely beyond regulatory oversight. Some United States companies that were publicly traded in 2008 have since gone private, often precisely in order to avoid intensified scrutiny from regulators. Many of those companies were purchased by private equity firms, in deals that leave the companies saddled with huge debts. Right now the typical American company owned by a private equity firm has debt six times higher than its annual earnings — or twice the level that a public ratings agency would consider high-risk or “junk.”
+
+At a time when central banks are holding interest rates at record lows, the return from holding plain vanilla corporate bonds is negligible, so investors are more willing to buy junk, for the higher yields. And this hunt for higher returns has been playing out worldwide as asset managers chase higher returns anywhere they can be found, whether in United States private equity or in the bond markets of Europe and emerging economies like Argentina and Turkey.
+
+The biggest risks outside the United States are in China, which has printed by far the most money and issued by far the most debt of any country since 2008, and where regulators have had less success reining in borrowers and lenders. Easy money has fueled bubbles in everything from stocks and bonds to property in China, and it’s hard to see how or when these bubbles might set off a major crisis in an opaque market where most of the borrowers and lenders are backed by the state. But if and when Beijing reaches the point where it can’t print any more money, the bottom could fall out of the economy.
+
+More broadly, the trigger to watch is the United States Federal Reserve, since many other central banks in the world tend to follow the Fed’s lead in setting interest rates. Over the last 50 years, every time the Fed has reined in easy money by raising interest rates, a downturn in the markets or the economy has followed eventually. It may take a while, but trouble almost inevitably does come.
+
+Many doomsayers worried that the Fed tightening that began in 2004 would help prompt a recession — and it eventually did, in 2008. Though rates are still historically low in the United States, the Federal Reserve began to raise them more than two years ago and is expected to continue tightening them into next year.
+
+The Fed’s tightening is already rattling emerging markets. When the American markets start feeling it, the results are likely be very different from 2008 — corporate meltdowns rather than mortgage defaults, and bond and pension funds affected before big investment banks. 
+
+If a downturn follows, it is more likely to be a normal recession than another 100-year storm, like 2008. Most economists put the probability of such a recession hitting before the end of 2020 at less than 20 percent. 
+
+But economists are more often wrong than right. Professional forecasters have missed every recession since such records were first kept in 1968, and one of the many reasons for this is “recency bias”: using economic forecasting models that tend to give too much weight to recent events. They see, for example, that big banks are in much better shape than in 2008, and households are less encumbered by mortgage debt, and so play down the likelihood of another recession. But they are, in effect, preparing to fight the last war.
+
+To have any chance of anticipating and preventing the next downturn, regulators must look for the threats that have emerged since 2008. They need to recognize that the markets now play an outsized role in the economy, and their attempts to micromanage this vast sea of money have only pushed the risks away from big American banks and toward new lenders outside the banking system, particularly in the United States and China.
+
+Markets have grown so large in part because every time they stumbled, central bankers rescued them with easy money. When markets rose sharply — as they have in recent years — the authorities stood by, saying they are not in the business of popping bubbles. Now, the markets are so large it is hard to see how policymakers can lower the risks they pose without precipitating a sharp decline that is bound to damage the economy. It’s a familiar problem: Like the big banks in 2008, the global markets have grown “too big to fail.”
+
+Follow The New York Times Opinion section on Facebook and Twitter (@NYTopinion), and sign up for the Opinion Today newsletter. 
+

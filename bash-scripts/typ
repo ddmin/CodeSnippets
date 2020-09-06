@@ -1,0 +1,118 @@
+#!/bin/bash
+
+# typ: a vim typing test
+# typ [-l number of lines]
+
+# Line number defaults to 3
+LINES=3
+
+# Get number of lines
+while getopts l: option
+do
+    case "${option}"
+        in
+        l) LINES=${OPTARG};;
+    esac
+done
+
+if (( LINES > 10 ))
+then {
+    echo "(Reverting to 10 lines)"
+    echo ""
+    LINES=10
+}
+fi
+
+if (( LINES < 1 ))
+then {
+    echo "(Reverting to 1 line)"
+    echo ""
+    LINES=1
+}
+fi
+
+LINES=`expr $LINES - 1`
+
+# Printing with color
+COLOR='\033[0;32m'
+NOCOL='\033[0m'
+
+# Create typing test from existing files in SPEECHDIR directory
+SPEECHDIR="/home/ddmin/Documents/Text"
+SPEECH="$(ls $SPEECHDIR | shuf -n 1)"
+TYPE="/tmp/$SPEECH"
+
+# Generate a random line number
+LIN=$(wc -l "$SPEECHDIR/$SPEECH")
+LIN=$(echo $LIN | cut -d ' ' -f 1)
+LIN=$(($LIN-$LINES))
+
+FIRST=$((1 + RANDOM % LIN))
+LAST=$((FIRST + LINES))
+
+# Delete file if it already exists
+rm -rf "$TYPE"
+
+# Generate 5 random lines from the file
+WORDS=$(sed -n "$FIRST,$LAST"p "$SPEECHDIR/$SPEECH")
+
+# Create a new file with blank lines in between each line
+sed -n "$FIRST,$LAST"p "$SPEECHDIR/$SPEECH" | while read line
+do
+    echo "$line" >> "$TYPE"
+    echo "" >> "$TYPE"
+done
+
+# Exit on first error
+# Placed here because I returned a nonzero error code earlier
+set -e
+
+# Start timer
+echo -e "${COLOR}Current Document: $SPEECH${NOCOL}"
+START=$SECONDS
+
+# Open file in Vim buffer
+vim "$TYPE"
+
+# Stop timer
+DUR=$(( SECONDS - START ))
+
+# Calculate total number of words
+NUM=$(echo $WORDS | wc -w)
+
+# File to store the actual test
+ACT="/tmp/act"
+
+# File to store the user-typed comparison
+COMP="/tmp/comp"
+
+rm -rf "$COMP"
+rm -rf "$ACT"
+
+echo "$WORDS" > "$ACT"
+
+# Ending message
+LINESONE=`expr $LINES + 1`
+ENN=`expr 3 \* $LINESONE + 2`
+
+for ((i=2; i<=ENN; i+=3));
+do
+    sed -n "$i"p "$TYPE" >> "$COMP"
+done
+
+RATIO=$(echo "$NUM / $DUR" | bc -l | cut -c -4)
+
+if cmp -s "$COMP" "$ACT";
+then
+    echo -e "You typed all ${COLOR}$NUM words${NOCOL} in ${COLOR}$DUR seconds${NOCOL}! ($RATIO WPS)"
+else
+    echo -e "It took you ${COLOR}$DUR seconds${NOCOL} ($RATIO WPS), but you did not type all ${COLOR}$NUM words${NOCOL} correctly."
+    echo
+    echo -e "${COLOR}Here is your mistake:${NOCOL}"
+    wdiff "$ACT" "$COMP" | colordiff
+fi
+
+# Delete the files
+rm /tmp/act
+rm /tmp/comp
+rm -rf "$TYPE"

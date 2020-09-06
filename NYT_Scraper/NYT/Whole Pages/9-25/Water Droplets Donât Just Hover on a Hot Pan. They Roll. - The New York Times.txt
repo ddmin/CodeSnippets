@@ -1,0 +1,38 @@
+Source: https://www.nytimes.com/2018/09/14/science/leidenfrost-effect.html
+
+Title: Water Droplets Don’t Just Hover on a Hot Pan. They Roll. - The New York Times
+
+By Kenneth Chang
+
+Drip water on a hot pan, and the droplets will skitter around the pan, speeding like tiny mad hovercraft on cushions of steam.
+
+This is the Leidenfrost effect, which you’ve probably experienced while cooking. Johann Gottlob Leidenfrost, a German doctor and theologian, described the phenomenon in 1756 in a book about the properties of water.
+
+But French scientists have now figured out something new about those skittering drops. When they are small enough — about a millimeter in diameter — the roiling of heat in the liquid will cause the droplet to tilt and rotate. That, in turn, propels the droplet to roll.
+
+Scientists — and home cooks — never noticed this before, because no one had tried pinning a water droplet on a precisely flat surface. Plus, since water is clear, you usually can’t see which way the liquid is churning.
+
+It was already known that the droplets, levitating on top of a layer of vapor, move easily, but the presumption was that they were sliding down a slope or pushed by air currents. The new research shows that they can move all by themselves.
+
+“It's embarrassingly simple,” David Quéré, a scientist at the École Polytechnique and ESPCI Paris, said of the discovery. 
+
+“The drop is running away,” he said. “It has a little motor inside, which is surprising. From this view, it’s amazingly different from usual drops, which, of course, stay where you place them.”
+
+Dr. Quéré and his colleagues described the research this week in the journal Nature Physics.
+
+[Like the Science Times page on Facebook. | Sign up for the Science Times newsletter.]
+
+In the experiments, droplets of water were placed on a very flat, very hot, nonabsorbent surface, held in place by a needle. (For the skittering Leidenfrost effect to occur, the surface has be at least about 400 degrees Fahrenheit, well above the boiling temperature of water. Some recipes use that as a test to see whether a pan is hot enough.)
+
+Larger drops, those more than 1.5 millimeters in diameter, are more flattened in shape (Dr. Quéré described them as puddles). Within the droplet, the liquid splits into two convective cells rotating in opposite directions. Think of two wheels spinning in opposite directions toward each other, one largely canceling out the other. (Tracers mixed in with the water enabled the scientists to observe the flow.)
+
+As the water evaporates, the droplet shrinks and becomes nearly spherical, with room for just one convective cell. When the needle is lifted, the smaller droplet speeds off in the direction of the convective spin.
+
+Dr. Quéré calls it a Leidenfrost wheel.
+
+The next step in their experiments is guiding the droplets through grooves or differences in temperature, Dr. Quéré said. 
+
+There are additional fundamental phenomena to be studied, such as why the temperature of the surface must be far above the boiling point before the drops start levitating.
+
+“Very remarkably, there is no answer to this question today,” Dr. Quéré said.
+

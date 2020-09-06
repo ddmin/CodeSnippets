@@ -1,0 +1,52 @@
+Source: https://www.nytimes.com/2018/09/28/your-money/frozen-credit-files-tips-unfreezing.html
+
+Title: So You’ve Frozen Your Credit Files. Here Are Tips on Unfreezing Them. - The New York Times
+
+By Ann Carrns
+
+People who froze their credit files before September may notice some changes when the time comes to thaw the files.
+
+As of Sept. 21, a new law requires that the three major credit reporting bureaus — Equifax, Experian and TransUnion — allow consumers to place or lift a security freeze on their credit files without charge. Freezing means lenders can’t check your credit file unless you “thaw” the freeze, preventing criminals from opening credit cards or borrowing money in your name. Consumer advocates recommend a freeze at all three bureaus as a way to thwart identity thieves.
+
+People who had already established security freezes, and now want to thaw them to apply for a loan or credit card, will see a difference. With the new law taking effect, two bureaus — Equifax and TransUnion — this month abandoned the use of personal identification numbers, or PINs, to manage freezes online. (PINs are still needed, though, if you want to lift a freeze by calling on the phone.)
+
+Equifax, which suffered a major data breach last year, changed its approach on Sept. 19 in response to “consumer feedback,” said a spokeswoman, Nancy Bistritz-Balkan. (Consumers had complained after the breach that the PINs issued by Equifax were hard to keep track of and weren’t generated in a secure way.) Now, instead of issuing PINs, Equifax has consumers establish a password-protected online account.
+
+People who had placed a freeze at Equifax under the old system don’t need to do anything to re-establish it, Ms. Bistritz-Balkan said. Their credit file remains on ice.
+
+But if consumers want to suspend or lift the freeze at Equifax online, they must now create a “myEquifax” account by entering personal information including a Social Security number and a birth date. Their email address serves as their user name; they create their own password, using Equifax’s criteria. And Equifax has added extra security steps, like sending a one-time code to your phone or email to activate the account. (The steps vary by consumer, Ms. Bistritz-Balkan said. People who don’t have mobile phones may answer extra security questions.)
+
+Once users are logged on, Ms. Bistritz-Balkan said, they may suspend or remove their freeze. The new process, she said, is intended to “establish, verify and authenticate that the consumer’s identity is connected to the consumer every time.”
+
+TransUnion had already required consumers to have an account with a user name and a password, as well as a PIN. Now, users can log on to a computer or app using those credentials, to lift or suspend a freeze — no PIN needed, according to its website. Bob Skwarek, a TransUnion spokesman, said in an email that consumers complete a “stringent” authentication process when they sign up for an account to freeze their credit.
+
+“Only users who can verify that they are who they say they are can create a user name and password to log in, create and manage a freeze,” Mr. Skwarek said.
+
+The third bureau, Experian, still requires a PIN to lift a freeze.
+
+“We’ve kept this in place as it provides a level of security that the consumer has control over,” a spokesman, Greg Young, said in an email.
+
+To lift a freeze, consumers enter personal details on Experian’s website as well as their PIN. If consumers lose their PIN, Mr. Young said, they can complete an online process to get a new one.
+
+Here are some questions and answers about security freezes:
+
+How can I make sure my credit freeze password is secure?
+
+Passwords tend to be more secure than PINs, said Lorrie Cranor, a professor of computer science at Carnegie Mellon University. PINs are typically just a series of digits, while passwords include letters and symbols, enabling more combinations and making them harder to guess.
+
+The addition of an extra step, like a one-time code texted to your phone, as Equifax is doing, provides extra security, Dr. Cranor said, adding, “That’s a good thing.”
+
+But, she cautioned, no system is perfect. Many people reuse the same passwords or create passwords containing letters and numbers that are relatively easy to guess — like birthdays or phone numbers. Dr. Cranor recommends using password-generating software to create truly random combinations, and then using a password manager to keep track of them. The Wirecutter, a New York Times affiliate, offers recommendations.
+
+It’s also fine to write down your passwords, she said, as long as you keep them in a secure location, like a locked file cabinet.
+
+Does having a credit freeze mean I can’t use my current credit cards?
+
+No. The Federal Trade Commission says some consumers mistakenly think a freeze will prevent them from using their credit cards. A freeze prevents new accounts from being opened without your permission, but has no effect on cards already in your wallet.
+
+Where can I complain if I have problems with a security freeze?
+
+You can complain to the Consumer Financial Protection Bureau either online at https://www.consumerfinance.gov/complaint, or by calling 1-855-411-2372.
+
+If you think you are a victim of identity theft, visit the Federal Trade Commission’s website.
+

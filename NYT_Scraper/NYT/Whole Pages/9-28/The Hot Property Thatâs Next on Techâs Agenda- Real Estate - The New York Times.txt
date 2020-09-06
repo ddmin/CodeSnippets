@@ -1,0 +1,62 @@
+Source: https://www.nytimes.com/2018/09/27/technology/next-techs-agenda-real-estate-opendoor.html
+
+Title: The Hot Property That’s Next on Tech’s Agenda: Real Estate - The New York Times
+
+By Erin Griffith
+
+SAN FRANCISCO — Opendoor, a start-up that flips homes, attracted attention in June when it announced it had raised $325 million from a long list of venture capitalists. The financing valued the four-year-old company at more than $2 billion.
+
+That was only an appetizer. Three months later, Opendoor has more than doubled its cash pile. On Thursday, the company said it had gotten a $400 million investment from SoftBank’s Vision Fund. The valuation for Opendoor remains the same.
+
+The so-called mega-round for Opendoor was not the Vision Fund’s only major real estate-related deal on Thursday. The firm also co-led a $400 million investment in the high-end brokerage Compass that valued the company at $4.4 billion.
+
+The hauls are part of a race by investors to pour money into technology for real estate, or what Silicon Valley now calls proptech.
+
+Having watched tech start-ups upend old-line industries like taxis and hotels, venture capitalists are casting about for the next area to be infused with software and data. Many have homed in on real estate as a big opportunity because parts of the industry — like pricing, mortgages and building management — have been slow to adopt software that could make business more efficient.
+
+Last year, real estate tech start-ups raised $3.4 billion in funding, a fivefold increase from 2013, according to the start-up data provider CB Insights. One firm, Fifth Wall Ventures, is entirely dedicated to proptech.
+
+“Tech is starting to make inroads to becoming adopted, and it’s opening the eyes of investors,” said Jeffrey Housenbold, a managing director at SoftBank’s Vision Fund.
+
+Until recently, the biggest tech innovations to hit the residential real estate market have come from listing sites like Zillow and Redfin. But the start-ups in the new wave are tackling a wide range of areas — appraisals, building management, financing, co-working, co-living, building amenities and empty retail space.
+
+The Vision Fund, one of the most aggressive investors in real estate tech start-ups, has written large checks to Katerra, a construction company; WeWork, an office rental company; Lemonade, a home insurance start-up; and Oyo Rooms, a hotel company in India.
+
+Mr. Housenbold said SoftBank’s deep pockets — it has $98 billion in cash to spend — might be influencing the market.
+
+“Given the vast amount of attention on the Vision Fund, people have become more curious,” he said.
+
+Opendoor, one of the largest start-ups in the proptech category, gives the Vision Fund an entry into residential housing. The Silicon Valley company was founded in 2014 by the venture capitalist Keith Rabois and Eric Wu, who is Opendoor’s chief executive. With the money from SoftBank, it has raised more than $1 billion from investors including Khosla Ventures and GGV Capital.
+
+Opendoor’s goal is to make moving as simple as the click of a button, according to Mr. Wu. While that remains a far-off reality, the company has simplified the process of selling a home. It uses a combination of data, software and a team of 50 human evaluators to assess a home’s value. If a customer accepts Opendoor’s value for their home, the company will buy the property, charging a 6.5 percent fee on average.
+
+The company said it offers sellers certainty — many conventional home sales fall through — and flexible closing dates, helping them avoid paying double mortgages. It also eliminates the need for a real estate agent. Opendoor employs 100 licensed real estate agents to advise customers if they request it.
+
+Opendoor buys only homes built in 1960 or later, worth $175,000 to $500,000 and not in need of major renovations or repairs. Operating in more than a dozen cities, mostly in the South, it bought $316 million of homes in August, up from around $100 million in January. After some light fixes, it sells the homes in an average of 90 days.
+
+Before its latest cash infusion, Opendoor planned to expand into one new city a month. Now it plans to double that pace. The company said it expects to be in 22 cities in the United States by the end of the year.
+
+Its growth has spawned competitors: OfferPad and Knock offer comparable services to Opendoor, and Zillow and Redfin, which are both publicly traded, have entered the house-flipping market as well.
+
+“For a while, we were literally the only ones doing this because it’s complex,” Mr. Wu said. Size is an advantage, he said: More transactions mean more data to help Opendoor price its offers more accurately, as well as more buying power with local suppliers for renovations.
+
+Mr. Wu said he believed that reducing the annoyances and costs of moving would entice more people to do it, which would increase the size of the market.
+
+“There are a finite number of homes, but if people are moving with more frequency, that increases the liquidity of the supply in the system,” he said.
+
+Opendoor’s business model has not been tested by a major dip in the housing market, causing some skepticism about whether it can work over the long term.
+
+“The vast majority of investors who hear about it initially think it’s a bad idea,” said Stephen Kim, an analyst at Evercore ISI, a market research company. But the skepticism often fades as they realize Opendoor makes money by providing a service to home sellers, rather than on price appreciation, Mr. Kim said. Even if the company breaks even on a sale, the transaction fees are a meaningful business.
+
+Jason Childs, Opendoor’s chief financial officer, said the company’s geographic diversity and 90-day average flips helped shield it from a potential housing market crash. In the housing crash a decade ago, the holders of long-duration assets were affected the worst, he said.
+
+Opendoor’s Phoenix operations are already profitable, excluding the cost of its headquarters in San Francisco, and Dallas is “on the edge of profitability,” said Mr. Childs.
+
+The company’s long-term success relies on its ability to accurately price homes. Half of the people who now get offers from Opendoor sell their home to the company. Opendoor did not provide data on how close its offers were to the ultimate sale price of the homes it did not buy.
+
+In recent months, aided by the promise of cash from SoftBank, Opendoor has also expanded into the business of selling homes directly to customers, instead of going through brokers in the traditional way. It acquired Open Listings, a home shopping site, to offer a service it is calling a “trade-in,” where Opendoor handles the entire buying and selling process for a person or family. That service is now available in Dallas. It also began offering mortgage and title services to buyers.
+
+But Mr. Wu does not foresee one thing going away completely: the job of the real estate agent. Rather, he expects an agent’s work to shift to more of an advisory role, instead of an administrative one.
+
+“The thing that cannot be automated is this notion of advice — what neighborhood, what school district, how much you can afford,” he said. “It’s important to have someone who is an expert alongside you.”
+

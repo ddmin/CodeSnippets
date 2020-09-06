@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# webm-2-mp3: convert .webm files to .mp3 files
+# wm2mp [directory]
+
+find "$1" -type f -iname "*.webm" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";' _ '{}' \;
+find "$1" -name "*.webm" -type f -delete
