@@ -27,7 +27,7 @@ func main() {
 		sum1 += (i / 3) - 2
 	}
 	// answer to part 1
-	fmt.Printf("Part 1: %d\n", sum1)
+	fmt.Println("Part 1:", sum1)
 
 	sum2 := 0
 	for _, n := range data {
@@ -42,5 +42,5 @@ func main() {
 		}
 	}
 	// answer to part 2
-	fmt.Printf("Part 2: %d\n", sum2)
+	fmt.Println("Part 2:", sum2)
 }
