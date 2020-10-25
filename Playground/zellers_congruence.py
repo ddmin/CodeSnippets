@@ -1,3 +1,4 @@
+# the better version
 def zellers_congruence(month, day, year):
     if month < 3:
         month += 12

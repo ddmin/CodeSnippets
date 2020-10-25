@@ -1,3 +1,4 @@
+# lol look at my noob code
 import time
 print("DAY OF THE WEEK CALCULATOR")
 print("--------------------------")
