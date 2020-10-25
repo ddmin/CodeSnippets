@@ -1,5 +1,3 @@
-def fizzbuzz(n):
-    for i in range(1, n+1):
-        print(f'{i}\t\t{"Fizz" * (i % 3==0)}{"Buzz" * (i % 5==0)}{"Baxx" * (i % 7==0)}')
+fizzbuzz = lambda n: '\n'.join([f'{i}\t{"Fizz" * (i % 3==0)}{"Buzz" * (i % 5==0)}{"Baxx" * (i % 7==0)}' for i in range(1, n+1)])
 
-fizzbuzz(1000)
+print(fizzbuzz(500))
