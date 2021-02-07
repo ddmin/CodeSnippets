@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import pyttsx3
+import os
 import re
 
 import tkinter
@@ -76,28 +76,17 @@ def nextPage():
         text.delete(1.0, tkinter.END)
         text.insert(1.0, pdf_text)
         update_page()
-    else:
-        pass
 
 # read contents
 def read_aloud():
     current_text = text.get(1.0, tkinter.END+"-1c")
     if current_text:
-        # tts engine setup
-        engine = pyttsx3.init()
-        engine.setProperty('rate', 170)
-
-        voices = engine.getProperty('voices')
-        engine.setProperty('voice', voices[16].id)
-
         # split sentences
         for sentence in re.split('\.\s[A-Z]', current_text):
-            print("Reading:", sentence)
-            engine.say(sentence)
-
-        engine.runAndWait()
-    else:
-        pass
+            sentence.lstrip().rstrip()
+            if sentence:
+                print("Reading:", sentence)
+                os.system(f'espeak "{sentence}"')
 
 # jump to page
 def jump_text():
