@@ -30,19 +30,19 @@ class ConnectFour:
 
     def fullAt(self, pos):
         return self.board[0][pos]
-   
+
 
     def placePiece(self, pos, piece):
         c = self.board[self.vert - 1][pos]
-        n = 0 
+        n = 0
         while c:
             n += 1
             c = self.board[self.vert - 1 - n][pos]
-        
+
         self.board[self.vert - 1 - n][pos] = piece
         return (self.vert - 1 - n, pos)
-           
-            
+
+
     def vertical(self, last):
 
         for i in range(self.vert - 3):
@@ -52,7 +52,7 @@ class ConnectFour:
         return False
 
     def horizontal(self, last):
-        
+
         for i in range(self.horz - 3):
             if len(set([self.board[last[0]][n] for n in range(i, i + 4)])) == 1 and self.board[last[0]][i] != '':
                 return True
@@ -72,7 +72,7 @@ class ConnectFour:
 
         while self.board[y][x] != self.board[last[0]][last[1]]:
             y -= 1
-            x += 1 
+            x += 1
 
         try:
             while self.board[y][x] == self.board[last[0]][last[1]]:
@@ -124,7 +124,7 @@ class ConnectFour:
 
             print(f"{pieces[turn]}'s turn")
             print("Move?")
-            
+
             try:
                 move = input("> ")
                 if move == "exit":
@@ -132,7 +132,7 @@ class ConnectFour:
                 move = int(move) - 1
             except:
                 move = -1
-            
+
             if move > -1 and move < self.horz and not self.fullAt(move):
                 last = self.placePiece(move, pieces[turn])
 
@@ -143,8 +143,7 @@ class ConnectFour:
                     return False
 
                 turn = not turn
-            
+
 if __name__ == '__main__':
-    # Initialize board size here
     game = ConnectFour(horz=7, vert=6)
     game.gameloop()

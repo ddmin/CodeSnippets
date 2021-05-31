@@ -15,7 +15,7 @@ class Hangman:
                 print('_', end=' ')
 
             else:
-                print(letter, end=' ') 
+                print(letter, end=' ')
         print('\n')
 
 
@@ -64,5 +64,5 @@ class Hangman:
 
 if __name__ == '__main__':
     # Change phrase to guess here.
-    game = Hangman('Hangman is a fun game to play. Neat-o!')
+    game = Hangman('The quick brown fox jumped over the lazy dog.')
     game.gameloop()

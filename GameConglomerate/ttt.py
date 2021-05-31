@@ -1,13 +1,13 @@
 import os
 
 class TicTacToe:
-    
+
     def __init__(self, gamesize):
         self.gamesize = gamesize
         self.board = board = [['' for i in range(self.gamesize)] for n in range(self.gamesize)]
 
     def display_board(self):
-        n = 1 
+        n = 1
 
         print("-" + "-----" * self.gamesize)
 
@@ -23,10 +23,10 @@ class TicTacToe:
                         print(n, end='  | ')
                 else:
                     print(col, end='  | ')
-                n += 1 
+                n += 1
 
             print("\b")
-            print("-" + "-----" * self.gamesize) 
+            print("-" + "-----" * self.gamesize)
         print()
 
 
@@ -47,7 +47,7 @@ class TicTacToe:
     def diagonal(self):
         if len(set([self.board[i][i] for i in range(self.gamesize)])) == 1 and self.board[0][0] != "":
             return True
-        
+
         if len(set([self.board[i][self.gamesize-1-i] for i in range(self.gamesize)])) == 1 and self.board[0][self.gamesize-1] != "":
             return True
         return False
@@ -61,27 +61,27 @@ class TicTacToe:
         clear = lambda : os.system("clear")
 
         marks = ["x", "o"]
-        turn = 0 
+        turn = 0
 
         while True:
             clear()
-            self.display_board()  
+            self.display_board()
 
-            move = -1 
-            while True: 
+            move = -1
+            while True:
                 print(marks[turn%2] + "'s turn")
                 print(f"Move? (1-{self.gamesize ** 2})")
 
                 try:
                     move = input("> ")
-                    if move == 'exit':
+                    if move == 'exit' or move == 'quit' or move == 'q':
                         return False
                     move = int(move) - 1
 
                 except:
                     move = -1
 
-                if move > -1 and move < (self.gamesize ** 2): 
+                if move > -1 and move < (self.gamesize ** 2):
                     if not self.board[move // self.gamesize][move % self.gamesize]:
                         self.board[move // self.gamesize][move % self.gamesize] = marks[turn%2]
 
@@ -102,6 +102,6 @@ class TicTacToe:
                         break
 
 if __name__ == '__main__':
-    # Initialize board size here 
-    game = TicTacToe(5)
+    # Change size of game here.
+    game = TicTacToe(3)
     game.gameloop()
