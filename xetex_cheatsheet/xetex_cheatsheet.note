@@ -1,0 +1,155 @@
+---
+title: XeTeX Cheatsheet
+author: ddmin
+geometry:
+- top=30mm
+- left=20mm
+- right=20mm
+- bottom=30mm
+---
+### Superscript
+
+`$E = mc^2$`
+
+$E = mc^2$
+
+### Subscript
+`$H_2 + O_2 \Rightarrow H_2O$`
+
+$H_2 + O_2 \Rightarrow H_2O$
+
+(You can also use `\textsuperscript` and `\textsubscript`)
+
+### Radical
+`$\sqrt{2}$`
+
+$\sqrt{2}$
+
+`$\sqrt[n]{2}$`
+
+$\sqrt[n]{2}$
+
+### Fraction
+
+`$\frac{A}{B}$`
+
+$\frac{A}{B}$
+
+$\linebreak$
+
+`$\frac{\frac{A}{B}}{C}$`
+
+$\frac{\frac{A}{B}}{C}$
+
+$\linebreak$
+
+`$PV \over nT$ $=R$`
+
+$PV \over nT$ $=R$
+
+### Greek
+
+`$\Delta H\textsubscript{rxn} = \Delta H_{f (products)} - \Delta H_{f (reactants)}$`
+
+$\Delta H\textsubscript{rxn} = \Delta H_{f (products)} - \Delta H_{f (reactants)}$
+
+$\linebreak$
+
+`Oxygen Partial Charge: $\delta\textsuperscript{-}$`
+
+Oxygen Partial Charge: $\delta\textsuperscript{-}$
+
+### Symbols
+Symbol                     Markdown
+---------------------   ----------------------
+$\leftarrow$            `\leftarrow`
+$\rightarrow$           `\rightarrow`
+$\rightleftharpoons$    `\rightleftharpoons`
+$\cdot$                 `\cdot`
+$\circ$                 `\circ`
+$^\circ$C               `^\circ C`
+$\neq$                  `\neq`
+$\approx$               `\approx`
+$\propto$               `\propto`
+$\geq$                  `\geq`
+$\leq$                  `\leq`
+
+### Table
+
+\begin{verbatim}
+n f(n) f(n)-1
+- ---- ------
+0   1    0
+1   1    0
+2   2    1
+3   3    2
+4   5    4
+5   8    7
+\end{verbatim}
+
+
+n f(n) f(n)-1
+- ---- ------
+0   1    0
+1   1    0
+2   2    1
+3   3    2
+4   5    4
+5   8    7
+
+$\linebreak$
+
+### Images
+`![XeTeX Logo](xetex.png)`
+
+![XeTeX Logo](xetex.png)
+
+$\linebreak$
+
+### Math
+\begin{verbatim}
+\begin{align}
+    f(x) &= \sum_{n = 0}^{\infty} e^{x} \\
+    g(x) &= \frac{1}{2\pi}\int_{-\pi}^{\pi}e^{-x}dx
+\end{align}
+\end{verbatim}
+
+\begin{align}
+    f(x) &= \sum_{n = 0}^{\infty} e^{x} \\
+    g(x) &= \frac{1}{2\pi}\int_{-\pi}^{\pi}e^{-x}dx
+\end{align}
+
+$\pagebreak$
+
+## Text Alignment
+\begin{verbatim}
+\begin{flushleft}
+    Left Justify
+\end{flushleft}
+
+\begin{center}
+    Centered
+\end{center}
+
+\begin{flushright}
+    Right Justify
+\end{flushright}
+
+\end{verbatim}
+
+\begin{flushleft}
+Left Justify
+\end{flushleft}
+
+\begin{center}
+Centered
+\end{center}
+
+\begin{flushright}
+Right Justify
+\end{flushright}
+
+# Further Resources
+* [XeTex Reference Guide](http://texdoc.net/texmf-dist/doc/xetex/xetexref/xetex-reference.pdf)
+* [Comprehensive LaTeX Symbol List](http://ctan.math.washington.edu/tex-archive/info/symbols/comprehensive/symbols-letter.pdf)
+* [List of LaTeX Mathematical Symbols](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
