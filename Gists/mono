@@ -1,0 +1,1 @@
+pacmd load-module module-remap-sink sink_name=mono master=bluez_sink.1A_12_36_DB_2D_25.a2dp_sink channels=1 channel_map=mono
