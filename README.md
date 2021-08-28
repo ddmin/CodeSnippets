@@ -1,3 +1,3 @@
 # CodeSnippets
 
-a whole lot of code snippets
+A whole lot of random stuff.
