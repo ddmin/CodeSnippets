@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set up a Windows 10 Virtual Machine using Virt-Manager
+# Create a Windows 10 Virtual Machine using Virt-Manager
 
 ISO="/var/lib/libvirt/boot/windows10LTSC.iso"
 VIRT="/var/lib/libvirt/boot/virtio-win.iso"
@@ -8,9 +8,9 @@ DISK="/var/lib/libvirt/images/windows.qcow2"
 
 VM_NAME="Windows-10"
 
-RAM="10240"
-SIZE="400"
-CPU="2"
+RAM="8192"
+SIZE="200"
+CPU="1"
 
 # shutdown existing VM
 [ -f "$DISK" ] && virsh destroy "$VM_NAME"

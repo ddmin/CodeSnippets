@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Set up an Ubuntu Virtual Machine using Virt-Manager
+# Create an Ubuntu Virtual Machine using Virt-Manager
 
 ISO="/var/lib/libvirt/boot/ubuntu-21.04.iso"
 DISK="/var/lib/libvirt/images/ubuntu.qcow2"
