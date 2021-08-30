@@ -7,7 +7,7 @@ DISK="/var/lib/libvirt/images/ubuntu.qcow2"
 
 VM_NAME="Ubuntu-21.04"
 
-RAM="4096"
+RAM="2048"
 SIZE="100"
 CPU="1"
 
