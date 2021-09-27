@@ -1,0 +1,11 @@
+#!/bin/bash
+
+[ ! -d "./pdf" ] && mkdir ./pdf
+
+for var in "$@"
+do
+    filename=$(echo "$var" | awk -F/ '{print $NF}' | awk -F. '{print $1}')
+    unrar e "$var"
+    convert *.jpg ./pdf/"$filename".pdf
+    rm *.jpg
+done
