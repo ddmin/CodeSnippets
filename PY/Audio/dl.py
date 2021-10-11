@@ -2,7 +2,6 @@
 
 from os.path import exists
 import subprocess
-import eyed3
 
 with open('songs.conf', 'r') as f:
     songs = f.read().split('\n')[:-1]
