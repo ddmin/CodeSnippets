@@ -1,7 +1,7 @@
 fn is_prime(n: i64) -> bool {
     let upper_limit = (n as f64).sqrt() as i64 + 1;
 
-    for i in 2..=upper_limit {
+    for i in 2..upper_limit {
         if n % i == 0 {
             return false
         }
