@@ -9,6 +9,7 @@ fn main() {
 fn day2() {
     let input = fs::read_to_string("2.txt").expect("Failed to read file.");
     aoc::day2::part1(&input);
+    aoc::day2::part2(&input);
 }
 
 #[allow(dead_code)]
