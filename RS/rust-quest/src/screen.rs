@@ -3,10 +3,8 @@ use std::io::{stdin, stdout, Write};
 
 // Read user input
 pub fn read(input: &mut String) {
-    stdout().flush()
-        .expect("faled to flush");
-    stdin().read_line(input)
-        .expect("failed to read");
+    stdout().flush().expect("failed to flush");
+    stdin().read_line(input).expect("failed to read");
 }
 
 // Pause dialogue

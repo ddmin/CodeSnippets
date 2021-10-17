@@ -8,11 +8,7 @@ pub enum AbilityClass {
 
 impl fmt::Display for AbilityClass {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let stats: [String; 3] = [
-            "ATK".to_string(),
-            "DEF".to_string(),
-            "SPD".to_string(),
-        ];
+        let stats = ["ATK".to_string(), "DEF".to_string(), "SPD".to_string()];
 
         let ability = match self {
             AbilityClass::Attack => "ATK".to_string(),
@@ -27,18 +23,12 @@ impl fmt::Display for AbilityClass {
 pub struct Ability {
     name: String,
     class: AbilityClass,
-    amt: i32
+    amt: i32,
 }
 
 impl Ability {
     pub fn new(name: String, class: AbilityClass, amt: i32) -> Ability {
-
-        Ability {
-            name,
-            class,
-            amt,
-        }
-
+        Ability { name, class, amt }
     }
 }
 

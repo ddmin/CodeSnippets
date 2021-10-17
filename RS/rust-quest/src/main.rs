@@ -1,13 +1,13 @@
+use rand::Rng;
 use std::fmt;
 use std::io::{stdin, stdout, Write};
-use rand::Rng;
 
+mod ability;
 mod character;
 mod screen;
-mod ability;
 
-use screen::{read, pause, clear};
 use character::{Character, HeroClass, MonsterClass};
+use screen::{clear, pause, read};
 
 use ability::Ability;
 use ability::AbilityClass;
@@ -51,7 +51,7 @@ fn main() {
         vec![
             Ability::new("Charge".to_string(), AbilityClass::Heal, 5),
             Ability::new("Gear Grind".to_string(), AbilityClass::Attack, 10),
-        ]
+        ],
     );
 
     let mut boss = Character::monster(
