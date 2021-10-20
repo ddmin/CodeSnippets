@@ -5,6 +5,7 @@ from os.path import exists
 
 ARTDIR="./Art"
 SONGDIR="./Music"
+PROCDIR="./proc"
 
 EXCLUDE=[
     "Anohana",
@@ -19,11 +20,15 @@ EXCLUDE=[
     "Tokyo Ghoul",
 ]
 
+if not exists(PROCDIR):
+    os.mkdir(PROCDIR)
+
 for file in os.listdir(SONGDIR):
 
     album = re.search("\[(.*)\]", file).group(1)
 
     if album in EXCLUDE:
+        subprocess.run(['cp', f'{SONGDIR}/{file}', f'{PROCDIR}/{file}'])
         continue
 
     if exists(f'./Art/{album}.jpg'):
@@ -54,5 +59,5 @@ for file in os.listdir(SONGDIR):
         ]
     )
 
-    subprocess.run(['mv', file+'.mp3', file])
+    subprocess.run(['mv', file+'.mp3', f'{PROCDIR}/{file}'])
     print('='*60)
