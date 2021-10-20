@@ -9,12 +9,9 @@ PROCDIR="./proc"
 
 EXCLUDE=[
     "Anohana",
-    "Black Clover",
     "Dr. Stone",
-    "Fire Force",
     "Nanatsu no Taizai",
     "Neon Genesis Evangelion",
-    "Noragami",
     "Shingeki no Kyojin",
     "Sword Art Online",
     "Tokyo Ghoul",
