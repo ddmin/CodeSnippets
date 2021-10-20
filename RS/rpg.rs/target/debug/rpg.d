@@ -1,0 +1,1 @@
+/home/ddmin/Templates/codesnippets/RS/rpg.rs/target/debug/rpg: /home/ddmin/Templates/codesnippets/RS/rpg.rs/src/game.rs /home/ddmin/Templates/codesnippets/RS/rpg.rs/src/hero.rs /home/ddmin/Templates/codesnippets/RS/rpg.rs/src/lib.rs /home/ddmin/Templates/codesnippets/RS/rpg.rs/src/main.rs
