@@ -37,24 +37,28 @@ for file in os.listdir(SONGDIR):
 
     subprocess.run(
         [
-            'id3v2',
-            '-A', album,
-            f'{SONGDIR}/{file}',
+            'ffmpeg',
+            '-y',
+            '-i', f'{SONGDIR}/{file}',
+            '-c', 'copy',
+            '-metadata', f'album={album}',
+            f'{file}.mp3',
         ]
     )
 
     subprocess.run(
         [
             'ffmpeg',
-            '-i', f'{SONGDIR}/{file}',
+            '-i', f'{file}.mp3',
             '-i', art,
             '-map_metadata', '0',
             '-map', '0',
             '-map', '1',
             '-acodec', 'copy',
-            file+'.mp3',
+            f'{file}.mp3.mp3',
         ]
     )
 
-    subprocess.run(['mv', file+'.mp3', f'{PROCDIR}/{file}'])
+    subprocess.run(['rm', f'{file}.mp3'])
+    subprocess.run(['mv', f'{file}.mp3.mp3', f'{PROCDIR}/{file}'])
     print('='*60)
