@@ -7,26 +7,12 @@ ARTDIR="./Art"
 SONGDIR="./Music"
 PROCDIR="./proc"
 
-EXCLUDE=[
-    "Anohana",
-    "Dr. Stone",
-    "Nanatsu no Taizai",
-    "Neon Genesis Evangelion",
-    "Shingeki no Kyojin",
-    "Sword Art Online",
-    "Tokyo Ghoul",
-]
-
 if not exists(PROCDIR):
     os.mkdir(PROCDIR)
 
 for file in os.listdir(SONGDIR):
 
     album = re.search("\[(.*)\]", file).group(1)
-
-    if album in EXCLUDE:
-        subprocess.run(['cp', f'{SONGDIR}/{file}', f'{PROCDIR}/{file}'])
-        continue
 
     if exists(f'./Art/{album}.jpg'):
         art = f'./Art/{album}.jpg'
