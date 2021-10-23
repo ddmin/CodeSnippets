@@ -10,7 +10,7 @@ songs = list(filter(lambda x: x, songs))
 songs = list(filter(lambda x: x[0] != '#', songs))
 
 for song in songs:
-    vals = song.split(',')
+    vals = song.split(';')
     print(f'Link: {vals[0]}')
     print(f'Name: {vals[1]}')
     print(f'Artist: {vals[2]}')
@@ -69,18 +69,21 @@ for song in songs:
 
     subprocess.run(
         [
-            'id3v2',
-            '-t', vals[1],
-            '-a', vals[2],
-            '-A', vals[3],
-            filename+'_pre.mp3',
+            'ffmpeg',
+            '-y',
+            '-i', f'{filename}_pre.mp3',
+            '-c', 'copy',
+            '-metadata', f'album={vals[3]}',
+            '-metadata', f'artist={vals[2]}',
+            '-metadata', f'title={vals[1]}',
+            f'{filename}_pre_pre.mp3',
         ]
     )
 
     subprocess.run(
         [
             'ffmpeg',
-            '-i', filename+'_pre.mp3',
+            '-i', filename+'_pre_pre.mp3',
             '-i', art,
             '-map_metadata', '0',
             '-map', '0',
@@ -91,5 +94,8 @@ for song in songs:
     )
 
     subprocess.run(['rm', filename+'_pre.mp3'])
+    subprocess.run(['rm', filename+'_pre_pre.mp3'])
 
     print('='*60)
+
+print(f"Total: {len(songs)}")
