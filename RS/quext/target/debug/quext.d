@@ -1,1 +1,0 @@
-/home/ddmin/Templates/codesnippets/RS/quext/target/debug/quext: /home/ddmin/Templates/codesnippets/RS/quext/src/interface.rs /home/ddmin/Templates/codesnippets/RS/quext/src/lib.rs /home/ddmin/Templates/codesnippets/RS/quext/src/main.rs /home/ddmin/Templates/codesnippets/RS/quext/src/words.rs

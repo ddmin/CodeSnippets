@@ -1,1 +1,3 @@
 secrets.conf
+target/*
+Cargo.lock

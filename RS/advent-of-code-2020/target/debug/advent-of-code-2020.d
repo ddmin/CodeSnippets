@@ -1,1 +1,0 @@
-/home/ddmin/Templates/codesnippets/RS/advent-of-code-2020/target/debug/advent-of-code-2020: /home/ddmin/Templates/codesnippets/RS/advent-of-code-2020/src/day1.rs /home/ddmin/Templates/codesnippets/RS/advent-of-code-2020/src/day2.rs /home/ddmin/Templates/codesnippets/RS/advent-of-code-2020/src/lib.rs /home/ddmin/Templates/codesnippets/RS/advent-of-code-2020/src/main.rs
