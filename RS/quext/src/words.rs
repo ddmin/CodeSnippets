@@ -1,8 +1,16 @@
 pub enum PartOfSpeech {
-    Noun,
+    Noun(NounFunction),
     Verb,
     Modifier,
     Ignore,
+}
+
+pub enum NounFunction {
+    Entity,
+    Food,
+    Location,
+    Time,
+    Weapon,
 }
 
 pub struct Word {
@@ -10,8 +18,15 @@ pub struct Word {
     word: String,
 }
 
+impl Word {
+    fn new(word: String) -> Word {
+        let pos = PartOfSpeech::Ignore;
+        Word { pos, word }
+    }
+}
+
 pub struct Sentence {
-    sentence: Vec<PartOfSpeech>,
+    sentence: Vec<Word>,
 }
 
 impl Sentence {
@@ -19,4 +34,9 @@ impl Sentence {
         string.split_whitespace();
         todo!()
     }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
 }

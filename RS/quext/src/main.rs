@@ -1,5 +1,31 @@
 use quext::{PartOfSpeech, Sentence};
 
+// ==== //
+// Noun //
+// ==== //
+
+// Entity
+// Food
+// Location
+// Time
+// Weapon
+
+// ==== //
+// Verb //
+// ==== //
+
+// ======== //
+// Modifier //
+// ======== //
+
+// Quantity
+// Size
+// Speed
+
+// ====== //
+// Ignore //
+// ====== //
+
 fn main() {
     // verb   modifier     ignore    noun
     // walk   slowly       to        town
