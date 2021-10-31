@@ -1,4 +1,3 @@
-use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -18,10 +17,8 @@ impl Worker {
 
     fn check_prime(&self) {
         let mut hash_table = self.hash_table.lock().unwrap();
-        println!("Worker {} checking prime", self.n);
         if is_prime(self.n) {
             hash_table.insert(self.n, true);
-            println!("Worker {} found prime!", self.n);
         } else {
             hash_table.insert(self.n, false);
         }
@@ -31,11 +28,12 @@ impl Worker {
 fn multi_threaded(n: usize) {
     let primes = HashMap::<usize, bool>::new();
     let primes = Arc::new(Mutex::new(primes));
-    let threads = Vec::<thread::JoinHandle<()>>::new();
+    let mut threads = Vec::<thread::JoinHandle<()>>::new();
 
-    for i in 2..n {
+    for i in 2..n + 1 {
         let worker = Worker::new(i, Arc::clone(&primes));
-        thread::spawn(move || worker.check_prime());
+        let t = thread::spawn(move || worker.check_prime());
+        threads.push(t);
     }
 
     for thread in threads {
@@ -52,7 +50,7 @@ fn multi_threaded(n: usize) {
 }
 
 fn single_threaded(n: usize) {
-    for i in 2..n {
+    for i in 2..n + 1 {
         println!("{}: {}", i, is_prime(i));
     }
 }
@@ -69,7 +67,7 @@ fn is_prime(n: usize) -> bool {
 }
 
 fn main() {
-    let n = 500_000;
+    let n = 10000;
     single_threaded(n);
-    // multi_threaded(n);
+    multi_threaded(n);
 }
