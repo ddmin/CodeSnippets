@@ -1,3 +1,4 @@
 secrets.conf
+*.mp3
 target/
 Cargo.lock
