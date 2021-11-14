@@ -1,0 +1,21 @@
+<user-mapping>
+
+    <!-- Per-user authentication and config information -->
+
+    <!-- A user using md5 to hash the password
+         guacadmin user and its md5 hashed password below is used to
+             login to Guacamole Web UI-->
+    <authorize
+            username="ddmin"
+            password="**************************"
+            encoding="md5">
+
+        <connection name="Ubuntu 21.10">
+            <protocol>vnc</protocol>
+            <param name="hostname">127.0.0.1</param>
+            <param name="port">5900</param>
+        </connection>
+
+    </authorize>
+
+</user-mapping>

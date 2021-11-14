@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/png" href="/assets/nexus.png">
+    <title>HOWTO | Nexus</title>
+  </head>
+  <body>
+    <h1>HOWTO</h1>
+    <p>A record of the things I figured out.</p>
+    <h1>Linux</h2>
+    <h3>Installation</h3>
+    <ol>
+        <li><a href="https://distrowatch.com/">Choose a distro.</a></li>
+        <li><a href="https://www.balena.io/etcher/">Create bootable USB.</a></li>
+        <li>Boot from USB.</li>
+        <li>Complete Installation.</li>
+    </ol>
+
+    <h1>Emacs</h1>
+    <h3>~/.emacs.d/init.el</h3>
+    <ul>
+        <li><a href="https://github.com/matman26/emacs-config">Example</a></li>
+        <li><a href="https://gitlab.com/dwt1/dotfiles/-/blob/master/.emacs.d.gnu/config.org">DistroTube</a></li>
+        <li><a href="https://github.com/emacs-evil/evil">EVIL</a></li>
+        <li><a href="https://github.com/ralesi/ranger.el">ranger</a></li>
+    </ul>
+    <h1>BSD</h1>
+    <h3>doas</h3>
+    <ol>
+        <li>Add user to wheel group</li>
+        <code>usermod -G wheel USER</code>
+        <li>Edit <code>/etc/doas.conf</code></li>
+        <code>permit :wheel</code><br/>
+        <code>permit persist :wheel</code><br/>
+    </ol>
+  </body>
+</html>
+

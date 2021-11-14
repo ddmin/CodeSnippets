@@ -1,0 +1,11 @@
+body {
+  background-color: gainsboro;
+}
+
+.done {
+  list-style-type: '\2713  ';
+}
+
+.todo {
+  list-style-type: '\2717  ';
+}

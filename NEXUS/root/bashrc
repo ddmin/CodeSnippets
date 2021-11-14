@@ -1,0 +1,57 @@
+#  _               _        _               _
+# | |__   __ _ ___(_) ___  | |__   __ _ ___| |__
+# | '_ \ / _` / __| |/ __| | '_ \ / _` / __| '_ \
+# | |_) | (_| \__ \ | (__  | |_) | (_| \__ \ | | |
+# |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# history
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+clear
+
+# list tmux sessions
+if [ -n "$TMUX" ]; then
+    PS1='\[\e[35m\][tmux]\[\e[m\] \[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\]:\[\e[34m\]\w\[\e[m\]# '
+else
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    tmux ls
+fi
+
+# set terminal
+export TERM='xterm-256color'
+
+# set default editor
+export EDITOR='vim'
+export VISUAL='vim'
+
+# alia-ls-es
+alias l='ls -lF --color=auto --group-directories-first'
+alias ll='ls -lF --color=auto --group-directories-first'
+alias la='ls -lAF --color=auto --group-directories-first'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# safer defaults
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias mkdir='mkdir -pv'
+
+# vi mode
+set -o vi
+bind '"jk":vi-movement-mode'
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
+
+# navigate to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
