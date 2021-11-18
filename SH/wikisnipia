@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -e
+
+OUT_FILE="$(dirname $1)/$1.output"
+cat $1 > $OUT_FILE
+
+# remove See Also
+sed -i '/^[Ss]ee\s[Aa]lso/d' $OUT_FILE
+
+# this might remove something important,
+# check beforehand
+sed -i '/^[Ss]ee\s.*/d' $OUT_FILE
+
+# remove empty lines
+sed -i '/^$/d' $OUT_FILE
+
+# remove brackets
+sed -i 's/\s*\[.*\]\s*//g' $OUT_FILE
+
+# remove parentheses
+sed -i 's/\s*(.*).*//g' $OUT_FILE
+
+# remove hyphenated description
+sed -i 's/\s–.*//g' $OUT_FILE
+sed -i 's/\s*;–.*//g' $OUT_FILE
+
+# two variations of hyphens
+sed -i 's/\s-.*//g' $OUT_FILE
+sed -i 's/\s*;-.*//g' $OUT_FILE
+
+# remove comma'd description
+sed -i 's/\s*,\s*.*//g' $OUT_FILE
+
+# remove semi-colon'd description
+sed -i 's/\s*;\s*.*//g' $OUT_FILE
+
+# make additional changes
+vi -u NONE $OUT_FILE
+
+# remove duplicate lines
+TEMP_OUT="${OUT_FILE}.output"
+sort $OUT_FILE | uniq -u > $TEMP_OUT
+mv $TEMP_OUT $OUT_FILE
