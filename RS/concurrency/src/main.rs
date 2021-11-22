@@ -1,5 +1,6 @@
 use std::thread;
 
+#[derive(Debug)]
 struct ThreadPool {
     threads: Vec<Worker>,
 }
@@ -12,10 +13,11 @@ impl ThreadPool {
     }
 
     fn execute(&self) {
-        let worker = thread::spawn(|| {});
+        let worker = thread::spawn(|| println!("Worker Run"));
     }
 }
 
+#[derive(Debug)]
 struct Worker {
     id: usize,
 }

@@ -31,7 +31,6 @@ pub struct Sentence {
 
 impl Sentence {
     fn new(string: String) -> Sentence {
-        string.split_whitespace();
         todo!()
     }
 }
