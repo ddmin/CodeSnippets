@@ -1,9 +1,9 @@
 #!/bin/bash
 
 GROUND_ZERO="/tmp/nuclear-fallout"
-NUMBERS="$GROUND_ZERO/numbers"
-WORDS="$GROUND_ZERO/words"
-TETANUS="$GROUND_ZERO/rust-playground"
+NUMBERS="$GROUND_ZERO/FILES/numbers"
+WORDS="$GROUND_ZERO/FILES/words"
+TETANUS="$GROUND_ZERO/RUST/rust-playground"
 
 echo "Detonating..."
 rm -rf $GROUND_ZERO
@@ -53,4 +53,4 @@ do
 done
 
 echo "Quarantine $TETANUS"
-cargo new rust-playground
+cargo new "$TETANUS"
