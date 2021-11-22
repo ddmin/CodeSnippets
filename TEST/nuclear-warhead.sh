@@ -4,6 +4,7 @@ GROUND_ZERO="/tmp/nuclear-fallout"
 NUMBERS="$GROUND_ZERO/FILES/numbers"
 WORDS="$GROUND_ZERO/FILES/words"
 TETANUS="$GROUND_ZERO/RUST/rust-playground"
+SNAKES="$GROUND_ZERO/PY/"
 
 echo "Detonating..."
 rm -rf $GROUND_ZERO
@@ -54,3 +55,8 @@ done
 
 echo "Quarantine $TETANUS"
 cargo new "$TETANUS"
+
+echo "Securing the Pit of Snakes"
+mkdir -p "$SNAKES"
+touch "$SNAKES/main.py"
+touch "$SNAKES/test.py"
