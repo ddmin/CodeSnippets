@@ -1,6 +1,9 @@
 use crate::*;
 
-pub fn part1(input: &str) {
+const INPUT: &str = include_str!("../../inputs/day01.txt");
+const EXAMPLE: &str = include_str!("../../examples/day01.txt");
+
+pub fn part1(input: &str) -> i32 {
     let input = lines_to_i32(input);
     let (base_iter, mut cmp_iter) = (input.iter(), input.iter());
 
@@ -14,10 +17,10 @@ pub fn part1(input: &str) {
         .filter(|&bool| bool)
         .count();
 
-    println!("Part 1: {}", solution);
+    solution as i32
 }
 
-pub fn part2(input: &str) {
+pub fn part2(input: &str) -> i32 {
     let input = lines_to_i32(input);
     let (base_iter, cmp_iter) = (input.iter(), input.iter().skip(3));
 
@@ -31,11 +34,25 @@ pub fn part2(input: &str) {
         .filter(|&bool| bool)
         .count();
 
-    println!("Part 2: {}", solution);
+    solution as i32
 }
 
 pub fn run() {
-    let input: String = read_input("inputs/day01.txt");
-    part1(&input);
-    part2(&input);
+    println!("{}", part1(INPUT));
+    println!("{}", part2(INPUT));
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn example1() {
+        assert_eq!(part1(EXAMPLE), 7);
+    }
+
+    #[test]
+    fn example2() {
+        assert_eq!(part2(EXAMPLE), 5);
+    }
 }

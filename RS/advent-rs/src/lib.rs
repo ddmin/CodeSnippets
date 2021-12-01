@@ -1,7 +1,20 @@
 pub mod days;
+pub use std::fs;
+
+pub fn read_input(file: &str) -> String {
+    fs::read_to_string(file).unwrap()
+}
+
+fn lines_to_i32(input: &str) -> Vec<i32> {
+    input
+        .split_whitespace()
+        .map(|n| n.parse().unwrap())
+        .collect()
+}
 
 pub fn run_days(days: Vec<usize>) {
     for day in days {
+        println!("Day {}", day);
         match day {
             1 => days::day01::run(),
             2 => days::day02::run(),
@@ -30,5 +43,6 @@ pub fn run_days(days: Vec<usize>) {
             25 => days::day25::run(),
             _ => (),
         }
+        println!();
     }
 }

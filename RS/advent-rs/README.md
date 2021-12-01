@@ -1,3 +1,3 @@
-# Advent of Code in Rust
+# Advent of Code 2021
 
-Project template to run individual days of Advent of Code with Rust.
+[Advent of Code](https://adventofcode.com/) 2021 Solutions in Rust.
