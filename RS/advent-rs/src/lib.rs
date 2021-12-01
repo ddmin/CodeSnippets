@@ -1,10 +1,7 @@
 pub mod days;
 pub use std::fs;
 
-pub fn read_input(file: &str) -> String {
-    fs::read_to_string(file).unwrap()
-}
-
+#[allow(unused)]
 fn lines_to_i32(input: &str) -> Vec<i32> {
     input
         .split_whitespace()

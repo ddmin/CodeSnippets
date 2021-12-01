@@ -1,7 +1,6 @@
 use crate::*;
 
 const INPUT: &str = include_str!("../../inputs/day01.txt");
-const EXAMPLE: &str = include_str!("../../examples/day01.txt");
 
 pub fn part1(input: &str) -> i32 {
     let input = lines_to_i32(input);
@@ -45,6 +44,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    const EXAMPLE: &str = include_str!("../../examples/day01.txt");
 
     #[test]
     fn example1() {
