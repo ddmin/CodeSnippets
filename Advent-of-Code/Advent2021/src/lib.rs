@@ -9,6 +9,19 @@ fn lines_to_i32(input: &str) -> Vec<i32> {
         .collect()
 }
 
+#[allow(unused)]
+pub fn bifurcate(input: &str) -> Vec<(&str, &str)> {
+    input
+        .lines()
+        .map(|line| line.split_once(" ").unwrap())
+        .collect()
+}
+
+#[allow(unused)]
+pub fn lines_to_tokens(input: &str) -> Vec<&str> {
+    input.split_whitespace().collect::<Vec<_>>()
+}
+
 pub fn run_days(days: Vec<usize>) {
     for day in days {
         println!("Day {}", day);
