@@ -4,9 +4,7 @@ const INPUT: &str = include_str!("../../inputs/day01.txt");
 
 pub fn part1(input: &str) -> i32 {
     let input = lines_to_i32(input);
-    let (base_iter, mut cmp_iter) = (input.iter(), input.iter());
-
-    cmp_iter.next();
+    let (base_iter, cmp_iter) = (input.iter(), input.iter().skip(1));
 
     // base: 0 1 2 3 4 ...
     // cmp : 1 2 3 4 5 ...
