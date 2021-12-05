@@ -1,54 +1,69 @@
-#![allow(unused_imports)]
-use crate::*;
-
 const INPUT: &str = include_str!("../../inputs/day03.txt");
 
-// 1 4 7        1 2 3
-// 2 5 8   =>   4 5 6
-// 3 6 9        7 8 9
-fn transpose(input: &str) -> Vec<Vec<&u8>> {
-    let mut vec = Vec::new();
-    for line in input.lines() {
-        for (idx, byte) in line.as_bytes().iter().enumerate() {
-            if idx >= vec.len() {
-                vec.push(Vec::new());
-            }
-            vec[idx].push(byte);
-        }
+fn max_bit(input: &[i32], pos: usize) -> i32 {
+    let mut count = [0, 0];
+    for &bit in input.iter() {
+        count[bit as usize >> pos & 1] += 1;
     }
-    vec
+    (count[0] <= count[1]) as i32
+}
+
+fn vec_to_i32(vec: &Vec<i32>) -> i32 {
+    let mut sum = 0;
+    for (idx, bit) in vec.iter().rev().enumerate() {
+        sum += bit << idx;
+    }
+    sum
 }
 
 pub fn part1(input: &str) -> i32 {
-    let vec = transpose(input);
-    let tuples = vec
+    let lines = input
+        .lines()
+        .map(|str| i32::from_str_radix(str, 2).unwrap())
+        .collect::<Vec<_>>();
+
+    let gamma = (0..input.lines().next().unwrap().len())
+        .rev()
+        .map(|idx| max_bit(&lines, idx))
+        .collect::<Vec<_>>();
+
+    let epsilon = gamma
         .iter()
-        .map(|vec| {
-            vec.iter().fold((0, 0), |(x, y), byte| match byte {
-                b'0' => (x + 1, y),
-                b'1' => (x, y + 1),
-                _ => unreachable!(),
-            })
+        .map(|bit| match bit {
+            0 => 1,
+            1 => 0,
+            _ => unreachable!(),
         })
         .collect::<Vec<_>>();
 
-    let gamma = tuples
-        .iter()
-        .map(|(x, y)| if x > y { '0' } else { '1' })
-        .collect::<String>();
-
-    let bitmask = vec!['1'; gamma.len()].iter().collect::<String>();
-    let bitmask = i32::from_str_radix(&bitmask, 2).unwrap();
-
-    let gamma = i32::from_str_radix(&gamma, 2).unwrap();
-    let epsilon = gamma ^ bitmask;
-
-    gamma * epsilon
+    vec_to_i32(&gamma) * vec_to_i32(&epsilon)
 }
 
-#[allow(unused)]
 pub fn part2(input: &str) -> i32 {
-    0
+    let lines = input
+        .lines()
+        .map(|str| i32::from_str_radix(&str, 2).unwrap())
+        .collect::<Vec<_>>();
+
+    let mut oxygen = lines.clone();
+    let mut co2 = lines.clone();
+
+    for idx in (0..input.lines().next().unwrap().len()).rev() {
+        let bit = max_bit(&oxygen, idx);
+        oxygen.retain(|n| (n >> idx) & 1 == bit);
+        if oxygen.len() == 1 {
+            break;
+        }
+    }
+
+    for idx in (0..input.lines().next().unwrap().len()).rev() {
+        let bit = max_bit(&co2, idx) ^ 1;
+        co2.retain(|n| (n >> idx) & 1 == bit);
+        if co2.len() == 1 {
+            break;
+        }
+    }
+    vec_to_i32(&oxygen) * vec_to_i32(&co2)
 }
 
 pub fn run() {
@@ -68,6 +83,6 @@ mod tests {
 
     #[test]
     fn example2() {
-        assert_eq!(part2(EXAMPLE), 0);
+        assert_eq!(part2(EXAMPLE), 230);
     }
 }
