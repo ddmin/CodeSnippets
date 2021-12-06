@@ -1,6 +1,6 @@
 use advent_2021::run_days;
 
 fn main() {
-    let days = vec![1, 2, 3, 4];
+    let days = (1..=4).collect::<Vec<_>>();
     run_days(days);
 }

@@ -91,7 +91,7 @@ impl fmt::Display for Bingo {
                 )?;
             }
             if col != self.board.len() {
-                write!(f, "\n")?
+                writeln!(f)?;
             }
         }
         write!(f, "")
@@ -104,7 +104,7 @@ fn parse_input(input: &str) -> (Vec<i32>, Vec<Bingo>) {
     let nums = input
         .next()
         .unwrap()
-        .split(",")
+        .split(',')
         .map(|n| n.parse().unwrap())
         .collect::<Vec<i32>>();
 
@@ -132,7 +132,10 @@ pub fn part1(input: &str) -> i32 {
         for board in 0..boards.len() {
             boards[board].call_number(*num);
             match boards[board].check_win() {
-                true => return num * boards[board].sum_unguessed(),
+                true => {
+                    println!("\nWinning Board:\n{}", boards[board]);
+                    return num * boards[board].sum_unguessed();
+                }
                 false => continue,
             }
         }
@@ -140,8 +143,30 @@ pub fn part1(input: &str) -> i32 {
     0
 }
 
-#[allow(unused)]
 pub fn part2(input: &str) -> i32 {
+    let (nums, mut boards) = parse_input(input);
+
+    let mut count = boards.len();
+    let mut won = Vec::new();
+
+    for num in nums.iter() {
+        for board in 0..boards.len() {
+            boards[board].call_number(*num);
+            match boards[board].check_win() {
+                true => {
+                    if !won.contains(&board) {
+                        count -= 1;
+                        won.push(board);
+                    }
+                    if count == 0 {
+                        println!("\nLosing Board:\n{}", boards[board]);
+                        return num * boards[board].sum_unguessed();
+                    }
+                }
+                false => continue,
+            }
+        }
+    }
     0
 }
 
@@ -162,6 +187,6 @@ mod tests {
 
     #[test]
     fn example2() {
-        assert_eq!(part2(EXAMPLE), 0);
+        assert_eq!(part2(EXAMPLE), 1924);
     }
 }

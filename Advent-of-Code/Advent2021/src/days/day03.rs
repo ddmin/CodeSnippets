@@ -8,7 +8,7 @@ fn max_bit(input: &[i32], pos: usize) -> i32 {
     (count[0] <= count[1]) as i32
 }
 
-fn vec_to_i32(vec: &Vec<i32>) -> i32 {
+fn vec_to_i32(vec: &[i32]) -> i32 {
     let mut sum = 0;
     for (idx, bit) in vec.iter().rev().enumerate() {
         sum += bit << idx;
@@ -42,11 +42,11 @@ pub fn part1(input: &str) -> i32 {
 pub fn part2(input: &str) -> i32 {
     let lines = input
         .lines()
-        .map(|str| i32::from_str_radix(&str, 2).unwrap())
+        .map(|str| i32::from_str_radix(str, 2).unwrap())
         .collect::<Vec<_>>();
 
     let mut oxygen = lines.clone();
-    let mut co2 = lines.clone();
+    let mut co2 = lines;
 
     for idx in (0..input.lines().next().unwrap().len()).rev() {
         let bit = max_bit(&oxygen, idx);
