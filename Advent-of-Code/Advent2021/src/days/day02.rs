@@ -3,7 +3,7 @@ use crate::*;
 const INPUT: &str = include_str!("../../inputs/day02.txt");
 
 pub fn part1(input: &str) -> i32 {
-    let commands = bifurcate(input);
+    let commands = bifurcate(input, " ");
     let commands = commands
         .iter()
         .map(|(cmd, amt)| (cmd, amt.parse::<i32>().unwrap()))
@@ -22,7 +22,7 @@ pub fn part1(input: &str) -> i32 {
 }
 
 pub fn part2(input: &str) -> i32 {
-    let commands = bifurcate(input);
+    let commands = bifurcate(input, " ");
     let commands = commands
         .iter()
         .map(|(command, amt)| (command, amt.parse::<i32>().unwrap()))
@@ -42,8 +42,8 @@ pub fn part2(input: &str) -> i32 {
 }
 
 pub fn run() {
-    println!("{}", part1(INPUT));
-    println!("{}", part2(INPUT));
+    println!("Part 1: {}", part1(INPUT));
+    println!("Part 2: {}", part2(INPUT));
 }
 
 #[cfg(test)]

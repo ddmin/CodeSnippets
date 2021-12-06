@@ -1,11 +1,12 @@
 pub mod days;
 pub use std::fs;
+pub use std::fmt;
 
 #[allow(unused)]
-pub fn bifurcate(input: &str) -> Vec<(&str, &str)> {
+pub fn bifurcate<'a>(input: &'a str, split: &str) -> Vec<(&'a str, &'a str)> {
     input
         .lines()
-        .map(|line| line.split_once(" ").unwrap())
+        .map(|line| line.split_once(split).unwrap())
         .collect()
 }
 

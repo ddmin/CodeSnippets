@@ -1,4 +1,4 @@
-use std::fmt;
+use crate::*;
 
 const INPUT: &str = include_str!("../../inputs/day04.txt");
 
@@ -26,7 +26,7 @@ impl Bingo {
                     false => break,
                 }
             }
-            if count == 5 {
+            if count == self.board[col].len() {
                 return true;
             }
         }
@@ -42,7 +42,7 @@ impl Bingo {
                     false => break,
                 }
             }
-            if count == 5 {
+            if count == self.board.len() {
                 return true;
             }
         }
@@ -129,18 +129,18 @@ fn parse_input(input: &str) -> (Vec<i32>, Vec<Bingo>) {
 pub fn part1(input: &str) -> i32 {
     let (nums, mut boards) = parse_input(input);
     for num in nums.iter() {
-        for board in 0..boards.len() {
-            boards[board].call_number(*num);
-            match boards[board].check_win() {
+        for board in &mut boards {
+            board.call_number(*num);
+            match board.check_win() {
                 true => {
-                    println!("\nWinning Board:\n{}", boards[board]);
-                    return num * boards[board].sum_unguessed();
+                    println!("\nWinning Board:\n{}", board);
+                    return num * board.sum_unguessed();
                 }
                 false => continue,
             }
         }
     }
-    0
+    unreachable!()
 }
 
 pub fn part2(input: &str) -> i32 {
@@ -150,29 +150,29 @@ pub fn part2(input: &str) -> i32 {
     let mut won = Vec::new();
 
     for num in nums.iter() {
-        for board in 0..boards.len() {
-            boards[board].call_number(*num);
-            match boards[board].check_win() {
+        for (idx, board) in boards.iter_mut().enumerate() {
+            board.call_number(*num);
+            match board.check_win() {
                 true => {
-                    if !won.contains(&board) {
+                    if !won.contains(&idx) {
                         count -= 1;
-                        won.push(board);
+                        won.push(idx);
                     }
                     if count == 0 {
-                        println!("\nLosing Board:\n{}", boards[board]);
-                        return num * boards[board].sum_unguessed();
+                        println!("\nLosing Board:\n{}", board);
+                        return num * board.sum_unguessed();
                     }
                 }
                 false => continue,
             }
         }
     }
-    0
+    unreachable!()
 }
 
 pub fn run() {
-    println!("{}", part1(INPUT));
-    println!("{}", part2(INPUT));
+    println!("Part 1: {}", part1(INPUT));
+    println!("Part 2: {}", part2(INPUT));
 }
 
 #[cfg(test)]

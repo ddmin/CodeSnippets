@@ -67,8 +67,8 @@ pub fn part2(input: &str) -> i32 {
 }
 
 pub fn run() {
-    println!("{}", part1(INPUT));
-    println!("{}", part2(INPUT));
+    println!("Part 1: {}", part1(INPUT));
+    println!("Part 2: {}", part2(INPUT));
 }
 
 #[cfg(test)]
