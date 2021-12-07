@@ -1,11 +1,24 @@
 const INPUT: &str = include_str!("../../inputs/day06.txt");
 
-pub fn part1(input: &str, days: i32) -> i32 {
-    let mut lanternfish = input
+fn parse_input(input: &str) -> Vec<i32> {
+    input
         .split(',')
         .map(|n| n.parse::<i32>().unwrap())
-        .collect::<Vec<_>>();
+        .collect::<Vec<_>>()
+}
 
+fn collate(lanternfish: Vec<i32>) -> Vec<i64> {
+    let mut collated = (0..=8).map(|_| 0).collect::<Vec<_>>();
+    for fish in lanternfish {
+        collated[fish as usize] += 1
+    }
+    collated
+}
+
+pub fn part1(input: &str, days: i32) -> i32 {
+    let mut lanternfish = parse_input(input);
+
+    println!("{}", days);
     for _ in 0..days {
         let mut new_fish = Vec::new();
         lanternfish = lanternfish
@@ -25,27 +38,19 @@ pub fn part1(input: &str, days: i32) -> i32 {
 }
 
 pub fn part2(input: &str, days: i32) -> i64 {
-    let mut lanternfish = input
-        .split(',')
-        .map(|n| n.parse::<i32>().unwrap())
-        .collect::<Vec<_>>();
+    let mut lanternfish = collate(parse_input(input));
+
+    //  0  1  2  3  4  5  6  7  8
+    //  -------------------------
+    // *3  0  0  0  0  0  1  0  2   Initial State (Birthing Fish: Index 0)
+    //  0  0  0  0  0  1  0  2 *3   Rotate Left   (Birthing Fish: Index 8)
+    //  0  0  0  0  0  1 *3  2  3   New Fish      (New Fish:      Index 6)
 
     for _ in 0..days {
-        let mut new_fish = Vec::new();
-        lanternfish = lanternfish
-            .iter()
-            .map(|&n| {
-                if n == 0 {
-                    new_fish.push(8);
-                    6
-                } else {
-                    n - 1
-                }
-            })
-            .collect();
-        lanternfish.append(&mut new_fish);
+        lanternfish.rotate_left(1);
+        lanternfish[6] += lanternfish[8];
     }
-    lanternfish.len() as i64
+    lanternfish.iter().sum::<i64>()
 }
 
 pub fn run() {

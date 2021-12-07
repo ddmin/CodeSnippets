@@ -87,18 +87,14 @@ pub fn part1(input: &str) -> i32 {
             } else {
                 (y2 - y1)..=0
             };
-            for y in range {
-                grid.insert((x1, y1 + y))
-            }
+            range.for_each(|y| grid.insert((x1, y1 + y)));
         } else if y1 == y2 {
             let range = if x2 > x1 {
                 0..=(x2 - x1)
             } else {
                 (x2 - x1)..=0
             };
-            for x in range {
-                grid.insert((x1 + x, y1))
-            }
+            range.for_each(|x| grid.insert((x1 + x, y1)));
         }
         grid.extend_width((x1, x2));
         grid.extend_height((y1, y2));
