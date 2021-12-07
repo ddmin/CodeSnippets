@@ -1,11 +1,6 @@
-const INPUT: &str = include_str!("../../inputs/day06.txt");
+use crate::*;
 
-fn parse_input(input: &str) -> Vec<i32> {
-    input
-        .split(',')
-        .map(|n| n.parse::<i32>().unwrap())
-        .collect::<Vec<_>>()
-}
+const INPUT: &str = include_str!("../../inputs/day06.txt");
 
 fn collate(lanternfish: Vec<i32>) -> Vec<i64> {
     let mut collated = (0..=8).map(|_| 0).collect::<Vec<_>>();
@@ -16,9 +11,8 @@ fn collate(lanternfish: Vec<i32>) -> Vec<i64> {
 }
 
 pub fn part1(input: &str, days: i32) -> i32 {
-    let mut lanternfish = parse_input(input);
+    let mut lanternfish = split(input, ",");
 
-    println!("{}", days);
     for _ in 0..days {
         let mut new_fish = Vec::new();
         lanternfish = lanternfish
@@ -38,7 +32,7 @@ pub fn part1(input: &str, days: i32) -> i32 {
 }
 
 pub fn part2(input: &str, days: i32) -> i64 {
-    let mut lanternfish = collate(parse_input(input));
+    let mut lanternfish = collate(split(input, ","));
 
     //  0  1  2  3  4  5  6  7  8
     //  -------------------------

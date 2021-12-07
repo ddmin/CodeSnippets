@@ -1,6 +1,6 @@
 pub mod days;
-pub use std::fs;
 pub use std::fmt;
+pub use std::fs;
 
 #[allow(unused)]
 pub fn bifurcate<'a>(input: &'a str, split: &str) -> Vec<(&'a str, &'a str)> {
@@ -11,16 +11,13 @@ pub fn bifurcate<'a>(input: &'a str, split: &str) -> Vec<(&'a str, &'a str)> {
 }
 
 #[allow(unused)]
-fn lines_to_i32(input: &str) -> Vec<i32> {
-    input
-        .split_whitespace()
-        .map(|n| n.parse().unwrap())
-        .collect()
+fn split(input: &str, delimiter: &str) -> Vec<i32> {
+    input.split(delimiter).map(|n| n.parse().unwrap()).collect()
 }
 
 #[allow(unused)]
-pub fn lines_to_tokens(input: &str) -> Vec<&str> {
-    input.split_whitespace().collect::<Vec<_>>()
+fn lines_to_i32(input: &str) -> Vec<i32> {
+    input.lines().map(|n| n.parse().unwrap()).collect()
 }
 
 pub fn run_days(days: Vec<usize>) {
