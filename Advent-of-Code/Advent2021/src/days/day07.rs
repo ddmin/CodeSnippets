@@ -12,7 +12,7 @@ fn calculate_crab_fuel(position: i32, destination: i32) -> i32 {
 
 pub fn part1(input: &str) -> i32 {
     let mut positions = split(input, ",");
-    positions.sort();
+    positions.sort_unstable();
 
     let mut fuels_fuels = Vec::new();
     for destination in positions[0]..=positions[positions.len() - 1] {
@@ -28,7 +28,7 @@ pub fn part1(input: &str) -> i32 {
 
 pub fn part2(input: &str) -> i32 {
     let mut positions = split(input, ",");
-    positions.sort();
+    positions.sort_unstable();
 
     let mut fuels_fuels = Vec::new();
     for destination in positions[0]..=positions[positions.len() - 1] {

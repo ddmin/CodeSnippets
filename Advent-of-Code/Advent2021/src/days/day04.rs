@@ -82,12 +82,11 @@ impl fmt::Display for Bingo {
             for row in 0..self.board[col].len() {
                 write!(
                     f,
-                    "{}{}",
+                    "{}",
                     match self.called.contains(&(col as i32, row as i32)) {
-                        true => " *",
-                        false => "  ",
+                        true => format!(" [{:02}]", self.board[col][row]),
+                        false => format!("  {:>2} ", self.board[col][row]),
                     },
-                    format!("{:02}", self.board[col][row])
                 )?;
             }
             if col != self.board.len() {
