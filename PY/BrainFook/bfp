@@ -1,0 +1,120 @@
+#!/usr/bin/python3
+# bfp: BrainFook parser in python
+
+# usage: bfp [file] [-h] [-i] [user input] [-t]
+
+import sys
+
+
+def help():
+    print()
+    print('usage: bfp [file] [-h] [-i] [user input] [-t]')
+    print()
+    print('file                 : bf source code')
+    print('-h                   : display this message and exit')
+    print('-i                   : user input')
+    print('-t                   : print tape')
+    print()
+
+def parse_arguments():
+    if len(sys.argv) < 2:
+        help()
+        sys.exit()
+
+    # Display help message and exit
+    if '-h' in sys.argv:
+        help()
+        sys.exit()
+
+    args = ['', '']
+
+    try:
+        with open(sys.argv[1]) as f:
+            code = ''.join(f.read().split('\n')) + ' '
+        args[0] = code
+
+    except:
+        print(f'FileError: {sys.argv[1]} does not exist.')
+        sys.exit()
+
+    if '-i' in sys.argv:
+        if sys.argv.index('-i') != len(sys.argv) - 1:
+            user_input = sys.argv[sys.argv.index('-i') + 1]
+            args[1] = user_input
+
+        else:
+            print('SyntaxError: no argument provided after -i')
+            sys.exit()
+
+    return args
+
+def main():
+    code, user_input = parse_arguments()
+
+    tape = [0 for x in range(5)]
+
+    open_bracket = []
+    close_bracket_pairs = {}
+
+    for index, character in enumerate(code):
+        if character == '[':
+            open_bracket.append(index)
+
+        if character == ']':
+            if not open_bracket:
+                print(f'SyntaxError at position {index}: Unpaired bracket')
+                sys.exit()
+            pos = open_bracket.pop(-1)
+            close_bracket_pairs[index] = pos
+
+    current_pos = 0
+    index = 0
+
+    while True:
+        character = code[index]
+
+        if character == '>':
+            current_pos += 1
+            if len(tape) == current_pos:
+                tape.append(0)
+
+        elif character == '<':
+            if current_pos != 0:
+                current_pos -= 1
+            else:
+                print(f'OutOfBoundsError at position {index}: Cannot traverse past start of tape')
+                sys.exit()
+
+        elif character == ']':
+            if tape[current_pos] != 0:
+                index = close_bracket_pairs[index] -1
+
+        elif character == '+':
+            tape[current_pos] += 1
+            tape[current_pos] %= 256
+
+        elif character == '-':
+            if tape[current_pos] != 0:
+                tape[current_pos] -= 1
+            else:
+                tape[current_pos] = 255
+
+        elif character == '.':
+            print(chr(tape[current_pos]), end='')
+
+        elif character == ',':
+            if not user_input:
+                tape[current_pos] = 0
+            else:
+                tape[current_pos] = ord(user_input[0])
+                user_input = user_input[1:]
+
+        index += 1
+        if index == len(code):
+            break
+
+    if '-t' in sys.argv:
+        print(tape)
+
+if __name__ == '__main__':
+    main()

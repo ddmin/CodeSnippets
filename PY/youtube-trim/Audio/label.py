@@ -11,7 +11,6 @@ if not exists(PROCDIR):
     os.mkdir(PROCDIR)
 
 for file in os.listdir(SONGDIR):
-
     album = re.search("\[(.*)\]", file).group(1)
 
     if exists(f'./Art/{album}.jpg'):

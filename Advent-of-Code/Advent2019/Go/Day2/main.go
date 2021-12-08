@@ -59,7 +59,7 @@ func main() {
 			intcode[2] = v
 			result = intcodeComputer(intcode)
 			if result == 19690720 {
-				fmt.Println("Part 2", n*100+v)
+                fmt.Println("Part 2:", n*100+v)
 			}
 		}
 	}

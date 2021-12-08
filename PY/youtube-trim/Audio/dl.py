@@ -3,11 +3,27 @@
 from os.path import exists
 import subprocess
 
-with open('songs.conf', 'r') as f:
+SONG_FILE = 'songs.conf'
+
+with open(SONG_FILE, 'r') as f:
     songs = f.read().split('\n')[:-1]
 
 songs = list(filter(lambda x: x, songs))
 songs = list(filter(lambda x: x[0] != '#', songs))
+
+# check file syntax
+print(f"Checking {SONG_FILE}...\n")
+for song in songs:
+    vals = song.split(';')
+    try:
+        assert(vals[0])
+        assert(vals[1])
+        assert(vals[2])
+        assert(vals[3])
+        assert(vals[4])
+    except:
+        print(f'Error in line: `{song}`')
+        exit()
 
 for song in songs:
     vals = song.split(';')

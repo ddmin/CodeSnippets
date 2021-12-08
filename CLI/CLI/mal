@@ -1,0 +1,128 @@
+#!/usr/bin/python3
+
+# mal: Terminal interface for MyAnimeList
+# usage: mal [username] [list] [-h]
+
+# Webscraping
+from bs4 import BeautifulSoup
+import requests
+import re
+
+# UI
+import sys
+
+STATUS_CODES = ['All Anime', 'Currently Watching', 'Completed', 'On Hold', 'Dropped', None, 'Plan to Watch', 'All Anime']
+
+# Help message
+def help():
+    print()
+    print('usage: mal [username] [list] [-h]')
+    print()
+    print('username        : the user to look up')
+    print('list            : the list to look up (defaults to Currently Watching)')
+    print('-h              : display this message and exit')
+
+    print('\nLists:')
+    print('\t\t1. Currently Watching')
+    print('\t\t2. Completed')
+    print('\t\t3. On Hold')
+    print('\t\t4. Dropped')
+    print('\t\t6. Plan to Watch')
+    print('\t\t7. All Anime')
+    print()
+
+# print help message and exit
+if len(sys.argv) > 1 and '-h' in sys.argv:
+    help()
+    sys.exit()
+
+# Error handling and getting username and list
+if len(sys.argv) == 1:
+    print('You need to provide a username as the first argument.')
+    help()
+    sys.exit()
+
+# Default to all anime if list is not provided
+elif len(sys.argv) == 2:
+    status = 1
+    username = sys.argv[1]
+
+elif len(sys.argv) == 3:
+    username = sys.argv[1]
+    status = sys.argv[2]
+
+else:
+    print("I don't understand. Try again.")
+    help()
+    sys.exit()
+
+status = int(status)
+
+# check if status is valid
+if status >= 0 and status <= 7 and status != 5:
+    pass
+
+else:
+    print('That\'s not a valid option.')
+    help()
+    sys.exit()
+
+print(f'Showing {username}\'s Anime List ({STATUS_CODES[status]})\n')
+
+# Format link
+link = f"https://myanimelist.net/animelist/{username}?status={status}"
+
+# Get source code
+try:
+    source = requests.get(link).text
+except:
+    print("Error. Can't connect to MAL.")
+    sys.exit()
+
+# Create BeautifulSoup parser
+soup = BeautifulSoup(source, 'lxml')
+
+# Do webscraping stuff
+try:
+    anime_list = str(soup.find('table', class_ = 'list-table')["data-items"])
+    anime_list = anime_list.split('},{')
+except:
+    print("Something went wrong.")
+    help()
+    sys.exit()
+
+# Get important information using regular expressions
+name_p = re.compile('"anime_title":"(.*?)"')
+status_p = re.compile('"status":(\d)')
+score_p = re.compile('"score":(\d+)')
+watched_episodes_p = re.compile('"num_watched_episodes":(\d*)')
+total_episodes_p = re.compile('"anime_num_episodes":(\d*)')
+
+# Check if there actually are any results
+if anime_list[0] == '[]':
+    print("Sorry. I couldn't find anything.")
+    help()
+    sys.exit()
+
+# Number the anime
+count = 1
+
+# Loop through and print appropriate information
+for anime in anime_list:
+    name = name_p.search(anime).group(1)
+    status = status_p.search(anime).group(1)
+    score = score_p.search(anime).group(1)
+    watched_episodes = watched_episodes_p.search(anime).group(1)
+    total_episodes = total_episodes_p.search(anime).group(1)
+
+    # Formatting to make more sense
+    if score == '0':
+        score = '?'
+
+    if total_episodes == '0':
+        total_episodes = '???'
+
+    status = STATUS_CODES[int(status)]
+
+    print(f'{count}. {name}\n\tStatus: {status}\n\tScore: {score}\n\tEpisode {watched_episodes}/{total_episodes}\n')
+    count += 1

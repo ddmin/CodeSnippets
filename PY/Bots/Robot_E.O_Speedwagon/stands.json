@@ -1,0 +1,2702 @@
+{
+    "Star Platinum": {
+        "Stand User": "Jotaro Kujo",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Star (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "A",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Super Strength",
+            "Super Speed",
+            "Self-Preservation",
+            "Precision",
+            "Enhanced Eyesight",
+            "Enhanced Breath",
+            "Ora Ora Rush",
+            "Star Finger",
+            "Time Stop"
+        ]
+    },
+    "Magician's Red": {
+        "Stand User": "Muhammad Avdol",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Magician (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Cross Fire Hurricane",
+            "Red Bind",
+            "Life Detector"
+        ]
+    },
+    "Hermit Purple": {
+        "Stand User": "Joseph Joestar",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Hermit (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Divination",
+            "Ripple Transmission"
+        ]
+    },
+    "Hierophant Green": {
+        "Stand User": "Noriaki Kakyoin",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Hierophant (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Coiled Body",
+            "Marionette Control",
+            "Emerald Splash"
+        ]
+    },
+    "Silver Chariot": {
+        "Stand User": "Jean Pierre Polnareff",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Chariot (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "B",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Speed",
+            "Power",
+            "Precision",
+            "Armor On/Off",
+            "Shooting the Sword"
+        ]
+    },
+    "The Fool": {
+        "Stand User": "Iggy",
+        "Type": ["Close-Range Stand", "Bound Stand"],
+        "Localized": "None",
+        "Namesake": "The Fool (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "C",
+                "Range": "D",
+                "Persistence": "C",
+                "Precision": "D",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Sand Manifestation",
+            "Shapeshifting"
+        ]
+    },
+    "The World": {
+        "Stand User": "DIO",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The World (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "B",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Super Strength",
+            "Super Senses",
+            "Super Speed",
+            "Super Precision",
+            "Time Stop"
+        ]
+    },
+    "Tower of Gray": {
+        "Stand User": "Gray Fly",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Tower (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "A",
+                "Range": "A",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Secondary Jaw",
+            "High Speed"
+        ]
+    },
+    "Dark Blue Moon": {
+        "Stand User": "Impostor Captain Tennille",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Moon (tarot card), Blue Moon (Rodgers/Hart song)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Razor Scales",
+            "Barnacles"
+        ]
+    },
+    "Strength": {
+        "Stand User": "Forever",
+        "Type": ["Bound Stand"],
+        "Localized": "None",
+        "Namesake": "Strength (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "D",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Ship Manipulation"
+        ]
+    },
+    "Ebony Devil": {
+        "Stand User": "Deyo",
+        "Type": ["Long-Distance Stand", "Bound Stand"],
+        "Localized": "None",
+        "Namesake": "The Devil (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "D",
+                "Range": "A",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Hatred Amplification"
+        ]
+    },
+    "Yellow Temperance": {
+        "Stand User": "Rubber Soul",
+        "Type": ["Close-Range Stand", "Bound Stand"],
+        "Localized": "None",
+        "Namesake": "Temperance (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Assimilation",
+            "Appearance Replication",
+            "Physical Imperviousness"
+        ]
+    },
+    "Hanged Man": {
+        "Stand User": "J. Geil",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Hanged Man (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "A",
+                "Range": "A",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Light Manifestation",
+            "Wrist Knives"
+        ]
+    },
+    "Emperor": {
+        "Stand User": "Hol Horse",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Emperor (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Homing Bullets",
+            "Point-Blank Summon"
+        ]
+    },
+    "Empress": {
+        "Stand User": "Nena",
+        "Type": ["Bound Stand", "Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Empress (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "E",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Parasitism"
+        ]
+    },
+    "Wheel of Fortune": {
+        "Stand User": "ZZ",
+        "Type": ["Bound Stand", "Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Wheel of Fortune (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "D",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Transformation from Confidence",
+            "Gasoline Bullets",
+            "Radio Communication"
+        ]
+    },
+    "Justice": {
+        "Stand User": "Enya the Hag",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "Justice (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "E",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Fog String Puppetry",
+            "Illusions"
+        ]
+    },
+    "Lovers": {
+        "Stand User": "Steely Dan",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Lovers (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "D",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Pain Synchronization",
+            "Organic Waste Clones",
+            "Spores Cultivation"
+        ]
+    },
+    "Sun": {
+        "Stand User": "Arabia Fats",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Sun (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "E",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Sun Replica",
+            "Lasers"
+        ]
+    },
+    "Death Thirteen": {
+        "Stand User": "Mannish Boy",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Death (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "E",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Dream World Control"
+        ]
+    },
+    "Judgement": {
+        "Stand User": "Cameo",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Judgement (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Wish Granting"
+        ]
+    },
+    "High Priestess": {
+        "Stand User": "Midler",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The High Priestess (tarot card)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Mineral Possession",
+            "Mineral Reformation"
+        ]
+    },
+    "Geb": {
+        "Stand User": "N'Doul",
+        "Type": ["Long-Distance Stand", "Bound Stand"],
+        "Localized": "None",
+        "Namesake": "Geb (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Water Amorphism"
+        ]
+    },
+    "Khnum": {
+        "Stand User": "Oingo",
+        "Type": ["Integrated Stand"],
+        "Localized": "None",
+        "Namesake": "Khnum (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Transfiguration"
+        ]
+    },
+    "Tohth": {
+        "Stand User": "Boingo",
+        "Type": ["Bound Stand", "Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Thoth (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Prediction"
+        ]
+    },
+    "Anubis": {
+        "Stand User": "n/a",
+        "Type": ["Automatic Stand", "Bound Stand", "Shared Stand"],
+        "Localized": "None",
+        "Namesake": "Anubis (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Mind Control",
+            "Selective Intangibility",
+            "Development",
+            "Selective Drawing"
+        ]
+    },
+    "Bastet": {
+        "Stand User": "Mariah",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Bastet (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Magnetic Attraction"
+        ]
+    },
+    "Sethan": {
+        "Stand User": "Alessi",
+        "Type": ["Bound Stand"],
+        "Localized": "None",
+        "Namesake": "Set (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "D",
+                "Range": "E",
+                "Persistence": "C",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Shadow Reflection",
+            "Age Reversal"
+        ]
+    },
+    "Osiris": {
+        "Stand User": "Daniel J. D'Arby",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Osiris (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "D",
+                "Range": "D",
+                "Persistence": "C",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Soul Steal"
+        ]
+    },
+    "Horus": {
+        "Stand User": "Pet Shop",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Horus (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "D",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Cryokinesis"
+        ]
+    },
+    "Atum": {
+        "Stand User": "Telence T. D'Arby",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Atum (Egyptian god)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "D",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Soul Steal",
+            "Binary Soul Reading"
+        ]
+    },
+    "Tenore Sax": {
+        "Stand User": "Kenny G.",
+        "Type": ["Unknown"],
+        "Localized": "None",
+        "Namesake": "Tenor Sax (musical instrument)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Illusion"
+        ]
+    },
+    "Cream": {
+        "Stand User": "Vanilla Ice",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Cream (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "D",
+                "Persistence": "C",
+                "Precision": "C",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Void"
+        ]
+    },
+    "Crazy Diamond": {
+        "Stand User": "Josuke Higashikata",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Shining Diamond",
+        "Namesake": "Shine on You Crazy Diamond (Pink Floyd song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "D",
+                "Persistence": "B",
+                "Precision": "B",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Super Strength",
+            "Super Speed",
+            "Precision",
+            "Restoration"
+        ]
+    },
+    "The Hand": {
+        "Stand User": "Okuyasu Nijimura",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The Band (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "D",
+                "Persistence": "C",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Elimination of space"
+        ]
+    },
+    "Echoes Act 1": {
+        "Stand User": "Koichi Hirose",
+        "Type": ["Evolved Stand", "Long-Distance Stand"],
+        "Localized": "Reverb",
+        "Namesake": "Echoes (Pink Floyd song)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "B",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Sound Generation"
+        ]
+    },
+    "Echoes Act 2": {
+        "Stand User": "Koichi Hirose",
+        "Type": ["Evolved Stand", "Long-Distance Stand"],
+        "Localized": "Reverb",
+        "Namesake": "Echoes (Pink Floyd song)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "D",
+                "Range": "B",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Sound Effect"
+        ]
+    },
+    "Echoes Act 3": {
+        "Stand User": "Koichi Hirose",
+        "Type": ["Evolved Stand", "Close-Range Stand"],
+        "Localized": "Reverb",
+        "Namesake": "Echoes (Pink Floyd song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "C",
+                "Range": "D",
+                "Persistence": "C",
+                "Precision": "C",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "3 Freeze"
+        ]
+    },
+    "Heaven's Door": {
+        "Stand User": "Rohan Kishibe",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Knockin' on Heaven's Door (Bob Dylan song)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Book transmutation",
+            "Memory Removal",
+            "Written-In Commands"
+        ]
+    },
+    "Killer Queen": {
+        "Stand User": "Yoshikage Kira",
+        "Type": ["Close-Range Stand", "Automatic Stand"],
+        "Localized": "Deadly Queen",
+        "Namesake": "Killer Queen (Queen song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "D",
+                "Persistence": "B",
+                "Precision": "B",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Bomb Transmutation",
+            "Air Bomb Transmutation",
+            "Sheer Heart Attack",
+            "Bites the Dust"
+        ]
+    },
+    "Aqua Necklace": {
+        "Stand User": "Anjuro 'Angelo' Katagiri",
+        "Type": ["Bound Stand", "Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "Aqua (Asia album)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Liquid Form",
+            "Possession"
+        ]
+    },
+    "Bad Company": {
+        "Stand User": "Keicho Nijimura",
+        "Type": ["Colony Stand"],
+        "Localized": "Worse Company",
+        "Namesake": "Bad Company (band / song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Military Firepower"
+        ]
+    },
+    "Red Hot Chili Pepper": {
+        "Stand User": "Akira Otoishi",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Chili Pepper",
+        "Namesake": "Red Hot Chili Peppers (band)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Electricity Absorption",
+            "Electrical Transfer"
+        ]
+    },
+    "The Lock": {
+        "Stand User": "Tamami Kobayashi",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "The Rock (The Who song)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Guilt Increase",
+            "Lie detection"
+        ]
+    },
+    "Surface": {
+        "Stand User": "Toshikazu Hazamada",
+        "Type": ["Bound Stand", "Automatic Stand"],
+        "Localized": "Show Off",
+        "Namesake": "Surface (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Mimicry",
+            "Forced Synchronization"
+        ]
+    },
+    "Love Deluxe": {
+        "Stand User": "Yukako Yamagishi",
+        "Type": ["Bound Stand"],
+        "Localized": "Love Extra (Eyes of Heaven)",
+        "Namesake": "Love Deluxe (Sade album)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Hair Manipulation"
+        ]
+    },
+    "Pearl Jam": {
+        "Stand User": "Tonio Trussardi",
+        "Type": ["Colony Stand"],
+        "Localized": "Pole Jam (anime), Opal Jam (All Star Battle)",
+        "Namesake": "Pearl Jam (band)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Curative Cooking"
+        ]
+    },
+    "Achtung Baby": {
+        "Stand User": "Shizuka Joestar",
+        "Type": ["Integrated Stand"],
+        "Localized": "Invisible Baby",
+        "Namesake": "Achtung Baby (U2 album)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Invisibility"
+        ]
+    },
+    "Ratt": {
+        "Stand User": "Bug-Eaten / Not Bug-Eaten",
+        "Type": ["Close-Range Stand", "Shared Stand"],
+        "Localized": "None",
+        "Namesake": "Ratt (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "C",
+                "Range": "D",
+                "Persistence": "B",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Melting Darts"
+        ]
+    },
+    "Harvest": {
+        "Stand User": "Shigekiyo 'Shigechi' Yangu",
+        "Type": ["Colony Stand", "Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "Harvest (Neil Young song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Persistence",
+            "Strength in Numbers",
+            "Harvesting",
+            "Hypodermic Needle"
+        ]
+    },
+    "Cinderella": {
+        "Stand User": "Aya Tsuji",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Fashionista (Eyes of Heaven)",
+        "Namesake": "Cinderella (band)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "C",
+                "Precision": "A",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Body Part Replacement",
+            "Permanent Body Replacement"
+        ]
+    },
+    "Atom Heart Father": {
+        "Stand User": "Yoshihiro Kira",
+        "Type": ["Bound Stand"],
+        "Localized": "Heart Father",
+        "Namesake": "Atom Heart Mother (Pink Floyd song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Supernatural Photography"
+        ]
+    },
+    "Boy II Man": {
+        "Stand User": "Ken Oyanagi",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Boys Man Man (anime), BoyManMan (All Star Battle)",
+        "Namesake": "Boyz II Men (vocal group)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Energy Theft via Rock Paper Scissors"
+        ]
+    },
+    "Earth Wind and Fire": {
+        "Stand User": "Mikitaka Hazekura",
+        "Type": ["Integrated Stand"],
+        "Localized": "Terra Ventus",
+        "Namesake": "Earth, Wind & Fire (band)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Shapeshifting",
+            "Regeneration"
+        ]
+    },
+    "Highway Star": {
+        "Stand User": "Yuya Fungami",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Highway Go Go",
+        "Namesake": "Highway Star (Deep Purple song)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Room Creation",
+            "Enhanced Sense of Smell",
+            "Body Dismantlement",
+            "Life Force Theft"
+        ]
+    },
+    "Stray Cat": {
+        "Stand User": "Tama",
+        "Type": ["Integrated Stand"],
+        "Localized": "Feral Cat (All Star Battle)",
+        "Namesake": "Stray Cats (band / album)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "E",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Reincarnation",
+            "Plant/Cat Constitution",
+            "Aerokinesis"
+        ]
+    },
+    "Super Fly": {
+        "Stand User": "Toyohiro Kanedaichi",
+        "Type": ["Bound Stand", "Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Superfly (Curtis Mayfield album)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Occupant Restraint",
+            "Damage Reflection"
+        ]
+    },
+    "Enigma": {
+        "Stand User": "Terunosuke Miyamoto",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Misterioso",
+        "Namesake": "Enigma (electronic musical project)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Paper Seal"
+        ]
+    },
+    "Cheap Trick": {
+        "Stand User": "n/a",
+        "Type": ["Automatic Stand", "Shared Stand"],
+        "Localized": "Cheap Trap",
+        "Namesake": "Cheap Trick (band)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Attachment",
+            "Universal Speech"
+        ]
+    },
+    "Gold Experience": {
+        "Stand User": "Giorno Giovanna",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Golden Wind",
+        "Namesake": "The Gold Experience (Prince album)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "D",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Life Giver",
+            "Life Shot",
+            "Flesh and Organ Creation",
+            "Life Sensor"
+        ]
+    },
+    "Sticky Fingers": {
+        "Stand User": "Bruno Bucciarati",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Zipper Man",
+        "Namesake": "Sticky Fingers (The Rolling Stones album)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "D",
+                "Precision": "C",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Zippers"
+        ]
+    },
+    "Moody Blues": {
+        "Stand User": "Leone Abbacchio",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Moody Jazz",
+        "Namesake": "The Moody Blues (band)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Chronological Rebroadcasting"
+        ]
+    },
+    "Sex Pistols": {
+        "Stand User": "Guido Mista",
+        "Type": ["Colony Stand", "Long-Distance Stand"],
+        "Localized": "Six Bullets",
+        "Namesake": "Sex Pisols (band)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "A",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Bullet Control",
+            "Enhanced Reloading"
+        ]
+    },
+    "Aerosmith": {
+        "Stand User": "Narancia Ghirga",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Li'l Bomber",
+        "Namesake": "Aerosmith (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Machine Guns and Bomb",
+            "Carbon Dioxide Radar"
+        ]
+    },
+    "Purple Haze": {
+        "Stand User": "Pannacotta Fugo",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Purple Smoke",
+        "Namesake": "Purple Haze (Jimi Hendrix song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "E",
+                "Precision": "E",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Killer Virus Infection"
+        ]
+    },
+    "Spice Girl": {
+        "Stand User": "Trish Una",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Spicy Lady",
+        "Namesake": "Spice Girls (pop group)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Softening"
+        ]
+    },
+    "Chariot Requiem": {
+        "Stand User": "Jean Pierre Polnareff",
+        "Type": ["Requiem Stand", "Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Silver Chariot (stand), Requiem (Mozart)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Regeneration",
+            "Grand Scale Soul Manipulation",
+            "Stand Manipulation",
+            "Complete Alteration of All Life",
+            "Shadow Weakness"
+        ]
+    },
+    "Gold Experience Requiem": {
+        "Stand User": "Giorno Giovanna",
+        "Type": ["Requiem Stand", "Close-Range Stand"],
+        "Localized": "Golden Wind Requiem",
+        "Namesake": "Gold Experience (stand), Requiem (Mozart)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "Null",
+                "Range": "Null",
+                "Persistence": "Null",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Return to Zero",
+            "Life Giver"
+        ]
+    },
+    "King Crimson": {
+        "Stand User": "Diavolo / Vinegar Doppio",
+        "Type": ["Close-Range Stand", "Shared Stand"],
+        "Localized": "Emperor Crimson, Eulogy (Epitaph)",
+        "Namesake": "King Crimson (band), Epitaph (King Crimson song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "E",
+                "Persistence": "E",
+                "Precision": "?",
+                "Developmental Potential": "?"
+             }
+        ],
+        "Abilities": [
+            "Time Erasure",
+            "Epitaph"
+        ]
+    },
+    "Black Sabbath": {
+        "Stand User": "Polpo",
+        "Type": ["Automatic Stand"],
+        "Localized": "Shadow Sabbath",
+        "Namesake": "Black Sabbath (band / song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "A",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Shadow Power",
+            "Soul Pull",
+            "Arrow Storage"
+        ]
+    },
+    "Soft Machine": {
+        "Stand User": "Mario Zucchero",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Tender Machine",
+        "Namesake": "Soft Machine (band)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "C",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Pinch Deflating"
+        ]
+    },
+    "Kraft Work": {
+        "Stand User": "Sale",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Arts & Crafts",
+        "Namesake": "Kraftwerk (music project)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "E",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Position Locking",
+            "Kinetic Energy Accumulation"
+        ]
+    },
+    "Little Feet": {
+        "Stand User": "Formaggio",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Tiny Feet",
+        "Namesake": "Little Feat (band / song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "B",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Shrinking"
+        ]
+    },
+    "Man in the Mirror": {
+        "Stand User": "Illuso",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Mirror Man",
+        "Namesake": "Man in the Mirror (Michael Jackson song)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "D",
+                "Precision": "C",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Mirror World Entry"
+        ]
+    },
+    "Mr. President": {
+        "Stand User": "Coco Jumbo",
+        "Type": ["Integrated Stand"],
+        "Localized": "None",
+        "Namesake": "Mr. President (band)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Hidden Room"
+        ]
+    },
+    "Beach Boy": {
+        "Stand User": "Pesci",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Fisher Man",
+        "Namesake": "The Beach Boys (band)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "C",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Hook and Line",
+            "Extreme Line Sensibility",
+            "Damage Reflection"
+        ]
+    },
+    "The Grateful Dead": {
+        "Stand User": "Prosciutto",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "The Thankful Dead",
+        "Namesake": "The Grateful Dead (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "E",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Accelerated Aging"
+        ]
+    },
+    "Baby Face": {
+        "Stand User": "Melone",
+        "Type": ["Automatic Stand"],
+        "Localized": "Babyhead",
+        "Namesake": "Kenneth 'Babyface' Edmonds (musican)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Homunculus Generation",
+            "Computer",
+            "Matter Manipulation",
+            "Physical Growth and Aging"
+        ]
+    },
+    "White Album": {
+        "Stand User": "Ghiaccio",
+        "Type": ["Close-Range Stand"],
+        "Localized": "White Ice",
+        "Namesake": "White Album (The Beatles album), While My Guitar Gently Weeps (The Beatles song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Cryokinesis",
+            "Ice Armor",
+            "White Album Gently Weeps"
+        ]
+    },
+    "Clash": {
+        "Stand User": "Squalo",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Crush",
+        "Namesake": "The Clash (band)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "A",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "A",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Liquid Warp"
+        ]
+    },
+    "Talking Head": {
+        "Stand User": "Tiziano",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Talking Mouth",
+        "Namesake": "Talking Heads (band)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "True-Statement Elimination",
+            "Tongue Control"
+        ]
+    },
+    "Notorious B.I.G": {
+        "Stand User": "Carne",
+        "Type": ["Automatic Stand"],
+        "Localized": "Notorious Chase",
+        "Namesake": "The Notorious B.I.G (rapper)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "Infinite",
+                "Range": "Infinite",
+                "Persistence": "Infinite",
+                "Precision": "E",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Post-Mortem Activation",
+            "Energy Absorption",
+            "Partial Symbiosis",
+            "Speed Detection"
+        ]
+    },
+    "Metallica": {
+        "Stand User": "Risotto Nero",
+        "Type": ["Close-Range Stand", "Colony Stand"],
+        "Localized": "Metallic",
+        "Namesake": "Metallica (band / album)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Iron Manipulation",
+            "Invisibility"
+        ]
+    },
+    "Green Day": {
+        "Stand User": "Cioccolata",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Green Tea",
+        "Namesake": "Green Day (band)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "C",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Mold Infestation",
+            "Dismemberment Control"
+        ]
+    },
+    "Oasis": {
+        "Stand User": "Secco",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Sanctuary",
+        "Namesake": "Oasis (band)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Ground Liquefaction",
+            "Physical Enhancement"
+        ]
+    },
+    "Rolling Stones": {
+        "Stand User": "Automatic Stand",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Prophecy Stones",
+        "Namesake": "The Rolling Stones (band)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Homing to Dying Target"
+        ]
+    },
+    "Stone Free": {
+        "Stand User": "Jolyne Kujoh",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Stone Ocean",
+        "Namesake": "Stone Free (Jimi Hendrix song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "String Decomposition",
+            "Eavesdropping",
+            "Sharp Strings",
+            "Pickpocket",
+            "Bulletproof",
+            "Strangle",
+            "Stitch Wounds",
+            "Movement detection",
+            "Create complex patterns"
+        ]
+    },
+    "Kiss": {
+        "Stand User": "Ermes Costello",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Smack",
+        "Namesake": "KISS (band), Kiss (Prince song)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Duplicating Stickers"
+        ]
+    },
+    "Burning Down the House": {
+        "Stand User": "Emporio Alnino",
+        "Type": ["Bound Stand"],
+        "Localized": "Burning Down",
+        "Namesake": "Burning Down the House (Talking Heads song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "Null",
+                "Range": "Null",
+                "Persistence": "Null",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Ghost Objects"
+        ]
+    },
+    "Foo Fighters": {
+        "Stand User": "Foo Fighters",
+        "Type": ["Bound Stand"],
+        "Localized": "None",
+        "Namesake": "Foo Fighters (band)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Plankton Colony Form",
+            "Body Invasion",
+            "Water Control",
+            "Plankton Shot",
+            "Wound Seal"
+        ]
+    },
+    "Weather Report": {
+        "Stand User": "Weather Report",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Weather Forecast",
+        "Namesake": "Weather Report (band)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Weather Control",
+            "Air and Wind Manipulation",
+            "Humidity and Cloud Manipulation",
+            "Oxygen Build-up",
+            "Heavy Weather",
+            "Snail Projection"
+        ]
+    },
+    "Diver Down": {
+        "Stand User": "Narciso Anasui",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Diver Drive",
+        "Namesake": "Diver Down (Van Halen album)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "E",
+                "Persistence": "C",
+                "Precision": "B",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Stand Power Storage",
+            "Restructuring"
+        ]
+    },
+    "Whitesnake": {
+        "Stand User": "Enrico Pucci",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Pale Snake",
+        "Namesake": "Whitesnake (band / album)",
+        "Stats": [
+            {
+                "Destructive Power": "?",
+                "Speed": "D",
+                "Range": "?",
+                "Persistence": "A",
+                "Precision": "?",
+                "Developmental Potential": "?"
+             }
+        ],
+        "Abilities": [
+            "Illusion",
+            "Disc Creation"
+        ]
+    },
+    "C-Moon": {
+        "Stand User": "Enrico Pucci",
+        "Type": ["Long-Distance Stand", "Evolved Stand"],
+        "Localized": "Full Moon",
+        "Namesake": "C Moon (Wings song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "?",
+                "Precision": "?",
+                "Developmental Potential": "?"
+             }
+        ],
+        "Abilities": [
+            "Gravity Shift",
+            "Surface Inversion",
+            "Time Acceleration"
+        ]
+    },
+    "Made in Heaven": {
+        "Stand User": "Enrico Pucci",
+        "Type": ["Close-Range Stand", "Evolved Stand", "Range Irrelevant Stand"],
+        "Localized": "Maiden Heaven",
+        "Namesake": "Made in Heaven (Freddie Mercury song / Queen album), Stairway To Heaven (Led Zeppelin song)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "Infinite",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Time Acceleration",
+            "Consequences"
+        ]
+    },
+    "Goo Goo Dolls": {
+        "Stand User": "Gwess",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "Cry Cry Dolls",
+        "Namesake": "Goo Goo Dolls (band)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "D",
+                "Precision": "B",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Size Reduction"
+        ]
+    },
+    "Manhattan Transfer": {
+        "Stand User": "Johngalli A",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "The Manhattan Transfer (vocal group)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "A",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Wind Reading",
+            "Bullet Redirection"
+        ]
+    },
+    "Highway to Hell": {
+        "Stand User": "Thunder McQueen",
+        "Type": ["Automatic Stand"],
+        "Localized": "Highway to Death",
+        "Namesake": "Highway to Hell (AC/DC song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "A",
+                "Persistence": "C",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Damage Sharing"
+        ]
+    },
+    "Marilyn Manson": {
+        "Stand User": "Miraschon",
+        "Type": ["Long-Distance Stand"],
+        "Localized": "None",
+        "Namesake": "Marilyn Manson (band / singer)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "A",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "A",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Debt Collection"
+        ]
+    },
+    "Jumpin' Jack Flash": {
+        "Stand User": "Lang Rangler",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Jumpin' Jack Flash (The Rolling Stones song)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Gravitational Removal",
+            "Built-in Centrifuges"
+        ]
+    },
+    "Limp Bizkit": {
+        "Stand User": "Sports Maxx",
+        "Type": ["Automatic Stand"],
+        "Localized": "Flaccid Pancake",
+        "Namesake": "Limp Bizkit (band)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Invisible Reincarnation"
+        ]
+    },
+    "Survivor": {
+        "Stand User": "Guccio",
+        "Type": ["Automatic Stand", "Colony Stand"],
+        "Localized": "None",
+        "Namesake": "Survivor (band)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Aggressiveness Stimulation"
+        ]
+    },
+    "Planet Waves": {
+        "Stand User": "Viviano Westwood",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Planet Waves (Bob Dylan album)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Meteorite Attraction"
+        ]
+    },
+    "Dragon's Dream": {
+        "Stand User": "Kenzou",
+        "Type": ["Automatic Stand", "Sentient Stand"],
+        "Localized": "None",
+        "Namesake": "The Dragon's Dream (Thom Brennan song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "Null",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Feng Shui",
+            "Feng Shui Luck Reading",
+            "Neutrality"
+        ]
+    },
+    "Yo-Yo Ma": {
+        "Stand User": "D an G",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Yo-Yo Ma (musician)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "D",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Acid Saliva"
+        ]
+    },
+    "Green, Green Grass of Home": {
+        "Stand User": "The Green Baby",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Green, Green Grass of Home (Porter Wagoner song)",
+        "Stats": [
+            {
+                "Destructive Power": "?",
+                "Speed": "?",
+                "Range": "?",
+                "Persistence": "?",
+                "Precision": "?",
+                "Developmental Potential": "?"
+             }
+        ],
+        "Abilities": [
+            "Shrinking"
+        ]
+    },
+    "Jail House Lock": {
+        "Stand User": "Miuccia Miuller",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Jailhouse Rock (Elvis Presley song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "A",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Short-term Memory Loss"
+        ]
+    },
+    "Bohemian Rhapsody": {
+        "Stand User": "Ungalo",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Bohemian Rhapsody (Queen song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "Null",
+                "Range": "Infinity",
+                "Persistence": "A",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Fiction Realization"
+        ]
+    },
+    "Sky High": {
+        "Stand User": "Rikiel",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Sky High (Jigsaw song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "Null",
+                "Range": "B",
+                "Persistence": "C",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Rods",
+            "Rod Manipulation",
+            "Heat Stealing"
+        ]
+    },
+    "Under World": {
+        "Stand User": "Donatello Versus",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Underworld (band)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "C",
+                "Range": "A",
+                "Persistence": "C",
+                "Precision": "Null",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Memory Unearthing"
+        ]
+    },
+    "Tusk Act 1": {
+        "Stand User": "Johnny Joestar",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Tusk (Fleetwood Mac song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "D",
+                "Persistence": "B",
+                "Precision": "E",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Spinning Nails"
+        ]
+    },
+    "Tusk Act 2": {
+        "Stand User": "Johnny Joestar",
+        "Type": ["Close-Range Stand", "Evolved Stand"],
+        "Localized": "None",
+        "Namesake": "Tusk (Fleetwood Mac song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "D",
+                "Range": "B",
+                "Persistence": "C",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Spinning Nails",
+            "Golden Rectangle Nails"
+        ]
+    },
+    "Tusk Act 3": {
+        "Stand User": "Johnny Joestar",
+        "Type": ["Close-Range Stand", "Evolved Stand"],
+        "Localized": "None",
+        "Namesake": "Tusk (Fleetwood Mac song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "D",
+                "Range": "B",
+                "Persistence": "D",
+                "Precision": "C",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Spinning Nails",
+            "Golden Rectangle Nails",
+            "Spatial Wormhole"
+        ]
+    },
+    "Tusk Act 4": {
+        "Stand User": "Johnny Joestar",
+        "Type": ["Close-Range Stand", "Evolved Stand", "Range Irrelevant Stand"],
+        "Localized": "None",
+        "Namesake": "Tusk (Fleetwood Mac song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "B",
+                "Range": "A",
+                "Persistence": "A",
+                "Precision": "B",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Spinning Nails",
+            "Golden Rectangle Nails",
+            "Spatial Wormhole",
+            "Infinite Rotation"
+        ]
+    },
+    "Ball Breaker": {
+        "Stand User": "Gyro Zeppeli",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Ballbreaker (AC/DC song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "D",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Golden Spin"
+        ]
+    },
+    "Oh! Lonesome Me": {
+        "Stand User": "Mountain Tim",
+        "Type": ["Integrated Stand"],
+        "Localized": "None",
+        "Namesake": "Oh! Lonesome Me (Don Gibson song)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Rope Transfer"
+        ]
+    },
+    "Scary Monsters": {
+        "Stand User": "Dr. Ferdinand / Diego Brando",
+        "Type": ["Integrated Stand", "Shared Stand"],
+        "Localized": "Frightening Monsters",
+        "Namesake": "Scary Monsters (David Bowie song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "B",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "C",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Dinosaur Infection",
+            "Dinosaur Morph",
+            "Fossilization"
+        ]
+    },
+    "Cream Starter": {
+        "Stand User": "Hot Pants",
+        "Type": ["Bound Stand"],
+        "Localized": "None",
+        "Namesake": "Firestarter (Prodigy song)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Flesh Spray"
+        ]
+    },
+    "Ticket to Ride": {
+        "Stand User": "Lucy Steel",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Ticket to Ride (The Beatles song)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "C",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Blade of Tears",
+            "Divine Protection"
+        ]
+    },
+    "Dirty Deeds Done Dirt Cheap": {
+        "Stand User": "Funny Valentine",
+        "Type": ["Close-Range Stand", "Range Irrelevant Stand"],
+        "Localized": "Filthy Acts at a Reasonable Price",
+        "Namesake": "Dirty Deeds Done Dirt Cheap (AC/DC song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "A",
+                "Developmental Potential": "A"
+             }
+        ],
+        "Abilities": [
+            "Dimension Hop",
+            "D4C -Love Train-",
+            "Misfortune Redirection"
+        ]
+    },
+    "In a Silent Way": {
+        "Stand User": "Sandman",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Silent Ways",
+        "Namesake": "In a Silent Way (Miles Davis album)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Sound Storage",
+            "Sound Construct"
+        ]
+    },
+    "Hey Ya!": {
+        "Stand User": "Pocoloco",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Hey Ya! (OutKast song)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "B",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Cheering"
+        ]
+    },
+    "Tomb of the Boom": {
+        "Stand User": "Boom Boom Family",
+        "Type": ["Close-Range Stand", "Shared Stand"],
+        "Localized": "Tomb of the Noise",
+        "Namesake": "Tomb of the Boom (OutKast song)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Magnetism"
+        ]
+    },
+    "Boku no Rhythm wo Kiitekure": {
+        "Stand User": "Oyecomova",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Oye Como Va (Tito Puente / Santana song)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Contact Bombs"
+        ]
+    },
+    "Oye Como Va, Mi Ritmo": {
+        "Stand User": "Oyecomova",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Oye Como Va (Tito Puente / Santana song)",
+        "Stats": [
+            {
+                "Destructive Power": "B",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "E",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Contact Bombs"
+        ]
+    },
+    "Wired": {
+        "Stand User": "Pork Pie Hat Kid",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Wired (Jeff Beck album)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "B",
+                "Range": "B",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Tongue Hooks"
+        ]
+    },
+    "Mandom": {
+        "Stand User": "Ringo Roadagain",
+        "Type": ["Close-Range Stand"],
+        "Localized": "Mando",
+        "Namesake": "Lovers of the World (Jerry Wallace song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "A",
+                "Range": "Null",
+                "Persistence": "E",
+                "Precision": "Null",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Time Rewind"
+        ]
+    },
+    "Catch the Rainbow": {
+        "Stand User": "Blackmore",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Catch the Rainbow (Rainbow song / album)",
+        "Stats": [
+            {
+                "Destructive Power": "C",
+                "Speed": "C",
+                "Range": "B",
+                "Persistence": "B",
+                "Precision": "D",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Rain Manipulation"
+        ]
+    },
+    "Sugar Mountain": {
+        "Stand User": "Large Tree",
+        "Type": ["Bound Stand"],
+        "Localized": "Snow Mountain",
+        "Namesake": "Sugar Mountain (Neil Young song)",
+        "Stats": [
+            {
+                "Destructive Power": "E",
+                "Speed": "E",
+                "Range": "E",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Appointing the Guardian",
+            "Trial of Avidity",
+            "Trial of Avarice"
+        ]
+    },
+    "Tattoo You!": {
+        "Stand User": "Eleven Men",
+        "Type": ["Close-Range Stand", "Shared Stand"],
+        "Localized": "None",
+        "Namesake": "Tattoo You (The Rolling Stones album)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "E",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "E",
+                "Developmental Potential": "E"
+             }
+        ],
+        "Abilities": [
+            "Body Slide"
+        ]
+    },
+    "Tubular Bells": {
+        "Stand User": "Mike O.",
+        "Type": ["Integrated Stand"],
+        "Localized": "Tubular",
+        "Namesake": "Tubular Bells (Mike Oldfield album)",
+        "Stats": [
+            {
+                "Destructive Power": "D",
+                "Speed": "D",
+                "Range": "D",
+                "Persistence": "A",
+                "Precision": "E",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Metal Blowing"
+        ]
+    },
+    "20th Century Boy": {
+        "Stand User": "Magent Magent",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "20th Century Boy (T. Rex song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "C",
+                "Range": "Null",
+                "Persistence": "A",
+                "Precision": "D",
+                "Developmental Potential": "C"
+             }
+        ],
+        "Abilities": [
+            "Absolute Defense"
+        ]
+    },
+    "Civil War": {
+        "Stand User": "Axl RO",
+        "Type": ["Automatic Stand"],
+        "Localized": "None",
+        "Namesake": "Civil War (Guns N' Roses song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "C",
+                "Developmental Potential": "Null"
+             }
+        ],
+        "Abilities": [
+            "Guilt Materialization",
+            "Rebirth from Guilt"
+        ]
+    },
+    "Chocolate Disco": {
+        "Stand User": "D-I-S-C-O",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "Chocolate Disco (Perfume song)",
+        "Stats": [
+            {
+                "Destructive Power": "Null",
+                "Speed": "C",
+                "Range": "C",
+                "Persistence": "B",
+                "Precision": "A",
+                "Developmental Potential": "D"
+             }
+        ],
+        "Abilities": [
+            "Teleporting Grid"
+        ]
+    },
+    "THE WORLD": {
+        "Stand User": "Diego Brando from Another Universe",
+        "Type": ["Close-Range Stand"],
+        "Localized": "None",
+        "Namesake": "The World (stand)",
+        "Stats": [
+            {
+                "Destructive Power": "A",
+                "Speed": "A",
+                "Range": "C",
+                "Persistence": "A",
+                "Precision": "B",
+                "Developmental Potential": "B"
+             }
+        ],
+        "Abilities": [
+            "Time Stop"
+        ]
+    }
+}
