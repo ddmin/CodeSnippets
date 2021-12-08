@@ -1,0 +1,76 @@
+#!/bin/bash
+# install - installs basic configurations
+
+sudo echo ""
+
+# Update system
+    yes | sudo apt update
+    yes | sudo apt upgrade
+
+# Gogh
+# clone the repo into "$HOME/src/gogh"
+    mkdir /tmp/src
+    git clone https://github.com/Mayccoll/Gogh.git /tmp/src/gogh
+    cd /tmp/src/gogh/themes
+
+    export TERMINAL=xfce4-terminal
+
+    # install themes
+    ./gruvbox-dark.sh
+
+    cd -
+
+# Install git
+    yes | sudo apt install git
+
+# Install curl
+    yes | sudo apt install curl
+
+# install wget
+    yes | sudo apt install wget
+
+# Install vim
+    yes | sudo apt install vim
+
+# Install python3 and pip3
+    yes | sudo apt install python3
+    yes | sudo apt install python3-pip
+    pip3 install --upgrade setuptools
+
+# install powerline
+    pip3 install powerline-shell
+
+# powerline fonts
+    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+
+    mv PowerlineSymbols.otf ~/.local/share/fonts/
+    sudo fc-cache -vf ~/.local/share/fonts/
+    mkdir -p /home/ddmin/.config/fontconfig
+    mv 10-powerline-symbols.conf /home/ddmin/.config/fontconfig/conf.d
+
+# Dependencies
+    yes | sudo apt install cmake
+
+# Install neofetch
+    yes | sudo apt install neofetch
+
+# install rofi
+    yes | sudo apt install rofi
+
+# Install ranger
+    # pip install method
+    yes | sudo apt install ranger
+    pip3 install ranger-fm
+
+# Copy ranger configs
+    ranger --copy-config=all
+
+# Dotfiles
+    git clone https://github.com/ddmin/Dotfiles.git /tmp/dots
+    cd /tmp/dots/basic
+    ./setup.sh
+    cd -
+
+echo 'Setup Complete'
+echo 'Please reboot your machine.'

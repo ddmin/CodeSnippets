@@ -1,0 +1,110 @@
+#!/bin/bash
+# install - installs and configure machine automatically (Ubuntu)
+
+# Update system
+    yes | sudo pacman -Syu
+
+# Install git
+    yes | sudo pacman -S git
+
+# Firefox Addons
+    cd /tmp/installscript
+    python3 firefox_setup.py
+
+# Go back to Arch Directory
+    cd /tmp/installscript/Arch
+
+# Install fzf
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    yes | ~/.fzf/install
+
+# Install curl
+    yes | sudo pacman -S curl
+
+# Install vim
+    yes | sudo pacman -S vim
+
+# Install nvim
+    yes | sudo pacman -S neovim
+
+# Install ranger
+    yes | sudo pacman -S ranger
+
+# Install ranger devicons
+    git clone https://github.com/ddmin/ranger_devicons.git /tmp/devicons
+    cd /tmp/devicons
+    make install
+
+# Return to home directory
+    cd
+
+# Copy ranger configs
+    ranger --copy-config=all
+
+# Install lsd
+    yes | sudo pacman -S lsd
+
+# Install cmus
+    yes | sudo pacman -S cmus
+
+# Install git
+    yes | sudo pacman -S git
+
+# Install neofetch
+    yes | sudo pacman -S neofetch
+
+# Install rofi
+    # Command to run rofi: rofi -modi drun -show drun -show-icons
+    yes | sudo pacman -S rofi
+
+# Install python and pip
+    yes | sudo pacman -S python
+    yes | sudo pacman -S python-pip
+    sudo -H pip install --upgrade setuptools
+
+# Install python3 and pip3
+    yes | sudo pacman -S python3
+    yes | sudo pacman -S python3-pip
+    sudo -H pip3 install --upgrade setuptools
+
+# Install powerline-shell
+    sudo -H pip install powerline-shell
+
+# Install ueberzug
+    sudo pip3 install ueberzug
+
+# Install mpv
+    yes | sudo pacman -S mpv
+
+# Install vlc
+    yes | sudo pacman -S vlc
+
+# Install feh
+    yes | sudo pacman -S feh
+
+# Install pywal
+    sudo -H pip3 install pywal
+
+# Install imagemagick
+    yes | sudo pacman -S imagemagick
+
+# Install calcurse
+    yes | sudo pacman -S calcurse
+
+# Install zathura
+    yes | sudo pacman -S zathura
+
+# Install id3v2
+    yes | sudo pacman -S id3v2
+
+# Install wget
+    yes | sudo pacman -S wget
+
+# Dotfiles
+    cd /tmp
+    git clone https://github.com/ddmin/Dotfiles.git
+    cd Dotfiles
+    cd dotfiles
+    ./setup.sh
+
+echo 'Setup Complete'

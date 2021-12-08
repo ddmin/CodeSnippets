@@ -1,0 +1,46 @@
+/home/ddmin/Downloads/ISO
+arch.iso
+debian-10.5.0.iso
+fedora-31.iso
+kubuntu-20.10.iso
+manjaro-kde.iso
+manjaro_xfce.iso
+mint-19.2-cinnamon.iso
+mint-19.3.iso
+mint-20-cinnamon.iso
+mint-20-xfce.iso
+pop-os.iso
+regolith-19.04.iso
+templeOS.ISO
+ubuntu-20.04.iso
+ubuntu-20.10.iso
+windows10.iso
+zorin-15.iso
+
+/home/ddmin/Downloads/ROM
+Pokemon Emerald.gba
+Pokemon Leaf Green.gba
+
+/home/ddmin/VirtualBox VMs
+Kubuntu
+Mint
+Temple
+Testing
+Windows 10
+
+/home/ddmin/Videos
+Akira (1988).mkv
+Birth of Japan (2016).mkv
+Doctor Strange (2016).mp4
+Forrest Gump (1994).mp4
+Iron Man (2008).mp4
+Kimi no Na Wa (2016).mp4
+Koe no Katachi (2016).mkv
+Nobita and the New Steel Troops (2011).mp4
+Nobita's Secret Gadget Museum (2013).mp4
+Research
+Spirited Away (2002).mkv
+Stand By Me (2014).mkv
+Tonari No Totoro (1988).mp4
+Ultimate Anime Openings + Endings Compilation [8 Hour mix].mkv
+

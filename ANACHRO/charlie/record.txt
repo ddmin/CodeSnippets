@@ -1,0 +1,18 @@
+/home/ddmin/Downloads/ISO
+arch.iso
+gentoo.iso
+linuxmint-20.1.iso
+manjaro-i3.iso
+nixOS-21.05.iso
+pop-os_20.10.iso
+ubuntu-20.04.iso
+windows 10.iso
+windows 11.iso
+xubuntu-20.04.iso
+zorin-OS-15.3.iso
+
+/home/ddmin/VirtualBox VMs
+Gentoo
+Windows 10
+Xubuntu
+

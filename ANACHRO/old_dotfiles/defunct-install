@@ -1,0 +1,138 @@
+#!/bin/bash
+# install - installs and configure machine automatically (Ubuntu)
+# this doesn't work anymore
+# use 2install
+
+# Papirus PPA
+    sudo add-apt-repository ppa:papirus/papirus
+
+# Update system
+    yes | sudo apt update
+    yes | sudo apt upgrade
+
+# Papirus Icons
+    yes | sudo apt-get install papirus-icon-theme
+
+# Firefox Addons
+    cd /tmp/installscript
+    python3 firefox_setup.py
+
+# Go back to Ubuntu directory
+    cd /tmp/installscript/Ubuntu
+
+# Install git
+    yes | sudo apt install git
+
+# Install fzf
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    yes | ~/.fzf/install
+
+# Install curl
+    yes | sudo apt install curl
+
+# install wget
+    yes | sudo apt install wget
+
+# Install vim
+    yes | sudo apt install vim
+
+# Install nvim
+    yes | sudo apt install neovim
+
+# Install gnome-tweaks
+    yes | sudo apt install gnome-tweak-tool
+
+# Install ranger
+    git clone https://github.com/ranger/ranger.git /tmp/ranger
+    cd /tmp/ranger
+    sudo make install
+
+# Install ranger devicons
+    git clone https://github.com/ddmin/ranger_devicons.git /tmp/devicons
+    cd /tmp/devicons
+    make install
+
+# Return to home directory
+    cd
+
+# Copy ranger configs
+    ranger --copy-config=all
+
+# Install cmus
+    yes | sudo apt install cmus
+
+# Install git
+    yes | sudo apt install git
+
+# Install neofetch
+    yes | sudo apt install neofetch
+
+# Install rofi
+    # Command to run rofi: rofi -modi drun -show drun -show-icons
+    yes | sudo apt install rofi
+
+# Install python and pip
+    yes | sudo apt install python
+    yes | sudo apt install python-pip
+    sudo -H pip install --upgrade setuptools
+
+# Install python3 and pip3
+    yes | sudo apt install python3
+    yes | sudo apt install python3-pip
+    sudo -H pip3 install --upgrade setuptools
+
+# Install powerline-shell
+    sudo -H pip install powerline-shell
+
+# Dependencies
+    yes | sudo apt install python3-dev
+    yes | sudo apt install libjpeg-dev
+    yes | sudo apt install zlib1g-dev
+    yes | sudo apt install libxtst-dev
+
+# Install ueberzug
+    sudo -H pip3 install ueberzug
+
+# Install mpv
+    yes | sudo apt install mpv
+
+# Install vlc
+    yes | sudo apt install vlc
+
+# Install feh
+    yes | sudo apt install feh
+
+# Install pywal
+    sudo -H pip3 install pywal
+
+# Install imagemagick
+    yes | sudo apt install imagemagick
+
+# Install calcurse
+    yes | sudo apt install calcurse
+
+# Install zathura
+    yes | sudo apt install zathura
+
+# Install id3v2
+    yes | sudo apt install id3v2
+
+# Arc Theme
+    yes | sudo apt install arc-theme
+
+# Install lsd
+    wget https://github.com/Peltoche/lsd/releases/download/0.16.0/lsd_0.16.0_amd64.deb
+
+    sudo dpkg -i lsd_0.16.0_amd64.deb
+
+    # Remove deb file
+    rm lsd_0.16.0_amd64.deb
+
+# Dotfiles
+    cd /tmp
+    git clone https://github.com/ddmin/Dotfiles.git
+    cd Dotfiles
+    cd dotfiles
+    ./setup.sh
+
+echo 'Setup Complete'

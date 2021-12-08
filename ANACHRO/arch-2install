@@ -1,0 +1,151 @@
+#!/bin/bash
+# install - installs and configure machine automatically (Arch)
+
+# Update System
+    sudo pacman -Syyu
+
+# base-devel
+    sudo pacman -S base-devel
+
+# Install git
+    yes | sudo pacman -S git
+
+# Papirus Icons
+    wget -qO- https://git.io/papirus-icon-theme-install | DESTDIR="$HOME/.local/share/icons" sh
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install golang
+    wget "https://golang.org/dl/go1.15.3.linux-amd64.tar.gz"
+    sudo tar -C /usr/local -xzf go1.*15*.3.linux-amd64.tar.gz
+    export PATH="$PATH:/usr/local/go/bin"
+    export GOPATH="$HOME/Code/Go"
+
+# install logo-ls
+    go get -u github.com/ddmin/logo-ls
+
+# Firefox Addons
+    cd ..
+    go run firefox.go & sleep 1 && firefox localhost:3000
+    cd -
+
+# Enable AUR
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    cd /tmp/yay
+    makepkg -si
+    cd -
+
+# Arc Dark Theme
+    wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+
+# Install fzf
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    yes | ~/.fzf/install
+
+# install gnome-terminal
+    yes | sudo pacman -S gnome-terminal
+
+# Install curl
+    yes | sudo pacman -S curl
+
+# install wget
+    yes | sudo pacman -S wget
+
+# Install vim
+    yes | sudo pacman -S vim
+
+# Install nvim
+    yes | sudo pacman -S neovim
+
+# Install node version manager
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+# Install python2
+    # ./python2_install
+
+# Install python3 and pip3
+    yes | sudo pacman -S python3
+    pip3 install --upgrade setuptools
+
+# install powerline
+    go get -u github.com/justjanne/powerline-go
+
+# powerline fonts
+    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+
+    mv PowerlineSymbols.otf ~/.local/share/fonts/
+    sudo fc-cache -vf ~/.local/share/fonts/
+    mkdir -p /home/ddmin/.config/fontconfig
+    mv 10-powerline-symbols.conf /home/ddmin/.config/fontconfig/conf.d
+
+# Dependencies
+    yes | sudo pacman -S libxext
+    yes | sudo pacman -S cmake
+
+# install ueberzug
+    pip3 install ueberzug
+
+# Install ffmpegthumbnailer
+    yes | sudo pacman -S ffmpegthumbnailer
+
+# Install lynx
+    yes | sudo pacman -S lynx
+
+# Install mpv
+    yes | sudo pacman -S mpv
+
+# Install vlc
+    yes | sudo pacman -S vlc
+
+# Install feh
+    yes | sudo pacman -S feh
+
+# pywal
+    pip3 install pywal
+
+# Install cmus
+    yes | sudo pacman -S cmus
+
+# Install neofetch
+    yes | sudo pacman -S neofetch
+
+# Install rofi
+    # Command to run rofi: rofi -modi drun -show drun -show-icons
+    yes | sudo pacman -S rofi
+
+# Install imagemagick
+    yes | sudo pacman -S imagemagick
+
+# Install zathura
+    yes | sudo pacman -S zathura
+
+# Install id3v2
+    yes | sudo pacman -S id3v2
+
+# install logo-ls
+    yay -S logo-ls
+
+# Install ranger
+
+    # pip install method
+    pip3 install ranger-fm
+
+# Install ranger devicons
+    git clone https://github.com/ddmin/ranger_devicons.git /tmp/devicons
+    cd /tmp/devicons
+    make install
+    cd -
+
+# Copy ranger configs
+    ranger --copy-config=all
+
+# Dotfiles
+    git clone https://github.com/ddmin/Dotfiles.git /tmp/dots
+    cd /tmp/dots/dotfiles
+    ./setup.sh
+    cd -
+
+echo 'Setup Complete'
+echo 'Please reboot your machine.'
