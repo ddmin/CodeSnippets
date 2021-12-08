@@ -7,39 +7,51 @@ fn calculate_fuel(position: i32, destination: i32) -> i32 {
 }
 
 fn calculate_crab_fuel(position: i32, destination: i32) -> i32 {
-    (1..=(position - destination).abs()).sum()
+    gauss((position - destination).abs())
+}
+
+// Sum all numbers 1 to n.
+//      1   2   3   4   5  ...   46  47  48  49  50
+//  + 100  99  98  97  96  ...   55  54  53  52  51
+//  -----------------------------------------------
+//    101 101 101 101 101  ...  101 101 101 101 101
+// 101 * 50 = 5050
+fn gauss(n: i32) -> i32 {
+    n * (n + 1) / 2
 }
 
 pub fn part1(input: &str) -> i32 {
     let mut positions = split(input, ",");
     positions.sort_unstable();
 
-    let mut fuels_fuels = Vec::new();
-    for destination in positions[0]..=positions[positions.len() - 1] {
-        let mut fuels = Vec::new();
-        for &position in positions.iter() {
-            let fuel = calculate_fuel(position, destination);
-            fuels.push(fuel);
-        }
-        fuels_fuels.push(fuels.iter().sum::<i32>());
-    }
-    *fuels_fuels.iter().min().unwrap()
+    let (min, max) = (positions[0], positions[positions.len() - 1]);
+
+    (min..=max)
+        .map(|dest| {
+            positions
+                .iter()
+                .map(move |&pos| calculate_fuel(dest, pos))
+                .sum::<i32>()
+        })
+        .min()
+        .unwrap()
 }
 
 pub fn part2(input: &str) -> i32 {
     let mut positions = split(input, ",");
     positions.sort_unstable();
 
-    let mut fuels_fuels = Vec::new();
-    for destination in positions[0]..=positions[positions.len() - 1] {
-        let mut fuels = Vec::new();
-        for &position in positions.iter() {
-            let fuel = calculate_crab_fuel(position, destination);
-            fuels.push(fuel);
-        }
-        fuels_fuels.push(fuels.iter().sum::<i32>());
-    }
-    *fuels_fuels.iter().min().unwrap()
+    let (min, max) = (positions[0], positions[positions.len() - 1]);
+
+    (min..=max)
+        .map(|dest| {
+            positions
+                .iter()
+                .map(move |&pos| calculate_crab_fuel(pos, dest))
+                .sum::<i32>()
+        })
+        .min()
+        .unwrap()
 }
 
 pub fn run() {
@@ -54,11 +66,11 @@ mod tests {
 
     #[test]
     fn example1() {
-        assert_eq!(part1(EXAMPLE), 0);
+        assert_eq!(part1(EXAMPLE), 37);
     }
 
     #[test]
     fn example2() {
-        assert_eq!(part2(EXAMPLE), 0);
+        assert_eq!(part2(EXAMPLE), 168);
     }
 }

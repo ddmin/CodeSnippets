@@ -21,6 +21,12 @@ impl Grid {
         *entry += 1;
     }
 
+    fn extend(&mut self, dimensions: (i32, i32, i32, i32)) {
+        let (x1, y1, x2, y2) = dimensions;
+        self.extend_width((x1, x2));
+        self.extend_height((y1, y2));
+    }
+
     fn extend_width(&mut self, widths: (i32, i32)) {
         self.width = if self.width < widths.0 {
             widths.0
@@ -96,8 +102,7 @@ pub fn part1(input: &str) -> i32 {
             };
             range.for_each(|x| grid.insert((x1 + x, y1)));
         }
-        grid.extend_width((x1, x2));
-        grid.extend_height((y1, y2));
+        grid.extend((x1, y1, x2, y2));
     }
     grid.hashmap.values().filter(|&&x| x > 1).count() as i32
 }
@@ -142,8 +147,7 @@ pub fn part2(input: &str) -> i32 {
                 .zip(range_y.iter())
                 .for_each(|(x, y)| grid.insert((x1 + x, y1 + y)));
         }
-        grid.extend_width((x1, x2));
-        grid.extend_height((y1, y2));
+        grid.extend((x1, y1, x2, y2));
     }
     grid.hashmap.values().filter(|&&x| x > 1).count() as i32
 }
