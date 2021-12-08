@@ -1,5 +1,5 @@
-use actix_files::{Files, NamedFile};
-use actix_web::{web, App, HttpResponse, HttpServer, Result};
+use actix_files::{Files};
+use actix_web::{web, App, HttpResponse, HttpServer};
 use handlebars::Handlebars;
 use serde_json::json;
 
@@ -44,7 +44,7 @@ async fn main() -> std::io::Result<()> {
         .unwrap();
     let handlebars_ref = web::Data::new(handlebars);
 
-    println!("listening on port 9090");
+    println!("Running on http://127.0.0.1:9090");
     HttpServer::new(move || {
         App::new()
             .app_data(handlebars_ref.clone())

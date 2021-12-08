@@ -1,10 +1,11 @@
 #!/bin/bash
 
 GROUND_ZERO="/tmp/nuclear-fallout"
-NUMBERS="$GROUND_ZERO/FILES/numbers"
-WORDS="$GROUND_ZERO/FILES/words"
-TETANUS="$GROUND_ZERO/RUST/rust-playground"
-SNAKES="$GROUND_ZERO/PY/"
+NUMBERS="$GROUND_ZERO/files/numbers"
+WORDS="$GROUND_ZERO/files/words"
+TETANUS="$GROUND_ZERO/rust/rust-playground"
+SNAKES="$GROUND_ZERO/py/"
+SPIDERS="$GROUND_ZERO/web/"
 
 echo "Detonating..."
 rm -rf $GROUND_ZERO
@@ -60,3 +61,9 @@ echo "Securing the Pit of Snakes"
 mkdir -p "$SNAKES"
 touch "$SNAKES/main.py"
 touch "$SNAKES/test.py"
+
+echo "Exterminating the Spider Nest"
+mkdir -p "$SPIDERS"
+touch "$SPIDERS/index.html"
+touch "$SPIDERS/styles.css"
+touch "$SPIDERS/app.js"
