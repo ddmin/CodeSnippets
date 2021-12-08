@@ -5,7 +5,7 @@ def cover_fabric(xpos, ypos, xsize, ysize):
 
 
 with open('claims.txt') as f:
-    claims = f.read().split('\n')
+    claims = f.read().split('\n')[:-1]
 
 claims = [claim.split()[2:] for claim in claims]
 fabric = [[0 for y in range(1000)] for x in range(1000)]

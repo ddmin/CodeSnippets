@@ -11,7 +11,7 @@ def isOverlap(xpos, ypos, xsize, ysize):
     return False
 
 with open('claims.txt') as f:
-    claims = f.read().split('\n')
+    claims = f.read().split('\n')[:-1]
 
 claims = [[claim.split()[0]] + claim.split()[2:] for claim in claims]
 fabric = [[0 for y in range(1000)] for x in range(1000)]

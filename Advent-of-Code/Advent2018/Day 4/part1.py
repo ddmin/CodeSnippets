@@ -1,14 +1,14 @@
 import re
 
 '''
-Exceptions: 
+Exceptions:
 [1518-05-31 23:59] Guard #2221 begins shift
 [1518-04-30 23:59] Guard #2861 begins shift
 [1518-09-30 23:56] Guard #2647 begins shift
 '''
 
 with open('guard_log.txt') as f:
-    guard_log = f.read().split('\n')
+    guard_log = f.read().split('\n')[:-1]
 
 
 guard_number = [entry for entry in guard_log if entry[-5:] == 'shift']
