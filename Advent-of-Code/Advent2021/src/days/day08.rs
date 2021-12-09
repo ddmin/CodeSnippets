@@ -132,11 +132,11 @@ pub fn part2(input: &str) -> i32 {
         .map(|(_, output)| output)
         .map(|signals| signals.split_ascii_whitespace().collect::<Vec<_>>());
 
-    inputs.zip(outputs).fold(0, |sum, (input, output)| {
+    inputs.zip(outputs).map(|(input, output)| {
         let one = input.iter().find(|signal| signal.len() == 2).unwrap();
         let four = input.iter().find(|signal| signal.len() == 4).unwrap();
 
-        sum + output
+        output
             .iter()
             .map(|signal| {
                 decode(
@@ -148,7 +148,7 @@ pub fn part2(input: &str) -> i32 {
             .rev()
             .enumerate()
             .fold(0, |sum, (idx, n)| sum + n * 10i32.pow(idx as u32))
-    })
+    }).sum()
 }
 
 pub fn run() {
