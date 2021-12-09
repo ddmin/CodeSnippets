@@ -1,9 +1,7 @@
 use crate::*;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
 
 const INPUT: &str = include_str!("../../inputs/day08.txt");
-
-struct SegmentDisplay(HashMap<i32, Vec<i32>>);
 
 //  0000
 // 1    2
@@ -13,15 +11,10 @@ struct SegmentDisplay(HashMap<i32, Vec<i32>>);
 // 4    5
 //  6666
 
-// 1 ^ 7 => [0                  ]
-// 1 ^ 4 => [   1,    3         ]
-// 0 ^ 8 => [         3         ]
-// 0 ^ 6 => [      2, 3         ]
-// 0 ^ 9 => [         3, 4      ]
-// 2 ^ 3 => [            4, 5   ]
-// 3 ^ 5 => [   1, 2            ]
-// 4 ^ 8 => [0,          4,    6]
+#[allow(unused)]
+struct SegmentDisplay(HashMap<i32, Vec<i32>>);
 
+#[allow(unused)]
 impl SegmentDisplay {
     fn new() -> SegmentDisplay {
         let mut segments: HashMap<i32, Vec<i32>> = HashMap::new();
@@ -44,40 +37,43 @@ impl SegmentDisplay {
         assert!(n < 10);
         let segments = self.0.get(&(n as i32)).unwrap();
 
-        let mut zero = "    ".to_string();
-        let mut one = " ".to_string();
-        let mut two = " ".to_string();
-        let mut three = "    ".to_string();
-        let mut four = " ".to_string();
-        let mut five = " ".to_string();
-        let mut six = "    ".to_string();
+        let single = "•".to_string();
+        let quad = "••••".to_string();
+
+        let mut zero = "    ";
+        let mut one = " ";
+        let mut two = " ";
+        let mut three = "    ";
+        let mut four = " ";
+        let mut five = " ";
+        let mut six = "    ";
 
         if segments[0] == 1 {
-            zero = "••••".to_string();
+            zero = &quad;
         };
 
         if segments[1] == 1 {
-            one = "•".to_string();
+            one = &single;
         };
 
         if segments[2] == 1 {
-            two = "•".to_string();
+            two = &single;
         };
 
         if segments[3] == 1 {
-            three = "••••".to_string();
+            three = &quad;
         };
 
         if segments[4] == 1 {
-            four = "•".to_string();
+            four = &single;
         };
 
         if segments[5] == 1 {
-            five = "•".to_string();
+            five = &single;
         };
 
         if segments[6] == 1 {
-            six = "••••".to_string();
+            six = &quad;
         };
 
         println!(
@@ -85,41 +81,29 @@ impl SegmentDisplay {
             zero, one, two, three, four, five, six
         );
     }
+}
 
-    fn get(&self, n: usize) -> &Vec<i32> {
-        assert!(n < 10);
-        self.0.get(&(n as i32)).unwrap()
+fn shared_chars(first: &str, second: &str) -> i32 {
+    first
+        .chars()
+        .filter(|&c| second.chars().any(|target| c == target))
+        .count() as i32
+}
+
+fn decode(length: usize, shared_one: i32, shared_four: i32) -> i32 {
+    match (length, shared_one, shared_four) {
+        (2, _, _) => 1,
+        (3, _, _) => 7,
+        (4, _, _) => 4,
+        (7, _, _) => 8,
+        (5, 1, 2) => 2,
+        (5, 1, 3) => 5,
+        (5, 2, 3) => 3,
+        (6, 1, 3) => 6,
+        (6, 2, 3) => 0,
+        (6, 2, 4) => 9,
+        _ => unreachable!(),
     }
-}
-
-fn character_xor(first: &str, second: &str) -> Vec<char> {
-    let mut difference = Vec::new();
-    difference.append(
-        &mut first
-            .chars()
-            .filter(|c| !second.chars().collect::<Vec<_>>().contains(c))
-            .collect::<Vec<_>>(),
-    );
-
-    difference.append(
-        &mut second
-            .chars()
-            .filter(|c| !first.chars().collect::<Vec<_>>().contains(c))
-            .collect::<Vec<_>>(),
-    );
-    difference
-}
-
-fn character_and(first: &str, second: &str) -> Vec<char> {
-    let mut and = Vec::new();
-    and.append(
-        &mut first
-            .chars()
-            .filter(|c| !second.chars().collect::<Vec<_>>().contains(c))
-            .collect::<Vec<_>>(),
-    );
-
-    and
 }
 
 pub fn part1(input: &str) -> i32 {
@@ -136,66 +120,35 @@ pub fn part1(input: &str) -> i32 {
 }
 
 pub fn part2(input: &str) -> i32 {
-    // Four numbers have unique signal lengths
-    //                                    1  4  7  8
-    const UNIQUE_SIGNALS: &[usize; 4] = &[2, 4, 3, 7];
-
-    const FIVE_SIGNALS: &[usize; 3] = &[2, 3, 5];
-    const SIX_SIGNALS: &[usize; 3] = &[0, 6, 9];
-
-    let segments = SegmentDisplay::new();
-    let mut letters_to_segments: HashMap<char, i32> = HashMap::new();
     let input = bifurcate(input, " | ");
 
     let inputs = input
         .iter()
         .map(|(input, _)| input)
-        .map(|signals| signals.split_ascii_whitespace().collect::<Vec<_>>())
-        .collect::<Vec<_>>();
+        .map(|signals| signals.split_ascii_whitespace().collect::<Vec<_>>());
 
     let outputs = input
         .iter()
         .map(|(_, output)| output)
-        .map(|signals| signals.split_ascii_whitespace().collect::<Vec<_>>())
-        .collect::<Vec<_>>();
+        .map(|signals| signals.split_ascii_whitespace().collect::<Vec<_>>());
 
-    println!("{:?}", inputs);
-    println!();
+    inputs.zip(outputs).fold(0, |sum, (input, output)| {
+        let one = input.iter().find(|signal| signal.len() == 2).unwrap();
+        let four = input.iter().find(|signal| signal.len() == 4).unwrap();
 
-    let first = inputs.get(0).unwrap();
-
-    let fives = first
-        .iter()
-        .filter(|signal| signal.len() == 5)
-        .collect::<Vec<_>>();
-
-    let sixes = first
-        .iter()
-        .filter(|signal| signal.len() == 6)
-        .collect::<Vec<_>>();
-
-    let unique = UNIQUE_SIGNALS
-        .iter()
-        .map(|&length| {
-            first
-                .iter()
-                .filter(|signal| signal.len() == length)
-                .next()
-                .unwrap()
-        })
-        .collect::<Vec<_>>();
-
-    println!("{:?}", first);
-    println!("FIVE: {:?}", fives);
-    println!("SIX: {:?}", sixes);
-    println!("UNIQ: {:?}", unique);
-    println!("IDX: {:?}", UNIQUE_SIGNALS);
-
-    // compare 1 and 7 => segment 0
-    letters_to_segments.insert(character_xor(unique[0], unique[2])[0], 0);
-
-    letters_to_segments.insert(character_and(unique[0], unique[2])[0], 0);
-    0
+        sum + output
+            .iter()
+            .map(|signal| {
+                decode(
+                    signal.len(),
+                    shared_chars(one, signal),
+                    shared_chars(four, signal),
+                )
+            })
+            .rev()
+            .enumerate()
+            .fold(0, |sum, (idx, n)| sum + n * 10i32.pow(idx as u32))
+    })
 }
 
 pub fn run() {
