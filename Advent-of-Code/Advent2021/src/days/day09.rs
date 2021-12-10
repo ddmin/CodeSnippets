@@ -13,36 +13,24 @@ fn parse_input(input: &str) -> HeightMap {
         .collect()
 }
 
-fn neighbors(grid: &[Vec<i32>], x: usize, y: usize) -> Vec<i32> {
-    let width: usize = grid[0].len() - 1;
-    let height: usize = grid.len() - 1;
+fn neighbors(grid: &[Vec<i32>], x: i32, y: i32) -> Vec<(i32, i32)> {
+    let width = (grid[0].len() - 1) as i32;
+    let height = (grid.len() - 1) as i32;
 
-    let mut neighbors = Vec::new();
-
-    // Adjacent Left Neighbor
-    if x != 0 {
-        neighbors.push(grid[y][x - 1]);
-    }
-
-    // Adjacent Right Neighbor
-    if x < width {
-        neighbors.push(grid[y][x + 1]);
-    }
-
-    // Adjacent Bottom Neighbor
-    if y < height {
-        neighbors.push(grid[y + 1][x]);
-    }
-
-    // Adjacent Top Neighbor
-    if y != 0 {
-        neighbors.push(grid[y - 1][x]);
-    }
-    neighbors
+    [
+        (x != 0, (x - 1, y)),
+        (x < width, (x + 1, y)),
+        (y != 0, (x, y - 1)),
+        (y < height, (x, y + 1)),
+    ]
+    .into_iter()
+    .filter(|(condition, _)| *condition)
+    .map(|(_, coordinate)| coordinate)
+    .collect()
 }
 
 fn is_lowest(n: i32, neighbors: &[i32]) -> bool {
-    neighbors.iter().find(|&&x| n >= x).is_none()
+    !neighbors.iter().any(|&x| n >= x)
 }
 
 pub fn part1(input: &str) -> i32 {
@@ -51,7 +39,15 @@ pub fn part1(input: &str) -> i32 {
     (0..heightmap.len())
         .map(|y| {
             (0..heightmap[y].len())
-                .filter(|&x| is_lowest(heightmap[y][x], &neighbors(&heightmap, x, y)))
+                .filter(|&x| {
+                    is_lowest(
+                        heightmap[y][x],
+                        &(neighbors(&heightmap, x as i32, y as i32)
+                            .iter()
+                            .map(|(x, y)| heightmap[*y as usize][*x as usize])
+                            .collect::<Vec<_>>()),
+                    )
+                })
                 .fold(0, |acc, x| acc + 1 + heightmap[y][x])
         })
         .sum()
