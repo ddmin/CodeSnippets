@@ -1,5 +1,6 @@
 const INPUT: &str = include_str!("../../inputs/day09.txt");
 
+type Coordinate = (i32, i32);
 type HeightMap = Vec<Vec<i32>>;
 
 fn parse_input(input: &str) -> HeightMap {
@@ -13,7 +14,8 @@ fn parse_input(input: &str) -> HeightMap {
         .collect()
 }
 
-fn neighbors(grid: &[Vec<i32>], x: i32, y: i32) -> Vec<(i32, i32)> {
+fn neighbors(grid: &[Vec<i32>], coordinate: Coordinate) -> Vec<Coordinate> {
+    let (x, y) = coordinate;
     let width = (grid[0].len() - 1) as i32;
     let height = (grid.len() - 1) as i32;
 
@@ -42,7 +44,7 @@ pub fn part1(input: &str) -> i32 {
                 .filter(|&x| {
                     is_lowest(
                         heightmap[y][x],
-                        &(neighbors(&heightmap, x as i32, y as i32)
+                        &(neighbors(&heightmap, (x as i32, y as i32))
                             .iter()
                             .map(|(x, y)| heightmap[*y as usize][*x as usize])
                             .collect::<Vec<_>>()),
