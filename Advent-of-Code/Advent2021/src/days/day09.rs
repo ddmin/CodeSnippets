@@ -108,7 +108,7 @@ pub fn part2(input: &str) -> i32 {
         })
         .collect::<Vec<_>>();
 
-    basins.sort();
+    basins.sort_unstable();
 
     basins.iter().rev().take(3).product::<usize>() as i32
 }

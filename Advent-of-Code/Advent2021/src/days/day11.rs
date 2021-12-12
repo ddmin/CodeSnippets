@@ -18,7 +18,7 @@ impl Grid {
             .lines()
             .map(|line| {
                 line.chars()
-                    .map(|c| c as u8 - '0' as u8)
+                    .map(|c| c as u8 - b'0')
                     .map(|n| n as i32)
                     .collect::<Vec<_>>()
             })

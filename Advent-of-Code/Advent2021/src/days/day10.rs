@@ -72,7 +72,7 @@ pub fn part2(input: &str) -> i64 {
         .filter(|&score| score >= 0)
         .collect::<Vec<_>>();
 
-    scores.sort();
+    scores.sort_unstable();
 
     scores[scores.len() / 2] as i64
 }
