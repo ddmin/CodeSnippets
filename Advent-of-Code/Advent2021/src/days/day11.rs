@@ -44,6 +44,21 @@ impl Grid {
         self.grid.get_mut(y).unwrap().get_mut(x).unwrap()
     }
 
+    fn flashes(&self) -> i32 {
+        self.flashes
+    }
+
+    fn all_flashed(&self) -> bool {
+        for y in 0..=self.height {
+            for x in 0..=self.width {
+                if self.get((x, y)) != 0 {
+                    return false;
+                }
+            }
+        }
+        true
+    }
+
     fn adjacent(&self, coordinate: Coordinate) -> Vec<Coordinate> {
         let (x, y) = (coordinate.0 as i32, coordinate.1 as i32);
         let (x_lower, x_upper, y_lower, y_upper) =
@@ -64,35 +79,39 @@ impl Grid {
         .collect()
     }
 
-    fn step(&mut self) {
-        let mut to_flash = Vec::new();
-        let mut flashed = HashSet::new();
-        for y in 0..=self.height {
-            for x in 0..=self.width {
-                *self.get_mut((x, y)) += 1;
-                if self.get((x, y)) > 9 {
-                    to_flash.push((x, y));
+    fn step(&mut self, n: usize) {
+        for _ in 0..n {
+            let mut to_flash = Vec::new();
+            let mut flashed = HashSet::new();
+            for y in 0..=self.height {
+                for x in 0..=self.width {
+                    *self.get_mut((x, y)) += 1;
+                    if self.get((x, y)) > 9 {
+                        to_flash.push((x, y));
+                    }
                 }
             }
-        }
 
-        while let Some(coordinate) = to_flash.pop() {
-            if !flashed.insert(coordinate) {
-                continue;
+            while let Some(coordinate) = to_flash.pop() {
+                if !flashed.insert(coordinate) {
+                    continue;
+                }
+
+                self.adjacent(coordinate)
+                    .into_iter()
+                    .for_each(|coordinate| {
+                        *self.get_mut(coordinate) += 1;
+                        if self.get(coordinate) > 9 {
+                            to_flash.push(coordinate);
+                        }
+                    });
             }
-            self.adjacent(coordinate)
-                .into_iter()
-                .for_each(|coordinate| {
-                    *self.get_mut(coordinate) += 1;
-                    if self.get(coordinate) > 9 {
-                        to_flash.push(coordinate);
-                    }
-                });
-        }
 
-        flashed
-            .iter()
-            .for_each(|&coordinate| *self.get_mut(coordinate) = 0);
+            flashed.iter().for_each(|&coordinate| {
+                self.flashes += 1;
+                *self.get_mut(coordinate) = 0;
+            });
+        }
     }
 }
 
@@ -111,19 +130,19 @@ impl fmt::Debug for Grid {
 
 pub fn part1(input: &str) -> i32 {
     let mut octopi = Grid::new(input);
-    println!("{:?}", octopi);
-
-    octopi.step();
-    println!("{:?}", octopi);
-
-    octopi.step();
-    println!("{:?}", octopi);
-    0
+    octopi.step(100);
+    octopi.flashes()
 }
 
-#[allow(unused)]
 pub fn part2(input: &str) -> i32 {
-    0
+    let mut octopi = Grid::new(input);
+
+    let mut count = 0;
+    while !octopi.all_flashed() {
+        octopi.step(1);
+        count += 1;
+    }
+    count
 }
 
 pub fn run() {
@@ -143,6 +162,6 @@ mod tests {
 
     #[test]
     fn example2() {
-        assert_eq!(part2(EXAMPLE), 0);
+        assert_eq!(part2(EXAMPLE), 195);
     }
 }
