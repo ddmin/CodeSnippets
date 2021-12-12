@@ -38,9 +38,43 @@ pub fn part1(input: &str) -> i32 {
     score
 }
 
-#[allow(unused)]
-pub fn part2(input: &str) -> i32 {
-    0
+pub fn part2(input: &str) -> i64 {
+    let mut scores = parse_input(input)
+        .into_iter()
+        .map(|chunk| {
+            let mut stack = Vec::new();
+
+            for c in chunk.chars() {
+                match c {
+                    '(' | '[' | '{' | '<' => stack.push(c),
+                    ')' | ']' | '}' | '>' => {
+                        let top = stack.pop().unwrap();
+                        if mirror(top) != c {
+                            return -1;
+                        }
+                    }
+                    _ => unreachable!(),
+                }
+            }
+            stack
+                .iter()
+                .rev()
+                .map(|&c| mirror(c))
+                .map(|c| {
+                    [')', ']', '}', '>']
+                        .into_iter()
+                        .position(|x| c == x)
+                        .unwrap()
+                        + 1
+                })
+                .fold(0, |acc, point| 5 * acc + point as i64)
+        })
+        .filter(|&score| score >= 0)
+        .collect::<Vec<_>>();
+
+    scores.sort();
+
+    scores[scores.len() / 2] as i64
 }
 
 pub fn run() {
@@ -60,6 +94,6 @@ mod tests {
 
     #[test]
     fn example2() {
-        assert_eq!(part2(EXAMPLE), 0);
+        assert_eq!(part2(EXAMPLE), 288957);
     }
 }
