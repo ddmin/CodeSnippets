@@ -76,7 +76,7 @@ impl Bingo {
     }
 }
 
-impl fmt::Display for Bingo {
+impl fmt::Debug for Bingo {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         for col in 0..self.board.len() {
             for row in 0..self.board[col].len() {
@@ -132,7 +132,7 @@ pub fn part1(input: &str) -> i32 {
             board.call_number(*num);
             match board.check_win() {
                 true => {
-                    println!("\nWinning Board:\n{}", board);
+                    println!("\nWinning Board:\n{:?}", board);
                     return num * board.sum_unguessed();
                 }
                 false => continue,
@@ -158,7 +158,7 @@ pub fn part2(input: &str) -> i32 {
                         won.push(idx);
                     }
                     if count == 0 {
-                        println!("\nLosing Board:\n{}", board);
+                        println!("\nLosing Board:\n{:?}", board);
                         return num * board.sum_unguessed();
                     }
                 }

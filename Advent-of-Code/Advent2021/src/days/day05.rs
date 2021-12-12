@@ -48,7 +48,7 @@ impl Grid {
     }
 }
 
-impl fmt::Display for Grid {
+impl fmt::Debug for Grid {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         for w in 0..=self.width {
             for h in 0..=self.height {

@@ -1,11 +1,14 @@
+use crate::*;
+use std::collections::HashSet;
+
 const INPUT: &str = include_str!("../../inputs/day11.txt");
 
-type Coordinate = (i32, i32);
+type Coordinate = (usize, usize);
 
 struct Grid {
     grid: Vec<Vec<i32>>,
-    height: i32,
-    width: i32,
+    height: usize,
+    width: usize,
     flashes: i32,
 }
 
@@ -21,7 +24,7 @@ impl Grid {
             })
             .collect::<Vec<_>>();
 
-        let (height, width) = (grid.len() as i32 - 1, grid[0].len() as i32 - 1);
+        let (height, width) = (grid.len() - 1, grid[0].len() - 1);
 
         Grid {
             grid,
@@ -31,9 +34,20 @@ impl Grid {
         }
     }
 
-    fn adjacent(&self, coordinate: Coordinate) -> Vec<Coordinate> {
+    fn get(&self, coordinate: Coordinate) -> i32 {
         let (x, y) = coordinate;
-        let (x_lower, x_upper, y_lower, y_upper) = (x > 0, x < self.width, y > 0, y < self.height);
+        self.grid[y][x]
+    }
+
+    fn get_mut(&mut self, coordinate: Coordinate) -> &mut i32 {
+        let (x, y) = coordinate;
+        self.grid.get_mut(y).unwrap().get_mut(x).unwrap()
+    }
+
+    fn adjacent(&self, coordinate: Coordinate) -> Vec<Coordinate> {
+        let (x, y) = (coordinate.0 as i32, coordinate.1 as i32);
+        let (x_lower, x_upper, y_lower, y_upper) =
+            (x > 0, x < self.width as i32, y > 0, y < self.height as i32);
         [
             (x_lower && y_lower, (x - 1, y - 1)),
             (y_lower, (x, y - 1)),
@@ -46,16 +60,64 @@ impl Grid {
         ]
         .into_iter()
         .filter(|(condition, _)| *condition)
-        .map(|(_, coordinate)| coordinate)
+        .map(|(_, (x, y))| (x as usize, y as usize))
         .collect()
     }
 
-    fn step(&mut self) {}
+    fn step(&mut self) {
+        let mut to_flash = Vec::new();
+        let mut flashed = HashSet::new();
+        for y in 0..=self.height {
+            for x in 0..=self.width {
+                *self.get_mut((x, y)) += 1;
+                if self.get((x, y)) > 9 {
+                    to_flash.push((x, y));
+                }
+            }
+        }
+
+        while let Some(coordinate) = to_flash.pop() {
+            if !flashed.insert(coordinate) {
+                continue;
+            }
+            self.adjacent(coordinate)
+                .into_iter()
+                .for_each(|coordinate| {
+                    *self.get_mut(coordinate) += 1;
+                    if self.get(coordinate) > 9 {
+                        to_flash.push(coordinate);
+                    }
+                });
+        }
+
+        flashed
+            .iter()
+            .for_each(|&coordinate| *self.get_mut(coordinate) = 0);
+    }
+}
+
+impl fmt::Debug for Grid {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        for rows in self.grid.iter() {
+            writeln!(
+                f,
+                "{}",
+                rows.iter().map(|n| n.to_string()).collect::<String>()
+            )?;
+        }
+        write!(f, "")
+    }
 }
 
 pub fn part1(input: &str) -> i32 {
     let mut octopi = Grid::new(input);
-    println!("{:?}", octopi.grid);
+    println!("{:?}", octopi);
+
+    octopi.step();
+    println!("{:?}", octopi);
+
+    octopi.step();
+    println!("{:?}", octopi);
     0
 }
 
