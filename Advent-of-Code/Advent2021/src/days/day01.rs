@@ -1,9 +1,11 @@
-use crate::*;
-
 const INPUT: &str = include_str!("../../inputs/day01.txt");
 
+fn parse_input(input: &str) -> Vec<i32> {
+    input.lines().map(|n| n.parse().unwrap()).collect()
+}
+
 pub fn part1(input: &str) -> i32 {
-    let input = lines_to_i32(input);
+    let input = parse_input(input);
     let (base_iter, cmp_iter) = (input.iter(), input.iter().skip(1));
 
     // base: 0 1 2 3 4 ...
@@ -18,7 +20,7 @@ pub fn part1(input: &str) -> i32 {
 }
 
 pub fn part2(input: &str) -> i32 {
-    let input = lines_to_i32(input);
+    let input = parse_input(input);
     let (base_iter, cmp_iter) = (input.iter(), input.iter().skip(3));
 
     // A

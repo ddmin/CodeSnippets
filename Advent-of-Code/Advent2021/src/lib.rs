@@ -11,13 +11,15 @@ pub fn bifurcate<'a>(input: &'a str, split: &str) -> Vec<(&'a str, &'a str)> {
 }
 
 #[allow(unused)]
-fn split(input: &str, delimiter: &str) -> Vec<i32> {
-    input.split(delimiter).map(|n| n.parse().unwrap()).collect()
-}
-
-#[allow(unused)]
-fn lines_to_i32(input: &str) -> Vec<i32> {
-    input.lines().map(|n| n.parse().unwrap()).collect()
+fn split<T>(input: &str, delimiter: &str) -> Vec<T>
+where
+    T: std::str::FromStr,
+    T::Err: std::fmt::Debug,
+{
+    input
+        .split(delimiter)
+        .map(|n| n.parse::<T>().unwrap())
+        .collect()
 }
 
 pub fn run_days(days: Vec<usize>) {
