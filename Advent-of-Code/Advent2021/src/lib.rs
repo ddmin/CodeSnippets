@@ -1,4 +1,5 @@
 pub mod days;
+pub use colored::*;
 pub use std::fmt;
 pub use std::fs;
 
@@ -24,7 +25,8 @@ where
 
 pub fn run_days(days: Vec<usize>) {
     for day in days {
-        println!("Day {}", day);
+        let now = std::time::Instant::now();
+        println!("{}", format!("🎄 Day {} 🎄", day).green());
         match day {
             1 => days::day01::run(),
             2 => days::day02::run(),
@@ -53,6 +55,8 @@ pub fn run_days(days: Vec<usize>) {
             25 => days::day25::run(),
             _ => (),
         }
+        let time = now.elapsed().as_millis();
+        println!("{}", format!("Time: {}ms", time).yellow());
         println!();
     }
 }
