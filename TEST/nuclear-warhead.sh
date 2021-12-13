@@ -3,12 +3,16 @@
 GROUND_ZERO="/tmp/nuclear-fallout"
 NUMBERS="$GROUND_ZERO/files/numbers"
 WORDS="$GROUND_ZERO/files/words"
-TETANUS="$GROUND_ZERO/rust/rust-playground"
+TETANUS="$GROUND_ZERO/rust-playground"
 SNAKES="$GROUND_ZERO/py/"
 SPIDERS="$GROUND_ZERO/web/"
 
 echo "Detonating..."
 rm -rf $GROUND_ZERO
+
+RED=`tput setaf 1`
+RESET=`tput sgr0`
+echo "${RED}"
 
 cat << "EOF"
                          ____
@@ -24,6 +28,8 @@ cat << "EOF"
                          <|i::|i|`.
                         (` ^'"`-' ")
 EOF
+
+echo "${RESET}"
 
 echo "$GROUND_ZERO has been eliminated."
 
