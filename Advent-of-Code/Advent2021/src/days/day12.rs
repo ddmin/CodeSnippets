@@ -1,5 +1,5 @@
 use crate::*;
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::str::FromStr;
 
 const INPUT: &str = include_str!("../../inputs/day12.txt");
@@ -8,6 +8,7 @@ fn is_lowercase(s: &str) -> bool {
     s.chars().map(|c| ('a'..='z').contains(&c)).all(|bool| bool)
 }
 
+#[derive(PartialEq, Eq, Hash, Clone)]
 enum Cave {
     Start,
     Big(String),
@@ -33,29 +34,76 @@ impl FromStr for Cave {
             "start" => Ok(Cave::Start),
             "end" => Ok(Cave::End),
             s if is_lowercase(s) => Ok(Cave::Small(s.to_string())),
-            s if !is_lowercase(s) => Ok(Cave::Big(s.to_string())),
-            _ => unreachable!(),
+            s => Ok(Cave::Big(s.to_string())),
         }
     }
 }
 
-fn parse_input(input: &str) -> Vec<(Cave, Cave)> {
+type CaveMap = HashMap<Cave, HashSet<Cave>>;
+
+fn parse_input(input: &str) -> CaveMap {
     let input = bifurcate(input, "-");
-    input
+    let connections = input.iter().collect::<HashSet<_>>();
+
+    let mut map = HashMap::new();
+    for (cave, connected) in connections {
+        let entry = map
+            .entry(Cave::from_str(cave).unwrap())
+            .or_insert(HashSet::new());
+        (*entry).insert(Cave::from_str(connected).unwrap());
+
+        let entry = map
+            .entry(Cave::from_str(connected).unwrap())
+            .or_insert(HashSet::new());
+        (*entry).insert(Cave::from_str(cave).unwrap());
+    }
+    map
+}
+
+fn total_paths(current: &Cave, path: &mut Vec<Cave>, map: &CaveMap, mut extra_time: bool) -> i32 {
+    // if you reach the end, the path is valid
+    if let Cave::End = current {
+        return 1;
+    }
+
+    if path.contains(&current) {
+        if let Cave::Start = current {
+            // after leaving the starting point, you can't return to it
+            return 0;
+        } else if let Cave::Small(_) = current {
+            // Part 1: can't return to small caves
+            if extra_time {
+                return 0;
+            }
+            // Part 2: you have time to visit a small cave once
+            //         after visiting small cave once,
+            //         you can no longer return to small caves.
+            extra_time = true;
+        }
+    }
+
+    // add current cave to path
+    path.push(current.clone());
+
+    let total = map
+        .get(&current)
+        .unwrap()
         .iter()
-        .map(|(a, b)| (Cave::from_str(*a).unwrap(), Cave::from_str(*b).unwrap()))
-        .collect()
+        .map(|cave| total_paths(cave, path, map, extra_time))
+        .sum();
+
+    path.pop();
+    total
 }
 
 pub fn part1(input: &str) -> i32 {
     let connections = parse_input(input);
-    println!("{:?}", connections);
-    0
+    total_paths(&Cave::Start, &mut Vec::new(), &connections, true)
 }
 
-#[allow(unused)]
 pub fn part2(input: &str) -> i32 {
-    0
+    let connections = parse_input(input);
+    total_paths(&Cave::Start, &mut Vec::new(), &connections, false)
 }
 
 pub fn run() {
@@ -71,22 +119,16 @@ mod tests {
     const EXAMPLE_3: &str = include_str!("../../examples/day12-3.txt");
 
     #[test]
-    fn example1_1() {
+    fn example1() {
         assert_eq!(part1(EXAMPLE_1), 10);
-    }
-
-    #[test]
-    fn example1_2() {
         assert_eq!(part1(EXAMPLE_2), 19);
-    }
-
-    #[test]
-    fn example1_3() {
         assert_eq!(part1(EXAMPLE_3), 226);
     }
 
     #[test]
     fn example2() {
-        assert_eq!(part2(EXAMPLE_1), 0);
+        assert_eq!(part2(EXAMPLE_1), 36);
+        assert_eq!(part2(EXAMPLE_2), 103);
+        assert_eq!(part2(EXAMPLE_3), 3509);
     }
 }
