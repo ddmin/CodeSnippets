@@ -49,12 +49,12 @@ fn parse_input(input: &str) -> CaveMap {
     for (cave, connected) in connections {
         let entry = map
             .entry(Cave::from_str(cave).unwrap())
-            .or_insert(HashSet::new());
+            .or_insert_with(HashSet::new);
         (*entry).insert(Cave::from_str(connected).unwrap());
 
         let entry = map
             .entry(Cave::from_str(connected).unwrap())
-            .or_insert(HashSet::new());
+            .or_insert_with(HashSet::new);
         (*entry).insert(Cave::from_str(cave).unwrap());
     }
     map
@@ -66,7 +66,7 @@ fn total_paths(current: &Cave, path: &mut Vec<Cave>, map: &CaveMap, mut extra_ti
         return 1;
     }
 
-    if path.contains(&current) {
+    if path.contains(current) {
         if let Cave::Start = current {
             // after leaving the starting point, you can't return to it
             return 0;
@@ -86,7 +86,7 @@ fn total_paths(current: &Cave, path: &mut Vec<Cave>, map: &CaveMap, mut extra_ti
     path.push(current.clone());
 
     let total = map
-        .get(&current)
+        .get(current)
         .unwrap()
         .iter()
         .map(|cave| total_paths(cave, path, map, extra_time))
