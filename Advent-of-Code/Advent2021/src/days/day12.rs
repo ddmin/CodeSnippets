@@ -71,14 +71,14 @@ fn total_paths(current: &Cave, path: &mut Vec<Cave>, map: &CaveMap, mut extra_ti
             // after leaving the starting point, you can't return to it
             return 0;
         } else if let Cave::Small(_) = current {
-            // Part 1: can't return to small caves
-            if extra_time {
+            // Part 1: there is no time to return to small caves
+            if !extra_time {
                 return 0;
             }
             // Part 2: you have time to visit a small cave once
             //         after visiting small cave once,
             //         you can no longer return to small caves.
-            extra_time = true;
+            extra_time = false;
         }
     }
 
@@ -98,12 +98,12 @@ fn total_paths(current: &Cave, path: &mut Vec<Cave>, map: &CaveMap, mut extra_ti
 
 pub fn part1(input: &str) -> i32 {
     let connections = parse_input(input);
-    total_paths(&Cave::Start, &mut Vec::new(), &connections, true)
+    total_paths(&Cave::Start, &mut Vec::new(), &connections, false)
 }
 
 pub fn part2(input: &str) -> i32 {
     let connections = parse_input(input);
-    total_paths(&Cave::Start, &mut Vec::new(), &connections, false)
+    total_paths(&Cave::Start, &mut Vec::new(), &connections, true)
 }
 
 pub fn run() {
