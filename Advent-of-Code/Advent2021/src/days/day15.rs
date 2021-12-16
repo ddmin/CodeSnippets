@@ -77,7 +77,7 @@ fn find_neighbors((x, y): Coordinate, cave: &Cave) -> Vec<Coordinate> {
     .collect::<Vec<_>>()
 }
 
-// use Dijikstra's Algorithm to find the path with the lowest risk level.
+// use Dijkstra's Algorithm to find the path with the lowest risk level.
 fn find_lowest_risk(cave: &Cave, neighbors: &HashMap<Coordinate, Vec<Coordinate>>) -> usize {
     // coordinates to visit next
     let mut to_visit = BinaryHeap::new();

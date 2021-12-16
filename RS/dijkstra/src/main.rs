@@ -28,7 +28,7 @@ struct Edge {
     cost: usize,
 }
 
-fn dijikstra(adj_list: &Vec<Vec<Edge>>, start: usize, goal: usize) -> Option<usize> {
+fn dijkstra(adj_list: &Vec<Vec<Edge>>, start: usize, goal: usize) -> Option<usize> {
     // shortest distance to position
     let mut shortest_dist = (0..adj_list.len()).map(|_| usize::MAX).collect::<Vec<_>>();
 
@@ -87,15 +87,15 @@ fn main() {
         vec![],
     ];
 
-    assert_eq!(dijikstra(&graph, 0, 1), Some(1));
-    assert_eq!(dijikstra(&graph, 0, 3), Some(3));
-    assert_eq!(dijikstra(&graph, 3, 0), Some(7));
-    assert_eq!(dijikstra(&graph, 0, 4), Some(5));
-    assert_eq!(dijikstra(&graph, 4, 0), None);
+    assert_eq!(dijkstra(&graph, 0, 1), Some(1));
+    assert_eq!(dijkstra(&graph, 0, 3), Some(3));
+    assert_eq!(dijkstra(&graph, 3, 0), Some(7));
+    assert_eq!(dijkstra(&graph, 0, 4), Some(5));
+    assert_eq!(dijkstra(&graph, 4, 0), None);
 
-    println!("Distance from 0 to 1: {:?}", dijikstra(&graph, 0, 1));
-    println!("Distance from 0 to 3: {:?}", dijikstra(&graph, 0, 3));
-    println!("Distance from 3 to 0: {:?}", dijikstra(&graph, 3, 0));
-    println!("Distance from 0 to 4: {:?}", dijikstra(&graph, 0, 4));
-    println!("Distance from 4 to 0: {:?}", dijikstra(&graph, 4, 0));
+    println!("Distance from 0 to 1: {:?}", dijkstra(&graph, 0, 1));
+    println!("Distance from 0 to 3: {:?}", dijkstra(&graph, 0, 3));
+    println!("Distance from 3 to 0: {:?}", dijkstra(&graph, 3, 0));
+    println!("Distance from 0 to 4: {:?}", dijkstra(&graph, 0, 4));
+    println!("Distance from 4 to 0: {:?}", dijkstra(&graph, 4, 0));
 }
