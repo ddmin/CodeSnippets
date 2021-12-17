@@ -1,6 +1,5 @@
 use crate::*;
 use std::collections::{HashMap, HashSet};
-use std::str::FromStr;
 
 const INPUT: &str = include_str!("../../inputs/day12.txt");
 

@@ -2,6 +2,8 @@ pub mod days;
 pub use colored::*;
 pub use std::fmt;
 pub use std::fs;
+pub use std::str::FromStr;
+pub use std::ops::Deref;
 
 #[allow(unused)]
 pub fn bifurcate<'a>(input: &'a str, split: &str) -> Vec<(&'a str, &'a str)> {
@@ -14,8 +16,8 @@ pub fn bifurcate<'a>(input: &'a str, split: &str) -> Vec<(&'a str, &'a str)> {
 #[allow(unused)]
 fn split<T>(input: &str, delimiter: &str) -> Vec<T>
 where
-    T: std::str::FromStr,
-    T::Err: std::fmt::Debug,
+    T: FromStr,
+    T::Err: fmt::Debug,
 {
     input
         .split(delimiter)

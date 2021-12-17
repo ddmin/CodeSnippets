@@ -44,7 +44,7 @@ fn parse_input(input: &str) -> Cave {
         .collect::<Vec<_>>()
 }
 
-fn full_map(cave: &Cave) -> Cave {
+fn full_map(cave: &[Vec<usize>]) -> Cave {
     let mut entire_cave = Vec::new();
     for y in 0..cave.len() * 5 {
         entire_cave.push(Vec::new());
@@ -64,7 +64,7 @@ fn full_map(cave: &Cave) -> Cave {
     entire_cave
 }
 
-fn find_neighbors((x, y): Coordinate, cave: &Cave) -> Vec<Coordinate> {
+fn find_neighbors((x, y): Coordinate, cave: &[Vec<usize>]) -> Vec<Coordinate> {
     [
         (x < cave[0].len() - 1, (x as i32 + 1, y as i32)),
         (y < cave.len() - 1, (x as i32, y as i32 + 1)),
@@ -78,15 +78,18 @@ fn find_neighbors((x, y): Coordinate, cave: &Cave) -> Vec<Coordinate> {
 }
 
 // use Dijkstra's Algorithm to find the path with the lowest risk level.
-fn find_lowest_risk(cave: &Cave, neighbors: &HashMap<Coordinate, Vec<Coordinate>>) -> usize {
+fn find_lowest_risk(
+    cave: &[Vec<usize>],
+    neighbors: &HashMap<Coordinate, Vec<Coordinate>>,
+) -> usize {
     // coordinates to visit next
     let mut to_visit = BinaryHeap::new();
 
     // hashmap of the accrued risk levels to a coordinate
     let mut risk_levels = HashMap::new();
 
-    for y in 0..cave.len() {
-        for x in 0..cave[y].len() {
+    for (y, row) in cave.iter().enumerate() {
+        for x in 0..row.len() {
             risk_levels.insert((x, y), usize::MAX);
         }
     }
