@@ -46,15 +46,6 @@ pub fn run_days(days: Vec<usize>) {
             14 => days::day14::run(),
             15 => days::day15::run(),
             16 => days::day16::run(),
-            17 => days::day17::run(),
-            18 => days::day18::run(),
-            19 => days::day19::run(),
-            20 => days::day20::run(),
-            21 => days::day21::run(),
-            22 => days::day22::run(),
-            23 => days::day23::run(),
-            24 => days::day24::run(),
-            25 => days::day25::run(),
             _ => (),
         }
         let time = now.elapsed().as_millis();
