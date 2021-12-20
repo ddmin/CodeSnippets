@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ls -1 |
+grep -iv "download\|virtualbox" |
+xargs du -sh
