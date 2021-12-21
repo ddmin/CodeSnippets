@@ -2,9 +2,10 @@
 
 - Advent of Code
 - Project Euler
-- Data Structures
-    - Go
-    - Rust
+- Fundamentals
+    - Data Structures and Algorithms
+        - Go
+        - Rust
 - Snippets / Half-Baked Projects
     - Go
     - Python

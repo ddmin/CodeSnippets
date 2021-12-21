@@ -4,7 +4,7 @@ use std::fmt;
 ///
 /// # Examples
 /// ```
-/// use fundamentals::lists::List;
+/// use list::lists::List;
 ///
 /// let mut list = List::new();
 /// list.push(1);
@@ -48,7 +48,7 @@ where
     /// Constructs a new, empty List<T>.
     /// # Examples
     /// ```
-    /// use fundamentals::lists::List;
+    /// use list::lists::List;
     /// let mut list: List<i32> = List::new();
     /// ```
     pub fn new() -> List<T> {
@@ -62,8 +62,8 @@ where
     /// Return the number of elements inside the list.
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let list = list![1, 2, 3];
     /// assert_eq!(list.size(), 3);
@@ -77,8 +77,8 @@ where
     ///
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let list = list![1, 2, 3, 4, 5];
     /// assert_eq!(Some(2), list.get(1));
@@ -98,8 +98,8 @@ where
     ///
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let mut list = list![1, 2, 3, 4, 5];
     /// list.set(1, 6);
@@ -124,8 +124,8 @@ where
     /// Appends an element to the back of the list.
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let mut list = list![1, 2];
     /// list.push(3);
@@ -153,8 +153,8 @@ where
     ///
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let mut list = list![1, 2, 3];
     /// list.insert(1, 4);
@@ -199,8 +199,8 @@ where
     ///
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let mut list = list![1, 2, 3];
     /// assert_eq!(list.pop(), Some(3));
@@ -222,8 +222,8 @@ where
     ///
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let mut list = list![1, 2, 3];
     /// list.remove(1);
@@ -246,8 +246,8 @@ where
     ///
     /// # Examples
     /// ```
-    /// use fundamentals::list;
-    /// use fundamentals::lists::List;
+    /// use list::list;
+    /// use list::lists::List;
     ///
     /// let mut list = list![1, 2, 3];
     /// list.reverse();
