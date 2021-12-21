@@ -1,58 +1,31 @@
-use std::collections::HashMap;
-use std::sync::Arc;
-use std::sync::Mutex;
+use std::ops::{FnOnce, RangeInclusive};
 use std::thread;
+use std::thread::JoinHandle;
+use std::time::Instant;
 
-type PrimeTable = Arc<Mutex<HashMap<usize, bool>>>;
+const LIMIT: usize = 100000;
+const MAX_THREADS: usize = 4;
 
-pub struct Worker {
-    n: usize,
-    hash_table: PrimeTable,
+#[derive(Debug)]
+enum Divisibility {
+    Prime(usize),
+    Composite(usize),
 }
 
-impl Worker {
-    fn new(n: usize, hash_table: PrimeTable) -> Worker {
-        Worker { n, hash_table }
-    }
-
-    fn check_prime(&self) {
-        let mut hash_table = self.hash_table.lock().unwrap();
-        if is_prime(self.n) {
-            hash_table.insert(self.n, true);
-        } else {
-            hash_table.insert(self.n, false);
+impl Divisibility {
+    fn from(n: usize) -> Divisibility {
+        match is_prime(n) {
+            true => Divisibility::Prime(n),
+            false => Divisibility::Composite(n),
         }
     }
 }
 
-fn multi_threaded(n: usize) {
-    let primes = HashMap::<usize, bool>::new();
-    let primes = Arc::new(Mutex::new(primes));
-    let mut threads = Vec::<thread::JoinHandle<()>>::new();
-
-    for i in 2..n + 1 {
-        let worker = Worker::new(i, Arc::clone(&primes));
-        let t = thread::spawn(move || worker.check_prime());
-        threads.push(t);
-    }
-
-    for thread in threads {
-        thread.join().unwrap();
-    }
-
-    let mut primes = primes.lock().unwrap();
-    let mut primes: Vec<(usize, bool)> = primes.drain().collect();
-    primes.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap());
-
-    for (a, b) in primes.iter() {
-        println!("{}: {}", a, b);
-    }
-}
-
-fn single_threaded(n: usize) {
-    for i in 2..n + 1 {
-        println!("{}: {}", i, is_prime(i));
-    }
+fn time<F: FnOnce(usize) -> Vec<Divisibility>>(f: F, arg: usize) {
+    let now = Instant::now();
+    let result = f(arg);
+    let time = now.elapsed().as_millis();
+    println!("Time: {}ms", time);
 }
 
 fn is_prime(n: usize) -> bool {
@@ -66,8 +39,54 @@ fn is_prime(n: usize) -> bool {
     true
 }
 
+fn divvy_task(n: usize, workers: usize) -> Vec<RangeInclusive<usize>> {
+    let mut current = 2;
+    let increment = (n - 2) / workers;
+    let mut leftovers = (n - 2) % workers;
+
+    let mut work_list = Vec::new();
+    for _ in 0..workers - 1 {
+        if leftovers > 0 {
+            work_list.push(current..=current + increment + 1);
+            current += increment + 2;
+            leftovers -= 1;
+        } else {
+            work_list.push(current..=current + increment);
+            current += increment + 1;
+        }
+    }
+
+    work_list.push(current..=n);
+    work_list
+}
+
+fn single_threaded(n: usize) -> Vec<Divisibility> {
+    (2..=n).map(|n| Divisibility::from(n)).collect()
+}
+
+fn multi_threaded(n: usize) -> Vec<Divisibility> {
+    let mut threads = Vec::new();
+    let work_list = divvy_task(n, MAX_THREADS);
+
+    for range in work_list {
+        threads.push(thread::spawn(move || {
+            range.map(|n| Divisibility::from(n)).collect()
+        }));
+    }
+
+    threads
+        .into_iter()
+        .map(|thread: JoinHandle<Vec<Divisibility>>| thread.join().unwrap())
+        .flatten()
+        .collect::<Vec<Divisibility>>()
+}
+
 fn main() {
-    let n = 10000;
-    single_threaded(n);
-    multi_threaded(n);
+    println!("Multi Threaded");
+    time(multi_threaded, LIMIT);
+
+    println!();
+
+    println!("Single Threaded");
+    time(single_threaded, LIMIT);
 }
