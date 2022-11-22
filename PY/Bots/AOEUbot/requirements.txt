@@ -1,4 +1,4 @@
-Pillow==6.0.0
+Pillow==9.3.0
 Pillow-SIMD==5.3.0.post1
 PyAutoGUI==0.9.42
 pytesseract==0.2.6
