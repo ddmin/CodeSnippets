@@ -1,0 +1,35 @@
+#  _               _                         __ _ _
+# | |__   __ _ ___(_) ___   _ __  _ __ ___  / _(_) | ___
+# | '_ \ / _` / __| |/ __| | '_ \| '__/ _ \| |_| | |/ _ \
+# | |_) | (_| \__ \ | (__  | |_) | | | (_) |  _| | |  __/
+# |_.__/ \__,_|___/_|\___| | .__/|_|  \___/|_| |_|_|\___|
+#                          |_|
+
+# source bashrc
+# if [ -n "$BASH_VERSION" ]; then
+#     if [ -f "$HOME/.bashrc" ]; then
+#         . "$HOME/.bashrc"
+#     fi
+# fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Path
+export PATH=$PATH:$HOME/.cargo/bin
+
+# vim man pages
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u NONE --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+
+alias vim='nvim'
+
+export PATH
+
+export BROWSER=/usr/bin/brave

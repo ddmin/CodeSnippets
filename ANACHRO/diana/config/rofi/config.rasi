@@ -1,0 +1,26 @@
+configuration {
+    modi: "drun,window,ssh";
+    columns: 3;
+    eh: 1;
+    fullscreen: false;
+    font: "Noto Sans Bold 18";
+    show-icons: true;
+    icon-theme: "Papirus";
+    drun-show-actions: false;
+    drun-display-format: "{name}";
+    disable-history: true;
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    auto-select: false;
+    terminal: "kitty";
+    kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+    kb-row-down: "Down,Control+j";
+    kb-row-left: "Control+h";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-to-eol: "Control+Shift+e";
+    kb-mode-next: "Shift+Right,Control+Tab";
+    kb-mode-previous: "Shift+Left,Control+Shift+Tab";
+    kb-remove-char-back: "BackSpace";
+}
+
+@theme "~/.config/rofi/theme.rasi"
