@@ -217,9 +217,6 @@ def main():
             if re.search(r'^http', img) is None:
                 img = f'{directory}/{img}'
             wget(img, img_save_dir)
-            # REMOVE
-            break
-            # REMOVE
 
 
 if __name__ == '__main__':
