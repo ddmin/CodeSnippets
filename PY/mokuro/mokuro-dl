@@ -68,7 +68,7 @@ def get_images_htmls(anchors):
 def safe_input():
     try:
         inp = input()
-    except EOFError:
+    except:
         print()
         exit()
 
@@ -80,6 +80,10 @@ def sublist(lst, indx):
     # download all if empty
     if not indx:
         return lst
+
+    # if 0 select none
+    if indx == '0':
+        return []
 
     sublist = []
 
@@ -176,23 +180,39 @@ def main():
     # collect all image directories and mokuro html files
     all_image_directories, all_mokuro_htmls = get_images_htmls(anchors)
 
-    print(f'[bold yellow]Manga: {title}[/bold yellow]')
+    # mokuro html selection
+    print(f'[bold yellow]Mokuro: {title}[/bold yellow]')
     for n, mokuro_html in enumerate(all_mokuro_htmls):
         print(f'[bold cyan]  ({str(n+1).zfill(2)}) {unquote(mokuro_html)}[/bold cyan]')
 
-    print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
+    print("[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]", end='')
     indx = safe_input()
     print()
 
     mokuro_htmls = sublist(all_mokuro_htmls, indx)
-    while not mokuro_htmls:
+    while not mokuro_htmls and not len(mokuro_htmls) == 0:
         print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
         indx = safe_input()
         print()
 
         mokuro_htmls = sublist(all_mokuro_htmls, indx)
 
+    # image gallery selection
+    print(f'[bold yellow]Manga: {title}[/bold yellow]')
+    for n, image_directory in enumerate(all_image_directories):
+        print(f'[bold cyan]  ({str(n+1).zfill(2)}) {unquote(image_directory)}[/bold cyan]')
+
+    print("[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]", end='')
+    indx = safe_input()
+    print()
+
     image_directories = sublist(all_image_directories, indx)
+    while not image_directories and not len(image_directories) == 0:
+        print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
+        indx = safe_input()
+        print()
+
+        image_directories = sublist(all_image_directories, indx)
 
     # create save directory (./{title})
     create_directory(title)
