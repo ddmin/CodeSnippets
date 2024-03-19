@@ -1,0 +1,11 @@
+#!/bin/bash
+# modorun: run recent command from bash_history  in new terminal
+
+TERMINAL="xfce4-terminal"
+
+COMMAND=`cat $HOME/.bash_history | tail -30 | uniq | tac | rofi -dmenu -p "modorun" 2> /dev/null`
+
+[[ -z $COMMAND ]] && exit
+
+echo $COMMAND >> $HOME/.bash_history
+$TERMINAL --hide-menubar --hide-toolbar --hide-scrollbar --command="$COMMAND"

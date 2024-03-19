@@ -64,6 +64,16 @@ def get_images_htmls(anchors):
 
     return all_image_directories, all_mokuro_htmls
 
+# input EOF error handling
+def safe_input():
+    try:
+        inp = input()
+    except EOFError:
+        print()
+        exit()
+
+    return inp
+
 
 # return sublist based on indx provided by user
 def sublist(lst, indx):
@@ -142,11 +152,11 @@ def sublist(lst, indx):
 # main tui loop
 def main():
     print("[bold white]mokuro.moe URL:\n> [/bold white]", end='')
-    main_url = input()
+    main_url = safe_input()
     while not is_valid_mokuro_url(main_url):
         print("[bold red]\nPlease enter a valid URL.\n[/bold red]")
         print("[bold white]mokuro.moe URL:\n> [/bold white]", end='')
-        main_url = input()
+        main_url = safe_input()
 
     print(f"[bold white]\nSending request to mokuro.moe ...... [/bold white]", end='')
     sys.stdout.flush()
@@ -171,13 +181,13 @@ def main():
         print(f'[bold cyan]  ({str(n+1).zfill(2)}) {unquote(mokuro_html)}[/bold cyan]')
 
     print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
-    indx = input()
+    indx = safe_input()
     print()
 
     mokuro_htmls = sublist(all_mokuro_htmls, indx)
     while not mokuro_htmls:
         print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
-        indx = input()
+        indx = safe_input()
         print()
 
         mokuro_htmls = sublist(all_mokuro_htmls, indx)
