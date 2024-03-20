@@ -59,8 +59,11 @@ def get_images_htmls(anchors):
     all_image_directories = list(map(lambda x: x.get('href'), all_image_directories))
     all_mokuro_htmls = list(map(lambda x: x.get('href'), all_mokuro_htmls))
 
-    # remove backlink (first) and _ocr/ (last)
-    all_image_directories = all_image_directories[1:-1]
+    # remove backlink and _ocr/
+    if '../' in all_image_directories:
+        all_image_directories.remove('../')
+    if '_ocr/' in all_image_directories:
+        all_image_directories.remove('_ocr/')
 
     return all_image_directories, all_mokuro_htmls
 
