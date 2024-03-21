@@ -1,0 +1,9 @@
+#!/bin/bash
+
+BOOKMARKS="$HOME/.local/drive/bookmarks"
+
+bookmark=`ls -1 $BOOKMARKS/* | tr '\n' '\0' | xargs -0 -n 1 basename | rofi -dmenu -p "bookmarks" 2> /dev/null`
+
+[[ -z $bookmark ]] && exit
+
+cat "$BOOKMARKS/$bookmark" | xsel -b
