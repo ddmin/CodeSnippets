@@ -1,0 +1,88 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="checkbox"],
+input[type="datetime-local"],
+input[type="number"],
+button {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+}
+
+#countdown {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+}
+
+/* Color Scheme */
+.container {
+    background-color: #f4f4f8;
+    color: #333;
+}
+
+button {
+    background-color: #6a1b9a; /* Purple */
+}
+
+button:hover {
+    background-color: #9c27b0; /* Light Purple */
+}
+
+#countdown {
+    color: #6a1b9a; /* Purple */
+}
+
+.form-group {
+    display: flex;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 0px;
+}
