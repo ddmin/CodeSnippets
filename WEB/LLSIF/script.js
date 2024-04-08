@@ -28,9 +28,9 @@ function calculatePoints() {
     document.getElementById('result').innerText = `LP Total: ${totalPoints}`;
 
     // point countdown calculation
-    let pointsNeeded = maxPoints - totalPoints;
+    let pointsNeeded = maxPoints - initialPoints;
     let minutesToFull = pointsNeeded * 5;
-    let fullTime = new Date(startTime.getTime() + minutesToFull * 60000);
+    let fullTime = new Date(startTime.getTime() + minutesToFull * 60 * 1000);
 
     document.getElementById('countdown-date').innerText = `LP will be full at: ${fullTime.toLocaleString()}`;
     document.getElementById('countdown-date').style.display = 'block';
