@@ -59,7 +59,6 @@ def get_images_htmls(anchors):
 
         # only mobile html
         elif re.search(r'\.mobile\.html$', a.get('href')) is not None:
-            print(a.get('href')) # REMOVE
             all_mobile_htmls.append(a)
 
     # turn links (Tag) into strings
