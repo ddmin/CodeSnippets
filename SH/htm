@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# htm: unpack zip of webp into jpg
+
+set -e
+
+if [ $# -lt 1 ]; then
+    echo "Please provide a zip file."
+    echo "USAGE: $(basename $0) [ZIP]"
+    exit
+fi
+
+zipfull="$@"
+filename=${zipfull%.*}
+
+mkdir -p "$filename"
+
+if [ "${zipfull##*.}" != "zip" ]; then
+    echo "Please provide a zip file."
+    echo "USAGE: $(basename $0) [ZIP]"
+    exit
+fi
+
+# temporary directory
+tempdir="/tmp/htm-convert"
+rm -rf "$tempdir"
+mkdir -p "$tempdir"
+
+unzip "$zipfull" -d "$tempdir"
+
+mogrify -verbose -format jpg -path "$filename" "$tempdir/*.webp"
