@@ -1,0 +1,46 @@
+#!/bin/bash
+# cbz2jxl: convert cbz images to jxl then repack into cbz
+
+EFFORT=9
+QUALITY=100
+
+set -e
+
+if [ $# -lt 1 ]; then
+    echo "Please provide a cbz file."
+    echo "USAGE: $(basename $0) [CBZ]"
+    exit
+fi
+
+cbz="$@"
+filename=${cbz%.*}
+
+if [ "${cbz##*.}" != "cbz" ]; then
+    echo "Please provide a cbz file."
+    echo "USAGE: $(basename $0) [CBZ]"
+    exit
+fi
+
+# temporary directory
+tempdir="/tmp/cbz2jxl"
+
+rm -rf $tempdir
+mkdir -p $tempdir
+mkdir -p "$tempdir/jxl"
+
+unzip "$cbz" -d "$tempdir"
+echo ""
+
+for img in $(find "$tempdir" -maxdepth 1 \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \));
+do
+    imgname=$(basename $img)
+    imgname=${imgname%.*}
+    cjxl --lossless_jpeg=1 -e $EFFORT -q $QUALITY "$img" "$tempdir/jxl/${imgname%.*}.jxl"
+    echo ""
+done
+
+IFS=$'\n'
+zip "$filename.jxl.zip" $(find "$tempdir/jxl" -maxdepth 1 -name "*.jxl")
+unset IFS
+
+mv "$filename.jxl.zip" "$filename.jxl.cbz"
