@@ -1,0 +1,15 @@
+#!/bin/bash
+# note2pdf: compile markdown to pdf
+
+filename=$1
+target="$(dirname "${filename}")/pdf"
+output="$(basename "$filename" .note).pdf"
+
+mkdir -p $target
+
+pandoc \
+    -V geometry:margin=1in \
+    --pdf-engine=xelatex \
+    -o "$target/$output" "$filename" &
+
+echo "$target/$output" > /tmp/lasteditpdf.txt

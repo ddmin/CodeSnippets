@@ -1,0 +1,4 @@
+#!/bin/bash
+# openrecent: open last edited document with zathura
+
+zathura $(cat /tmp/lasteditpdf.txt)

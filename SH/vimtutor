@@ -1,0 +1,9 @@
+#!/bin/bash
+# vimtutor: vimtutor with ~/.vimrc
+
+VIMTUTOR="$HOME/Code/Bash/files/vimtutor"
+TUTOR_COPY=$(echo "/tmp/vimtutor-$(date)" | sed "s/\ /-/g")
+
+cp $VIMTUTOR $TUTOR_COPY
+$EDITOR $TUTOR_COPY
+rm $TUTOR_COPY

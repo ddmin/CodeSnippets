@@ -1,0 +1,48 @@
+#!/bin/bash
+# sys: catch-all for miscellaneous functions
+
+CHOICE=$(dialog --stdout --colors --clear --title "\Z5sys" --menu "\Z5Choose an option:" 0 0 4 \
+    blu "\Z6toggle Bluetooth" \
+    cam "\Z6attach VirtualBox camera" \
+    vpn "\Z6toggle VPN" \
+    sound "\Z6reload audio" \
+    2> /tmp/sys.option)
+
+clear
+
+case $CHOICE in
+
+blu)
+    DEVICE="20:09:26:09:2D:D3"
+    CONNECT=$(bluetoothctl info $DEVICE | sed -n -e 's/Connected://p')
+
+    if [ $CONNECT == "no" ]; then
+        printf "📶 "
+        bluetoothctl --timeout 2 connect $DEVICE
+    else
+        printf "📶 "
+        bluetoothctl --timeout 2 disconnect $DEVICE
+    fi
+;;
+
+cam)
+    echo "📷 cam: attaching camera to Windows 10"
+    VBoxManage controlvm "Windows 10" webcam attach .1
+;;
+
+sound)
+    echo "🔊 sound: reloading sound"
+    sudo alsa force-reload
+;;
+
+vpn)
+    ip a | grep wg0 > /dev/null \
+        && echo "📴 vpn: disabling wg0" \
+        && sudo wg-quick down wg0 \
+        && exit
+
+     echo "📲 vpn: enabling wg0" \
+        && sudo wg-quick up wg0 \
+        && exit
+;;
+esac

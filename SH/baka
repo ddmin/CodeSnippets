@@ -1,0 +1,60 @@
+#!/bin/bash
+# baka: create tar backups of specified directories
+
+# Start timer
+SECONDS=0
+
+# Colors
+RED=`tput setaf 1`
+GREEN=`tput setaf 2`
+ORANGE=`tput setaf 3`
+BLUE=`tput setaf 4`
+VIOLET=`tput setaf 5`
+RESET=`tput sgr0`
+
+# exclude file
+EXCLUDE="$HOME/Code/Bash/files/baka-exclude"
+
+# save location
+DEVICE="root@10.0.0.1"
+SAVEDIR="$DEVICE:/root/Vault/Charlie"
+
+# Test Connection
+echo ""
+echo "${GREEN}Testing connection to ${ORANGE}'$DEVICE'${RESET}"
+
+if !(rsync --timeout=1 --dry-run "$EXCLUDE" "$SAVEDIR" 2> /dev/null); then
+    echo "${RED}Failed to Connect.${RESET}" && exit
+fi
+echo "${GREEN}Connection Successful.${RESET}"
+
+# directories to archive
+dirs=("Code" "Documents" "Pictures" "Music" "Videos")
+
+# loop through directories
+for d in ${dirs[@]}; do
+
+    # fancy printing
+    len=$((34+${#d}))
+    echo "${BLUE}"
+    printf '=%.0s' `eval echo {1..$len}`
+    echo ""
+    echo "#           Archiving $d           #"
+    printf '=%.0s' `eval echo {1..$len}`
+    echo ""
+    echo "${VIOLET}"
+
+    # create backup
+    rsync -aurvzP --exclude-from="$EXCLUDE" "$HOME/$d" "$SAVEDIR" --delete-after --delete-excluded
+done
+
+msg="Finished in $((($SECONDS)/60))m $((($SECONDS)%60))s"
+len=$((36+${#d}))
+
+echo "${GREEN}"
+printf '=%.0s' `eval echo {1..$len}`
+echo ""
+echo "#           $msg           #"
+printf '=%.0s' `eval echo {1..$len}`
+echo ""
+echo "${RESET}"
