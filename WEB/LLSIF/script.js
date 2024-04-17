@@ -27,10 +27,19 @@ function calculatePoints() {
 
     document.getElementById('result').innerText = `LP Total: ${totalPoints}`;
 
+    let targetPoints = maxPoints - pointsPerFiveMinutes;
+    document.getElementById('target').innerText = `LP Target: ${targetPoints}`;
+
     // point countdown calculation
     let pointsNeeded = maxPoints - initialPoints;
+    console.log(maxPoints);
+    console.log(initialPoints);
     let minutesToFull = pointsNeeded * 5;
+    console.log(minutesToFull);
     let fullTime = new Date(startTime.getTime() + minutesToFull * 60 * 1000);
+    console.log(startTime);
+    console.log(fullTime);
+    console.log((fullTime - startTime) / (60 * 1000));
 
     document.getElementById('countdown-date').innerText = `LP will be full at: ${fullTime.toLocaleString()}`;
     document.getElementById('countdown-date').style.display = 'block';
