@@ -10,28 +10,65 @@ if [[ -z $1 ]]; then
     exit
 fi
 
-X_FACTOR=128
-X_SIZE_FACTOR=4
-Y_FACTOR=128
-Y_SIZE_FACTOR=88
-Y_OFFSET=$((1080/4))
+# get screen dimensions
+screen_width=`xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+)x[0-9]+.*$/\1/'`
+screen_height=`xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*[0-9]+x([0-9]+).*$/\1/'`
 
+# ffprobe get video dimensions
 dimension=`ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$1"`
 width=` echo $dimension | sed -r 's/^([0-9]+)x[0-9]+$/\1/'`
 height=`echo $dimension | sed -r 's/^[0-9]+x([0-9]+)$/\1/'`
 
-start_x=$((width*X_SIZE_FACTOR/X_FACTOR))
-size_x=$((width-2*start_x))
-start_y=$((height*Y_SIZE_FACTOR/Y_FACTOR))
-size_y=$((height*$((Y_FACTOR-Y_SIZE_FACTOR-height/Y_OFFSET))/Y_FACTOR))
-
+# create output file name
 filename=$(basename -- "$1")
 name="${filename%.*}"
 ext="${filename##*.}"
 output="${name}_blur.${ext}"
 
+# ffprobe get video duration
+duration=`ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 "$1"`
+half=$(echo "$duration / 2" | bc)
+
+pidfile="/tmp/blur-subs.pid"
+mpv --fullscreen --start="$half" "$1" & echo $! >"$pidfile"
+
+slop=`slop -f "%x %y %w %h"` || exit 1
+read -r X Y W H <<< $slop
+
+kill -9 `cat "$pidfile"`
+
+# scale screen size to video size
+
+# X / Width
+if [[ $screen_width -gt $width ]]; then
+    ratio=$((screen_width / width))
+    scaled_x=$((X/ratio))
+    scaled_width=$((W/ratio))
+elif [[ $screen_width -lt $width ]]; then
+    ratio=$((width / screen_width))
+    scaled_x=$((X*ratio))
+    scaled_width=$((W*ratio))
+else
+    scaled_x=$((X))
+    scaled_width=$((W))
+fi
+
+# Y / Height
+if [[ $screen_height -gt $height ]]; then
+    ratio=$((screen_height / height))
+    scaled_y=$((Y/ratio))
+    scaled_height=$((H/ratio))
+elif [[ $screen_height -lt $height ]]; then
+    ratio=$((height / screen_height))
+    scaled_y=$((Y*ratio))
+    scaled_height=$((H*ratio))
+else
+    scaled_y=$((Y))
+    scaled_height=$((H))
+fi
+
 ffmpeg -i "$1" \
-    -filter_complex "[0:v]crop=${size_x}:${size_y}:${start_x}:${start_y},avgblur=9[fg];[0:v][fg]overlay=${start_x}:${start_y}[v]" \
+    -filter_complex "[0:v]crop=${scaled_width}:${scaled_height}:${scaled_x}:${scaled_y},avgblur=10[fg];[0:v][fg]overlay=${scaled_x}:${scaled_y}[v]" \
     -map "[v]" \
     -map 0:a \
     -c:a copy \
