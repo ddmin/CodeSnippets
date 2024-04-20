@@ -1,4 +1,4 @@
-#+title: Troubleshooting
+# Troubleshooting
 
 https://superuser.com/questions/1009571/how-to-prevent-url-redirects-in-chrome
 
