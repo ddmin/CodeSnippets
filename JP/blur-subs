@@ -1,4 +1,12 @@
 #!/bin/bash
+# blur-subs: blur video file in a user-specified region
+
+set -e
+
+BLUR_LEVEL=10
+
+RED='\033[1;31m'
+NC='\033[0m'
 
 usage() {
     echo "Usage: $0 [VIDEO]"
@@ -25,17 +33,27 @@ name="${filename%.*}"
 ext="${filename##*.}"
 output="${name}_blur.${ext}"
 
+echo -ne "${RED}File '$output' already exists. Overwrite? [y/N]: ${NC}"
+read -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    rm -rf "$output"
+else
+    exit 1
+fi
+
 # ffprobe get video duration
 duration=`ffprobe -v error -select_streams v:0 -show_entries stream=duration -of default=noprint_wrappers=1:nokey=1 "$1"`
 half=$(echo "$duration / 2" | bc)
 
 pidfile="/tmp/blur-subs.pid"
-mpv --fullscreen --start="$half" "$1" & echo $! >"$pidfile"
+mpv --quiet --fullscreen --start="$half" "$1" & echo $! >"$pidfile"
 
 slop=`slop -f "%x %y %w %h"` || exit 1
 read -r X Y W H <<< $slop
 
-kill -9 `cat "$pidfile"`
+kill -9 `cat "$pidfile"` >/dev/null
 
 # scale screen size to video size
 
@@ -68,10 +86,13 @@ else
 fi
 
 ffmpeg -i "$1" \
-    -filter_complex "[0:v]crop=${scaled_width}:${scaled_height}:${scaled_x}:${scaled_y},avgblur=10[fg];[0:v][fg]overlay=${scaled_x}:${scaled_y}[v]" \
+    -filter_complex "[0:v]crop=${scaled_width}:${scaled_height}:${scaled_x}:${scaled_y},avgblur=$BLUR_LEVEL[fg];[0:v][fg]overlay=${scaled_x}:${scaled_y}[v]" \
     -map "[v]" \
     -map 0:a \
     -c:a copy \
     -c:s copy \
     -movflags faststart \
-    "$output"
+    "$output" \
+    -loglevel error
+
+stty sane
