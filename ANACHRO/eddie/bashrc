@@ -1,0 +1,72 @@
+#  _               _        _               _
+# | |__   __ _ ___(_) ___  | |__   __ _ ___| |__
+# | '_ \ / _` / __| |/ __| | '_ \ / _` / __| '_ \
+# | |_) | (_| \__ \ | (__  | |_) | (_| \__ \ | | |
+# |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
+
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+export PROMPT_COMMAND='echo -en "\033]0;$(basename "$PWD")\a"'
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# profile
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
+# history
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# set terminal
+export TERM='xterm-256color'
+
+# browser
+export BROWSER='google-chrome'
+
+# set default editor
+export EDITOR='vim'
+export VISUAL='vim'
+
+# alia-ls-es
+alias l='exa --group-directories-first --icons'
+alias la='exa -la --group-directories-first --icons'
+alias ll='exa -l --group-directories-first --icons'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# safer defaults
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias rm='rm -vI'
+alias mkdir='mkdir -pv'
+alias shred='shred -vzun 3'
+alias srm='srm -rfll'
+alias bleachbit='bleachbit -s'
+
+# ocrmypdf
+alias ocrmypdf='ocrmypdf -l eng --deskew'
+
+# vi mode
+set -o vi
+bind '"jk":vi-movement-mode'
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
+
+# navigate to directories with ranger
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# fzf
+bind -x '"\C-f": fzf-file-widget'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(starship init bash)"
