@@ -23,7 +23,7 @@ screen_width=`xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+)x[0-9]+.*$/
 screen_height=`xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*[0-9]+x([0-9]+).*$/\1/'`
 
 # ffprobe get video dimensions
-dimension=`ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$1"`
+dimension=`ffprobe -v quiet -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$1"`
 width=` echo $dimension | sed -r 's/^([0-9]+)x[0-9]+$/\1/'`
 height=`echo $dimension | sed -r 's/^[0-9]+x([0-9]+)$/\1/'`
 
@@ -86,6 +86,7 @@ else
 fi
 
 ffmpeg -i "$1" \
+    -v quiet \
     -filter_complex "[0:v]crop=${scaled_width}:${scaled_height}:${scaled_x}:${scaled_y},avgblur=$BLUR_LEVEL[fg];[0:v][fg]overlay=${scaled_x}:${scaled_y}[v]" \
     -map "[v]" \
     -map 0:a \
