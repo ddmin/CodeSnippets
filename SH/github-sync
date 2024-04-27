@@ -1,0 +1,26 @@
+#!/bin/bash
+# sync github directories
+
+GREEN='\033[1;32m'
+NC='\033[0m'
+
+CONFIG="$HOME/.config"
+GITHUB="$HOME/.local/drive/code/GitHub"
+GITHUB_CONFIG="$GITHUB/dotfiles/config"
+
+# sync files from local machine -> github directory
+CONFIGS=("doom" "zathura" "ranger")
+for config in $CONFIGS
+do
+    yes | cp -r $CONFIG/$config/* $GITHUB_CONFIG/doom/
+done
+
+# check for changes in remote/local
+for dir in `find $GITHUB -maxdepth 1 -mindepth 1 -type d`
+do
+    echo -e "${GREEN}DIRECTORY: $dir$NC"
+    cd $dir
+    git pull $dir
+    git status $dir
+    echo
+done

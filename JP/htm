@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # htm: unpack zip of webp into jpg
 
 set -e
