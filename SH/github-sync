@@ -9,10 +9,11 @@ GITHUB="$HOME/.local/drive/code/GitHub"
 GITHUB_CONFIG="$GITHUB/dotfiles/config"
 
 # sync files from local machine -> github directory
-CONFIGS=("doom" "zathura" "ranger")
-for config in $CONFIGS
+CONFIGS=("doom" "zathura" "ranger" "mpv")
+for config in ${CONFIGS[@]}
 do
-    yes | cp -r $CONFIG/$config/* $GITHUB_CONFIG/doom/
+    echo $config
+    yes | cp -r $CONFIG/$config/* $GITHUB_CONFIG/$config/
 done
 
 # check for changes in remote/local
