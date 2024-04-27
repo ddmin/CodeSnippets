@@ -1,0 +1,148 @@
+#!/usr/bin/python3
+# inject javascript into mokuro html
+# https://github.com/kha-white/mokuro/issues/16#issuecomment-1690310509
+
+import sys
+
+
+PANZOOM_INJECTION_SITE = 'pz = panzoom(pc, {'
+INJECTION_PANZOOM = """pz = panzoom(pc, {
+        bounds: true,
+        boundsPadding: 0.05,
+        maxZoom: 10,
+        minZoom: 0.1,
+        zoomDoubleClickSpeed: 1,
+        enableTextSelection: true,
+
+        // add this option
+        filterKey: function( e, dx, dy, dz ) {
+            // don't let panzoom handle this event:
+            return true;
+        },"""
+
+WHEEL_INJECTION_SITE = 'beforeWheel: function (e) {'
+INJECTION_WHEEL = """beforeWheel: function (e) {
+            let shouldIgnore = disablePanzoomOnElement(e.target);
+            return true;
+        },"""
+
+KEYBOARD_INJECTION_SITE = 'document.addEventListener("keydown", function onEvent(e) {'
+INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e) {
+    switch (e.key) {
+        // change to any key you want
+        case "ArrowRight":
+            prevPage();
+            break;
+
+        case "ArrowLeft":
+            nextPage();
+            break;
+
+        case "ArrowDown":
+            zoomFitToScreen();
+            break;
+
+        case "ArrowUp":
+            zoomFitToWidth();
+            break;
+
+        case "d":
+            prevPage();
+            break;
+
+        case "a":
+            nextPage();
+            break;
+
+        case "s":
+            zoomFitToScreen();
+            break;
+
+        case "w":
+            zoomFitToWidth();
+            break;
+
+        case " ":
+            nextPage();
+            break;
+
+        case "Backspace":
+            prevPage();
+            break;
+
+        case "0":
+            firstPage();
+            break;
+
+        case "1":
+            lastPage();
+            break;
+
+        case ".":
+            zoomDefault();
+            break;
+    }
+});"""
+
+
+def name():
+    return sys.argv[0].split("/")[-1]
+
+def help():
+    print(f'Usage: {name()} [MOKURO HTML]')
+    print('Injects javascript into mokuro html file.')
+
+def main():
+    if '-h' in sys.argv or '--help' in sys.argv:
+        help()
+        exit(0)
+
+    if len(sys.argv) < 2:
+        print(f'{name()}: ERROR Please provide a mokuro html file.')
+        print()
+        help()
+        exit(1)
+
+    html = ''
+    try:
+        with open(sys.argv[1], 'r') as f:
+            html = f.read()
+    except:
+        print(f"{name()}: ERROR Unable to open file '{sys.argv[1]}'.")
+        exit(1)
+
+    wheel = html.split(WHEEL_INJECTION_SITE)
+    if len(wheel) != 2:
+        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
+        exit(1)
+
+    assert len(wheel) == 2
+    html = wheel[0] + INJECTION_WHEEL + '\n' +  '\n'.join(wheel[1].split('\n')[4:])
+
+    panzoom = html.split(PANZOOM_INJECTION_SITE)
+    if len(panzoom) != 2:
+        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
+        exit(1)
+
+    assert len(panzoom) == 2
+    html = panzoom[0] + INJECTION_PANZOOM + '\n' +  '\n'.join(panzoom[1].split('\n')[7:])
+
+    keyboard = html.split(KEYBOARD_INJECTION_SITE)
+    if len(keyboard) != 2:
+        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
+        exit(1)
+
+    assert len(keyboard) == 2
+    html = keyboard[0] + INJECTION_KEYBOARD + '\n' + '\n'.join(keyboard[1].split('\n')[27:])
+
+    base_name = '.'.join(sys.argv[1].split('.')[:-1])
+    save_name = f'{base_name}-injected.html'
+
+    with open(save_name, 'w') as f:
+        f.write(html)
+
+    print(f"Saved to '{save_name}'")
+
+
+if __name__ == '__main__':
+    main()
