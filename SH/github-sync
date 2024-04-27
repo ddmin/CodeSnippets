@@ -12,7 +12,6 @@ GITHUB_CONFIG="$GITHUB/dotfiles/config"
 CONFIGS=("doom" "zathura" "ranger" "mpv")
 for config in ${CONFIGS[@]}
 do
-    echo $config
     yes | cp -r $CONFIG/$config/* $GITHUB_CONFIG/$config/
 done
 
