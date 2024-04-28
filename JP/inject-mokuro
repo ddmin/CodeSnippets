@@ -5,6 +5,11 @@
 import sys
 
 
+SCROLL_SPEED = '0.4'
+VIM_INJECTION_SITE = 'function onKeyDown(e){var x=0,y=0,z=0;if(e.keyCode===38){y=1}else if(e.keyCode===40){y=-1}else if(e.keyCode===37){x=1}else if(e.keyCode===39){x=-1}else if(e.keyCode===189||e.keyCode===109){z=1}else if(e.keyCode===187||e.keyCode===107){z=-1}if(filterKey(e,x,y,z)){return}'
+
+INJECTION_VIM = f'function onKeyDown(e){{var x=0,y=0,z=0;if(e.keyCode===75){{y={SCROLL_SPEED}}}else if(e.keyCode===74){{y=-{SCROLL_SPEED}}}else if(e.keyCode===72){{x={SCROLL_SPEED}}}else if(e.keyCode===76){{x=-{SCROLL_SPEED}}}else if(e.keyCode===189||e.keyCode===109||e.keyCode===40||e.keyCode===83){{z=1}}else if(e.keyCode===187||e.keyCode===107||e.keyCode===38||e.keyCode===87){{z=-1}}if(filterKey(e,x,y,z)){{return}}'
+
 PANZOOM_INJECTION_SITE = 'pz = panzoom(pc, {'
 INJECTION_PANZOOM = """pz = panzoom(pc, {
         bounds: true,
@@ -26,7 +31,7 @@ INJECTION_WHEEL = """beforeWheel: function (e) {
             return true;
         },"""
 
-KEYBOARD_INJECTION_SITE = 'document.addEventListener("keydown", function onEvent(e) {'
+KEYBOARD_INJECTION_SITE = "document.addEventListener('keydown', function onEvent(e) {"
 INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e) {
     switch (e.key) {
         // change to any key you want
@@ -38,14 +43,6 @@ INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e)
             nextPage();
             break;
 
-        case "ArrowDown":
-            zoomFitToScreen();
-            break;
-
-        case "ArrowUp":
-            zoomFitToWidth();
-            break;
-
         case "d":
             prevPage();
             break;
@@ -54,12 +51,12 @@ INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e)
             nextPage();
             break;
 
-        case "s":
-            zoomFitToScreen();
+        case "F":
+            zoomFitToWidth();
             break;
 
-        case "w":
-            zoomFitToWidth();
+        case "f":
+            zoomFitToScreen();
             break;
 
         case " ":
@@ -111,29 +108,38 @@ def main():
         print(f"{name()}: ERROR Unable to open file '{sys.argv[1]}'.")
         exit(1)
 
+
+    # ===================== disable scroll wheel =================================
     wheel = html.split(WHEEL_INJECTION_SITE)
     if len(wheel) != 2:
         print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
         exit(1)
-
-    assert len(wheel) == 2
     html = wheel[0] + INJECTION_WHEEL + '\n' +  '\n'.join(wheel[1].split('\n')[4:])
+    # =============================================================================
 
-    panzoom = html.split(PANZOOM_INJECTION_SITE)
-    if len(panzoom) != 2:
-        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
-        exit(1)
+    # ========================= disable panzoom ===================================
+    # panzoom = html.split(PANZOOM_INJECTION_SITE)
+    # if len(panzoom) != 2:
+    #     print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
+    #     exit(1)
+    # html = panzoom[0] + INJECTION_PANZOOM + '\n' +  '\n'.join(panzoom[1].split('\n')[7:])
+    # =============================================================================
 
-    assert len(panzoom) == 2
-    html = panzoom[0] + INJECTION_PANZOOM + '\n' +  '\n'.join(panzoom[1].split('\n')[7:])
-
+    # ========================= keyboard shortcuts ===================================
     keyboard = html.split(KEYBOARD_INJECTION_SITE)
     if len(keyboard) != 2:
         print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
         exit(1)
+    html = keyboard[0] + INJECTION_KEYBOARD + '\n' + '\n'.join(keyboard[1].split('\n')[23:])
+    # ================================================================================
 
-    assert len(keyboard) == 2
-    html = keyboard[0] + INJECTION_KEYBOARD + '\n' + '\n'.join(keyboard[1].split('\n')[27:])
+    # ========================= vim navigation shortcuts =============================
+    vim = html.split(VIM_INJECTION_SITE)
+    if len(vim) != 2:
+        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
+        exit(1)
+    html = vim[0] + INJECTION_VIM + vim[1]
+    # ================================================================================
 
     dir_split = sys.argv[1].split('/')
     if len(dir_split) < 2:
