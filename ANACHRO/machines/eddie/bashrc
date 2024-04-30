@@ -27,7 +27,7 @@ HISTFILESIZE=2000
 export TERM='xterm-256color'
 
 # browser
-export BROWSER='google-chrome'
+export BROWSER='firefox'
 
 # set default editor
 export EDITOR='vim'
@@ -55,6 +55,23 @@ alias bleachbit='bleachbit -s'
 # ocrmypdf
 alias ocrmypdf='ocrmypdf -l eng --deskew'
 
+# virtualenv
+alias venv='virtualenv'
+
+activate-venv () {
+    venv_dir="$HOME/.local/drive/code/venv"
+    venv=`find $venv_dir -maxdepth 1 -mindepth 1 -type d |\
+        tr '\n' '\0' |\
+        xargs -0 -n 1 basename |\
+        rofi -dmenu -p "venv" 2> /dev/null`
+
+    [[ -z $venv ]] && return 1
+
+    source "$venv_dir/$venv/bin/activate"
+}
+
+
+
 # vi mode
 set -o vi
 bind '"jk":vi-movement-mode'
@@ -68,5 +85,12 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 bind -x '"\C-f": fzf-file-widget'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# fix xfce-terminal window
+if [ "$DISPLAY" ]; then
+    activ_win_id=`xprop -root _NET_ACTIVE_WINDOW`
+    activ_win_id=$(echo $activ_win_id | awk '{ activ_win_id=substr($0,41,9); print activ_win_id; }' )
+    xprop -id $activ_win_id -remove WM_NORMAL_HINTS
+fi
 
 eval "$(starship init bash)"

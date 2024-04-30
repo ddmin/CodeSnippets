@@ -1,4 +1,3 @@
-# source this from bash
 activate-venv () {
     venv_dir="$HOME/.local/drive/code/venv"
     venv=`find $venv_dir -maxdepth 1 -mindepth 1 -type d |\
