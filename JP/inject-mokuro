@@ -1,13 +1,25 @@
 #!/usr/bin/python3
 # inject javascript into mokuro html
-# https://github.com/kha-white/mokuro/issues/16#issuecomment-1690310509
+# inspired by: https://github.com/kha-white/mokuro/issues/16#issuecomment-1690310509
 
 import sys
 
 
-SCROLL_SPEED = '0.4'
-VIM_INJECTION_SITE = 'function onKeyDown(e){var x=0,y=0,z=0;if(e.keyCode===38){y=1}else if(e.keyCode===40){y=-1}else if(e.keyCode===37){x=1}else if(e.keyCode===39){x=-1}else if(e.keyCode===189||e.keyCode===109){z=1}else if(e.keyCode===187||e.keyCode===107){z=-1}if(filterKey(e,x,y,z)){return}'
+# Default Settings
+SCROLL_SPEED = '3'
+BACKGROUND_COLOR = '2b2a33'
+READING_MODE = "keep zoom, go to top"
 
+BACKGROUND_INJECTION_SITE = "backgroundColor: '#C4C3D0',"
+INJECTION_BACKGROUND = f"backgroundColor: '#{BACKGROUND_COLOR}',"
+
+READING_MODE_INJECTION_SITE = "defaultZoomMode: 'fit to screen',"
+INJECTION_READING_MODE = f"defaultZoomMode: '{READING_MODE}',"
+
+EDITABLE_INJECTION_SITE = "editableText: false,"
+INJECTION_EDITABLE = "editableText: true,"
+
+VIM_INJECTION_SITE = 'function onKeyDown(e){var x=0,y=0,z=0;if(e.keyCode===38){y=1}else if(e.keyCode===40){y=-1}else if(e.keyCode===37){x=1}else if(e.keyCode===39){x=-1}else if(e.keyCode===189||e.keyCode===109){z=1}else if(e.keyCode===187||e.keyCode===107){z=-1}if(filterKey(e,x,y,z)){return}'
 INJECTION_VIM = f'function onKeyDown(e){{var x=0,y=0,z=0;if(e.keyCode===75){{y={SCROLL_SPEED}}}else if(e.keyCode===74){{y=-{SCROLL_SPEED}}}else if(e.keyCode===72){{x={SCROLL_SPEED}}}else if(e.keyCode===76){{x=-{SCROLL_SPEED}}}else if(e.keyCode===189||e.keyCode===109||e.keyCode===40||e.keyCode===83){{z=1}}else if(e.keyCode===187||e.keyCode===107||e.keyCode===38||e.keyCode===87){{z=-1}}if(filterKey(e,x,y,z)){{return}}'
 
 PANZOOM_INJECTION_SITE = 'pz = panzoom(pc, {'
@@ -82,12 +94,28 @@ INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e)
 });"""
 
 
+def inject(html, injection_site, injection, multiline=False, lines=1):
+    splits = html.split(injection_site)
+    if len(splits) != 2:
+        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
+        exit(1)
+
+    if multiline:
+        html = splits[0] + injection + '\n' + '\n'.join(splits[1].split('\n')[lines:])
+    else:
+        html = splits[0] + injection + splits[1]
+
+    return html
+
+
 def name():
     return sys.argv[0].split("/")[-1]
+
 
 def help():
     print(f'Usage: {name()} [MOKURO HTML]')
     print('Injects javascript into mokuro html file.')
+
 
 def main():
     if '-h' in sys.argv or '--help' in sys.argv:
@@ -109,36 +137,26 @@ def main():
         exit(1)
 
 
+    # ========================= default settings =============================
+    html = inject(html, BACKGROUND_INJECTION_SITE, INJECTION_BACKGROUND, multiline=False)
+    html = inject(html, READING_MODE_INJECTION_SITE, INJECTION_READING_MODE, multiline=False)
+    # html = inject(html, EDITABLE_INJECTION_SITE, INJECTION_EDITABLE, multiline=False)
+    # ========================================================================
+
     # ===================== disable scroll wheel =================================
-    wheel = html.split(WHEEL_INJECTION_SITE)
-    if len(wheel) != 2:
-        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
-        exit(1)
-    html = wheel[0] + INJECTION_WHEEL + '\n' +  '\n'.join(wheel[1].split('\n')[4:])
+    html = inject(html, WHEEL_INJECTION_SITE, INJECTION_WHEEL, multiline=True, lines=4)
     # =============================================================================
 
     # ========================= disable panzoom ===================================
-    # panzoom = html.split(PANZOOM_INJECTION_SITE)
-    # if len(panzoom) != 2:
-    #     print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
-    #     exit(1)
-    # html = panzoom[0] + INJECTION_PANZOOM + '\n' +  '\n'.join(panzoom[1].split('\n')[7:])
+    # html = inject(html, PANZOOM_INJECTION_SITE, INJECTION_PANZOOM, multiline=True, lines=7)
     # =============================================================================
 
     # ========================= keyboard shortcuts ===================================
-    keyboard = html.split(KEYBOARD_INJECTION_SITE)
-    if len(keyboard) != 2:
-        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
-        exit(1)
-    html = keyboard[0] + INJECTION_KEYBOARD + '\n' + '\n'.join(keyboard[1].split('\n')[23:])
+    html = inject(html, KEYBOARD_INJECTION_SITE, INJECTION_KEYBOARD, multiline=True, lines=23)
     # ================================================================================
 
     # ========================= vim navigation shortcuts =============================
-    vim = html.split(VIM_INJECTION_SITE)
-    if len(vim) != 2:
-        print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
-        exit(1)
-    html = vim[0] + INJECTION_VIM + vim[1]
+    html = inject(html, VIM_INJECTION_SITE, INJECTION_VIM, multiline=False)
     # ================================================================================
 
     dir_split = sys.argv[1].split('/')
