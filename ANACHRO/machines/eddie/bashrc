@@ -27,14 +27,14 @@ HISTFILESIZE=2000
 export TERM='xterm-256color'
 
 # browser
-export BROWSER='firefox'
+export BROWSER='librewolf'
 
 # set default editor
 export EDITOR='vim'
 export VISUAL='vim'
 
 # save pwd for reasons
-PWD_FILE="$HOME/.pwd"
+PWD_FILE="/tmp/.pwd"
 cd_alias() {
     cd "$@" && echo "$PWD" > $PWD_FILE
 }
@@ -107,6 +107,13 @@ fi
 
 # alacritty completions
 source ~/.bash_completion/alacritty
+
+# set alacritty terminal opacity
+alacritty-opacity() {
+    if [ $# -gt 0 ]; then
+        alacritty msg config window.opacity="$1"
+    fi
+}
 
 # starship: must be last line
 eval "$(starship init bash)"

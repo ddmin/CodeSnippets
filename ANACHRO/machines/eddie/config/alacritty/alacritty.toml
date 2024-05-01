@@ -11,6 +11,10 @@ foreground = '0xe6e1cf'
 text = '0x0f1419'
 cursor = '0xe6e1cf'
 
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
 # Normal colors
 [colors.normal]
 black = '0x0f1419'
@@ -65,7 +69,7 @@ text = "CellForeground"
 TERM = "xterm-256color"
 
 [font]
-size = 15.0
+size = 14.0
 
 [font.bold]
 family = "SauceCodePro Nerd Font"
@@ -123,11 +127,6 @@ key = "Minus"
 mods = "Control"
 
 [[keyboard.bindings]]
-action = "ToggleFullscreen"
-key = "F11"
-mods = "None"
-
-[[keyboard.bindings]]
 action = "Paste"
 key = "Paste"
 mods = "None"
@@ -148,28 +147,121 @@ key = "L"
 mods = "Control"
 
 [[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "PageUp"
-mode = "~Alt"
-mods = "None"
+action = "ToggleViMode"
+key = "Return"
+mods = "Control"
 
 [[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "PageDown"
-mode = "~Alt"
-mods = "None"
+action = "ToggleViMode"
+key = "I"
+mods = "Control"
 
 [[keyboard.bindings]]
-action = "ScrollToTop"
-key = "Home"
-mode = "~Alt"
+action = "ScrollToBottom"
+key = "Return"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "I"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "I"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "I"
+mode = "Vi"
 mods = "Shift"
 
 [[keyboard.bindings]]
 action = "ScrollToBottom"
-key = "End"
-mode = "~Alt"
+key = "A"
+mode = "Vi"
 mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "A"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "C"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "C"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "Escape"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "Y"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "E"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "G"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageUp"
+key = "U"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageDown"
+key = "D"
+mode = "Vi"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Y"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "Y"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ToggleNormalSelection"
+key = "V"
+mode = "Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ToggleBlockSelection"
+key = "V"
+mode = "Vi"
+mods = "Control"
 
 [scrolling]
 history = 5000
