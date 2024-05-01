@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# batch-translate: use manga-image-translator to translate a directory
+
+if [ $# -lt 1 ]; then
+    echo "ERROR: Please provide a directory."
+    echo "USAGE: batch-translate [DIRECTORY]"
+    exit
+fi
+
+DIR=$(basename $1)
+FILEPATH="$(pwd)/$DIR"
+MODULE_PATH=$HOME/.local/manga-image-translator
+
+cd $MODULE_PATH
+
+time python3 -m manga_translator \
+    -v --mode batch --save-text -f jpg \
+    --translator=sugoi -l ENG \
+    -o "$FILEPATH/mtl" -i $FILEPATH --manga2eng \
+    --font-path "/usr/share/fonts/TTF/CCWildWordsRoman.ttf"
+
+cd -
+
+notify-send "🏁 Finished MTL"

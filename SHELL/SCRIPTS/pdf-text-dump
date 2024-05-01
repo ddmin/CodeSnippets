@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import pdftotext
+import sys
+
+
+def main():
+    file = sys.argv[-1]
+
+    with open(file, 'rb') as f:
+        pdf = pdftotext.PDF(f)
+
+    text = ''.join([pdf[page] for page in range(len(pdf))])
+
+    print(text, end='')
+
+
+if __name__ == '__main__':
+    main()

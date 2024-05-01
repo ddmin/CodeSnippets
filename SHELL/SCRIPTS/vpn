@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# vpn: openvpn connection script
+# vpngate: https://www.vpngate.net/en/
+
+# auth:
+#   username
+#   password
+
+sudo echo ""
+sudo killall openvpn 2> /dev/null
+
+VPNS="$HOME/.local/drive/ovpn"
+
+file=`ls -1 $VPNS/*.ovpn | tr '\n' '\0' | xargs -0 -n 1 basename | rofi -dmenu -p "ovpn" 2> /dev/null`
+[[ -z $file ]] && exit
+
+sudo openvpn --config "$VPNS/$file" --auth-user-pass "$VPNS/auth"
