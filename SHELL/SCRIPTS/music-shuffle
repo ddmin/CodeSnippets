@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "Please provide a URL."
+    echo "USAGE: $(basename $0) <URL>"
+    exit
+fi
+
+mpv --shuffle --no-video --term-playing-msg='\n🎶NOW PLAYING: 「${media-title}」🎶' $1
