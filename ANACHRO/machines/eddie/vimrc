@@ -4,6 +4,12 @@
 " | |_) | (_| \__ \ | (__   \ V /| | | | | | |
 " |_.__/ \__,_|___/_|\___|   \_/ |_|_| |_| |_|
 
+" Remap alt
+    set <M-j>=j
+    set <M-k>=k
+    set <M-h>=h
+    set <M-l>=l
+
 " Basics
     let mapleader = " "
     inoremap jk <ESC>
@@ -72,30 +78,44 @@
 " Yank to end of line
     nnoremap Y y$
 
-" Reselect visual after indents
+" Indentation
+    nnoremap <M-h> <<
+    nnoremap <M-l> >>
+    inoremap <M-h> <C-d>
+    inoremap <M-l> <C-t>
+
+" Reselect visual selection after indent
     vnoremap < <gv
     vnoremap > >gv
+    vnoremap <M-h> <gv
+    vnoremap <M-l> >gv
 
 " Undo breakpoints
-    inoremap , ,<c-g>u
-    inoremap . .<c-g>u
-    inoremap ! !<c-g>u
-    inoremap ? ?<c-g>u
+    inoremap . .<C-g>u
+    inoremap , ,<C-g>u
+    inoremap ! !<C-g>u
+    inoremap ? ?<C-g>u
 
 " Moving text
-    nnoremap <C-j> :m .+1<CR>==
-    nnoremap <C-k> :m .-2<CR>==
-    vnoremap <C-j> :m '>+1<CR>gv=gv
-    vnoremap <C-k> :m '<-2<CR>gv=gv
+    nnoremap <M-j> :m .+1<CR>==
+    nnoremap <M-k> :m .-2<CR>==
+    inoremap <M-j> <ESC>:m .+1<CR>==gi
+    inoremap <M-k> <ESC>:m .-2<CR>==gi
+    vnoremap <M-j> :m '>+1<CR>gv=gv
+    vnoremap <M-k> :m '<-2<CR>gv=gv
 
 " Fix splits
     set splitbelow splitright
 
 " Vertical Split
-    nnoremap <silent> <leader>v :vnew<CR>
+    nnoremap <silent> <leader>wv :vnew<CR>
+    nnoremap <silent> <leader>wh :wincmd h<CR>
+    nnoremap <silent> <leader>wl :wincmd l<CR>
 
 " Horizontal Split
-    nnoremap <silent> <leader>s :new<CR>
+    nnoremap <silent> <leader>ws :new<CR>
+    nnoremap <silent> <leader>wj :wincmd j<CR>
+    nnoremap <silent> <leader>wk :wincmd k<CR>
 
 " Terminal
     map <Leader>t :term<CR>

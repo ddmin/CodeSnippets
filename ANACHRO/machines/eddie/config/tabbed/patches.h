@@ -50,7 +50,7 @@
 /* This patch prints the position number of the client before the window title.
  * https://tools.suckless.org/tabbed/patches/clientnumber/
  */
-#define CLIENTNUMBER_PATCH 0
+#define CLIENTNUMBER_PATCH 1
 
 /* Adds support for dragging tabs left and right using the mouse.
  * https://tools.suckless.org/tabbed/patches/drag/
