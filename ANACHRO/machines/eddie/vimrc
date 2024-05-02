@@ -1,0 +1,104 @@
+"  _               _              _
+" | |__   __ _ ___(_) ___  __   _(_)_ __ ___
+" | '_ \ / _` / __| |/ __| \ \ / / | '_ ` _ \
+" | |_) | (_| \__ \ | (__   \ V /| | | | | | |
+" |_.__/ \__,_|___/_|\___|   \_/ |_|_| |_| |_|
+
+" Basics
+    let mapleader = " "
+    inoremap jk <ESC>
+
+    set number
+    set relativenumber
+    set ignorecase
+    set smartcase
+
+    set nocompatible
+    set encoding=utf-8
+    set showcmd
+
+    syntax on
+    filetype plugin on
+    filetype indent on
+
+    set wrap
+    set redrawtime=10000
+    set lazyredraw
+    set nolist
+
+    set wildmenu
+    set wildmode=longest:full,full
+
+" Enable word movement between separators
+    set iskeyword-=_-
+
+" Undo Directory
+    set hidden
+    set noswapfile
+    set nobackup
+    set undodir=~/.vim/undodir
+    set undofile
+
+" Tabs
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+    set autoindent
+
+" Highlight searches and <Leader><Leader> to unhighlight
+    set incsearch
+    set hlsearch
+    nnoremap <silent> <leader><leader> :nohl<CR><C-l>
+
+"Disable auto-commenting
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=o
+
+" Remove trailing white space on save
+    autocmd BufWritePre * %s/\s\+$//e
+
+" Open folds
+    nnoremap <CR> za
+
+" Increment number
+    nnoremap <C-p> <C-a>
+
+" Toggle numbers
+    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
+
+" Toggle spell
+    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
+
+" Yank to end of line
+    nnoremap Y y$
+
+" Reselect visual after indents
+    vnoremap < <gv
+    vnoremap > >gv
+
+" Undo breakpoints
+    inoremap , ,<c-g>u
+    inoremap . .<c-g>u
+    inoremap ! !<c-g>u
+    inoremap ? ?<c-g>u
+
+" Moving text
+    nnoremap <C-j> :m .+1<CR>==
+    nnoremap <C-k> :m .-2<CR>==
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Fix splits
+    set splitbelow splitright
+
+" Vertical Split
+    nnoremap <silent> <leader>v :vnew<CR>
+
+" Horizontal Split
+    nnoremap <silent> <leader>s :new<CR>
+
+" Terminal
+    map <Leader>t :term<CR>
+
+" Ctrl + Backspace to Delete Word
+    imap <C-H> <C-W>

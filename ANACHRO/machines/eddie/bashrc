@@ -42,6 +42,12 @@ cd_alias() {
 alias cd='cd_alias'
 alias cdl='cd "$(cat $PWD_FILE)"'
 
+# vim man pages
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+
+# bat
+alias cat='batcat'
+
 # alia-ls-es
 alias l='exa --group-directories-first --icons'
 alias la='exa -la --group-directories-first --icons'

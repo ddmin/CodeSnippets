@@ -22,9 +22,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# vim man pages
-export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim -u NONE --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
-
 # emacs
 PATH="$PATH:/home/ddmin/.config/emacs/bin"
 
