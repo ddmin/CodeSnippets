@@ -4,10 +4,10 @@
 
 ```console
 # store a new password:
-secret-tool store --label='Keepass' database <DATABASE>.xdbx
+secret-tool store --label='Keepass' <ATTRIBUTE> <DATABASE>.xdbx
 
 # query and start keepassxc:
-secret-tool lookup database <DATABASE>.xdbx | keepassxc --pw-stdin <DATABASE>.xdbx --keyfile <KEYFILE>
+secret-tool lookup <ATTRIBUTE> <DATABASE>.xdbx | keepassxc --pw-stdin <DATABASE>.xdbx --keyfile <KEYFILE>
 ```
 
 ### if using KeePassXC appimage
