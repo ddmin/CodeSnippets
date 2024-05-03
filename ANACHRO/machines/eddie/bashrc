@@ -64,8 +64,8 @@ alias mv='mv -iv'
 alias rm='rm -vI'
 alias mkdir='mkdir -pv'
 alias shred='shred -vzun 3'
-alias srm='srm -rfll'
-alias bleachbit='bleachbit -s'
+# alias srm='srm -rfll'
+# alias bleachbit='bleachbit -s'
 
 # ocrmypdf
 alias ocrmypdf='ocrmypdf -l eng --deskew'

@@ -2,17 +2,20 @@
 
 # Fill in the blanks
 
-KEEPASSXC="<KeePassXC binary/appimage>"
-DATABASE="<Password Database>"
+# KEEPASSXC="<KeePassXC binary/appimage>"
+# DATABASE="<Password Database>"
+#
+# KEYFILE_GPG="<Keyfile GPG Location>"
+#
+# KEYFILE_ATTR="<Keyfile Attribute>"
+# DATABASE_ATTR="<Database Attribute>"
 
-KEYFILE_GPG="<Keyfile GPG Location>"
+. $HOME/.env
+
 KEYFILE="/tmp/$(cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32)-keyfile"
-
-KEYFILE_ATTR="<Keyfile Attribute>"
-DATABASE_ATTR="<Database Attribute>"
 
 notify-send "keepassxc" --icon=keepassxc "Starting keepassxc"
 
 secret-tool lookup keyfile "$KEYFILE_GPG" | gpg --batch --passphrase-fd 0 --decrypt "$KEYFILE_GPG" > "$KEYFILE"
 secret-tool lookup database "$DATABASE" | "$KEEPASSXC" --pw-stdin "$DATABASE" --keyfile "$KEYFILE"
-bleachbit -s "$KEYFILE"
+shred -vzun 3 "$KEYFILE"

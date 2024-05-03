@@ -35,6 +35,12 @@
     set wildmenu
     set wildmode=longest:full,full
 
+" Fix splits
+    set splitbelow splitright
+
+" Splits
+    nnoremap <leader>w <C-w>
+
 " Enable word movement between separators
     set iskeyword-=_-
 
@@ -103,19 +109,6 @@
     inoremap <M-k> <ESC>:m .-2<CR>==gi
     vnoremap <M-j> :m '>+1<CR>gv=gv
     vnoremap <M-k> :m '<-2<CR>gv=gv
-
-" Fix splits
-    set splitbelow splitright
-
-" Vertical Split
-    nnoremap <silent> <leader>wv :vnew<CR>
-    nnoremap <silent> <leader>wh :wincmd h<CR>
-    nnoremap <silent> <leader>wl :wincmd l<CR>
-
-" Horizontal Split
-    nnoremap <silent> <leader>ws :new<CR>
-    nnoremap <silent> <leader>wj :wincmd j<CR>
-    nnoremap <silent> <leader>wk :wincmd k<CR>
 
 " Terminal
     map <Leader>t :term<CR>

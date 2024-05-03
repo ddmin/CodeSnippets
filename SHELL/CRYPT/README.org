@@ -1,0 +1,35 @@
+#+TITLE: Encryption
+
+* Encrypt the System
+* Encrypt a Drive/USB with LUKS
+** Run commands as root
+#+begin_src bash
+sudo su
+#+end_src
+
+** Create Partition
+#+begin_src bash
+fdisk /dev/<DRIVE>
+#+end_src
+
+** cryptsetup
+*** Encrypt
+#+begin_src bash
+cryptsetup luksFormat /dev/<DRIVE><PARTITION>
+#+end_src
+*** Open
+#+begin_src bash
+cryptsetup open /dev/<DRIVE><PARTITION> <MOUNT NAME>
+#+end_src
+*** Setup Filesystem (only first time)
+#+begin_src bash
+mkfs.ext4 /dev/mapper/<MOUNT NAME>
+#+end_src
+*** Mount Drive
+#+begin_src bash
+mount /dev/mapper/<MOUNT NAME> /mnt/
+#+end_src
+*** Close
+#+begin_src bash
+cryptsetup close <MOUNT NAME>
+#+end_src
