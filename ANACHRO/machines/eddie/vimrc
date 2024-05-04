@@ -42,7 +42,8 @@
     nnoremap <leader>w <C-w>
 
 " Enable word movement between separators
-    set iskeyword-=_-
+    set iskeyword-=-
+    set iskeyword-=_
 
 " Undo Directory
     set hidden

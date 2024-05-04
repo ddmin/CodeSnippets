@@ -158,6 +158,16 @@ mods = "Control"
 
 [[keyboard.bindings]]
 action = "ScrollToBottom"
+key = "Escape"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
 key = "Return"
 mode = "Vi"
 mods = "Control"

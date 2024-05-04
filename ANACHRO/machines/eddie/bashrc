@@ -40,6 +40,7 @@ cd_alias() {
 }
 
 alias cd='cd_alias'
+alias cdd='cd .'
 alias cdl='cd "$(cat $PWD_FILE)"'
 
 # vim man pages
