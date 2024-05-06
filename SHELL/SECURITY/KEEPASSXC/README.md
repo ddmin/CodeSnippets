@@ -12,7 +12,7 @@ secret-tool lookup <ATTRIBUTE> <DATABASE>.xdbx | keepassxc --pw-stdin <DATABASE>
 
 ## Remove from keyring
 
-``console
+```console
 secret-tool clear <ATTRIBUTE> <VALUE>
 ```
 
