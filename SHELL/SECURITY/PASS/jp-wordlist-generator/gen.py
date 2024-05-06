@@ -1,13 +1,16 @@
 #!/usr/bin/python
 
+# TODO: separate hiragana / katakana words
+
 import re
 import itertools
+from random import shuffle
+
 
 dice = [i for i in range(1, 7)]
 rolls = [''.join(map(lambda x: str(x), p)) for p in itertools.product(dice, repeat=7)]
 
 JMdict = "JMdict_e"
-helper = "JP_EFF_LARGE_WORDLIST.txt"
 savefile = "JP_JMDICT_WORDLIST.txt"
 exceptions = ["・", "＝", "。", "ゐ", "ゑ", "ヰ", "ヱ", "々", "ゞ", "ゝ", "ゝ", "、", "ヶ", "ﾀ", "ﾋ", "ヮ", "ゎ"]
 
@@ -305,21 +308,19 @@ def main():
 
             words.append(roman)
 
-    with open(helper, 'r') as f:
-        lines = f.read().split('\n')
-        lines = list(filter(lambda x: not x.startswith('#') and len(x) > 0, lines))
-        helper_words = list(map(lambda x: x.split()[1], lines))
-
     with open(savefile, 'w') as f:
         n = -1
         for roll, word, japanese in zip(rolls, words, jp):
             n += 1
             f.write(f'{roll}\t{word}\t{japanese}\n')
 
-        for n, roll in enumerate(rolls[n+1:]):
-            helper_word = helper_words[n % len(helper_words)]
-            f.write(f'{roll}\t{helper_word}\n')
+        # it's not "non-deterministic", baby
+        matching = list(filter(lambda x: len(x[0]) > 2 and len(x[0]) < 10, zip(words, jp)))
+        shuffle(matching)
 
+        for roll, zipped in zip(rolls[n+1:], matching):
+            word, japanese = zipped
+            f.write(f'{roll}\t{word.upper()}\t{japanese}\n')
 
 
 if __name__ == "__main__":
