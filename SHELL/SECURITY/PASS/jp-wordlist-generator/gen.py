@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # TODO: separate hiragana / katakana words
+# TODO: remove repeated words
 
 import re
 import itertools
