@@ -17,6 +17,12 @@ BROWSER="librewolf"
 # rebind caps lock to escape
 setxkbmap -option caps:escape
 
+# PAVLOV: rebind escape to another key
+xmodmap -e 'keycode 9 = F1'
+
+# keycode 67 f1
+# keycode 9 escape
+
 # turn off caps if it is on
 xset -q | grep -q "Caps Lock:\s*on" && xdotool key Caps_Lock
 

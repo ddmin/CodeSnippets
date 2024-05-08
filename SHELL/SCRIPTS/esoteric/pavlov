@@ -1,5 +1,7 @@
 #!/bin/bash
 
+condition=3
+
 RED='\033[1;31m'
 NC='\033[0m'
 
@@ -18,4 +20,4 @@ echo -e "${RED}🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭�
 echo -e "${RED}🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭${NC}"
 echo -e "${RED}🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭🌭${NC}"
 
-sleep 2
+sleep $condition

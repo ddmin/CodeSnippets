@@ -1,3 +1,0 @@
-#!/bin/bash
-
-alacritty -e pavlov & alacritty -e pavlov & alacritty -e pavlov & alacritty -e pavlov & alacritty -e pavlov & alacritty -e pavlov
