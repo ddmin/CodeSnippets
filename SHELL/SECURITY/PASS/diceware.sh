@@ -5,7 +5,7 @@ set -e
 RED='\033[1;31m'
 NC='\033[0m'
 
-usage() { echo "Usage: $(basename $0) [-n(umber of words)] [-v(erbose)] [-h(elp)] [FILE]" 1>&2; }
+usage() { echo "Usage: $(basename $0) [-n(umber of words)] [-v(erbose)] [-h(elp)] [FILE]"; }
 
 dice() {
     local roll=$((1 + $RANDOM % 6))
@@ -74,7 +74,7 @@ if [ "${help}" -eq "1" ]; then
 fi
 
 if [ -z "${file}" ]; then
-    echo -e "${RED}ERROR: no file was provided${NC} 1>&2"
+    echo -e "${RED}ERROR: no file was provided${NC}" 1>&2
     usage
     exit 1
 fi
@@ -84,13 +84,13 @@ if [ -z "${n}" ]; then
 fi
 
 if [ $howmany -lt 1 ]; then
-    echo -e "${RED}ERROR: enter a positive '-n' value${NC} 1>&2"
+    echo -e "${RED}ERROR: enter a positive '-n' value${NC}" 1>&2
     usage
     exit 1
 fi
 
 if [ ! -f $file ]; then
-    echo -e "${RED}ERROR: file '$file' does not exist${NC} 1>&2"
+    echo -e "${RED}ERROR: file '$file' does not exist${NC}" 1>&2
     usage
     exit 1
 fi

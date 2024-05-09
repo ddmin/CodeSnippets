@@ -44,15 +44,15 @@ alias cdd='cd .'
 alias cdl='cd "$(cat $PWD_FILE)"'
 
 # vim man pages
-export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma nonumber norelativenumber' -\""
 
 # bat
 alias cat='batcat'
 
 # alia-ls-es
-alias l='exa --group-directories-first --icons'
-alias la='exa -la --group-directories-first --icons'
-alias ll='exa -l --group-directories-first --icons'
+alias l='exa -F --group-directories-first --icons'
+alias la='exa -Fla --group-directories-first --icons'
+alias ll='exa -Fl --group-directories-first --icons'
 
 # grep
 alias grep='grep --color=auto'
@@ -62,7 +62,7 @@ alias egrep='egrep --color=auto'
 # safer defaults
 alias cp='cp -riv'
 alias mv='mv -iv'
-alias rm='rm -vI'
+alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 # alias shred='shred -vzun 3'
 # alias srm='srm -rfll'
