@@ -1,0 +1,4 @@
+#!/bin/bash
+# yp: yank file path
+
+readlink -f "$1" | xsel -b

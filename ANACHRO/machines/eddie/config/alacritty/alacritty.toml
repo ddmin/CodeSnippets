@@ -152,11 +152,6 @@ key = "Return"
 mods = "Control"
 
 [[keyboard.bindings]]
-action = "ToggleViMode"
-key = "I"
-mods = "Control"
-
-[[keyboard.bindings]]
 action = "ScrollToBottom"
 key = "Escape"
 mode = "Vi"
@@ -169,12 +164,6 @@ mode = "Vi"
 [[keyboard.bindings]]
 action = "ScrollToBottom"
 key = "Return"
-mode = "Vi"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "ScrollToBottom"
-key = "I"
 mode = "Vi"
 mods = "Control"
 

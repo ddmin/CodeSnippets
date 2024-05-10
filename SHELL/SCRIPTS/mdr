@@ -1,0 +1,28 @@
+#!/bin/bash
+# mdr: ripgrep then R.I.P
+
+RED='\033[1;31m'
+NC='\033[0m'
+
+set -e
+
+if [ $# -lt 1 ]; then
+    echo -e "${RED}ERROR: provide string to narrow down search${NC}"
+    echo "Usage: mdr [SEARCH]"
+    exit 1
+fi
+
+echo -e "${RED}FILES WILL BE REMOVED.${NC}"
+echo
+
+rg --files | rg -i "$1"
+files=`rg --files | rg -i "$1"`
+
+echo
+echo -en "${RED}ARE YOU SURE? [y/N]${NC} "
+
+read -e choice
+[[ "$choice" == [Yy]* ]] || (unset IFS && exit 1)
+
+echo
+echo "$files" | xargs -d "\n" rm -v

@@ -1,5 +1,6 @@
 #!/bin/bash
-# htm: unpack zip of webp into jpg
+
+# htm: unpack zip of webp into directory of jpg
 
 set -e
 
@@ -14,7 +15,8 @@ filename=${zipfull%.*}
 
 mkdir -p "$filename"
 
-if [ "${zipfull##*.}" != "zip" ]; then
+extension="${zipfull##*.}"
+if [ "${extension}" != "zip" ] && [ "${extension}" != "cbz" ]; then
     echo "Please provide a zip file."
     echo "USAGE: $(basename $0) [ZIP]"
     exit

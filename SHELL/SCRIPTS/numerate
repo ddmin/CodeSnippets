@@ -1,0 +1,42 @@
+#!/bin/bash
+
+HELP() {
+    echo "USAGE: $(basename $0) -d [DIRECTORY] -a [PREPEND] -b [APPEND] -c [COUNT] -z [ZEROES]"
+}
+
+if [ $# -lt 1 ]; then
+    echo "Please provide a directory."
+    HELP
+    exit 1
+fi
+
+PREPEND=""
+APPEND=""
+COUNT=1
+DIRECTORY=""
+ZERO=3
+
+while getopts "a:b:c:hd:z:" opt
+do
+    case ${opt} in
+        (a) PREPEND=${OPTARG} ;;
+        (b) APPEND=${OPTARG} ;;
+        (c) COUNT=${OPTARG} ;;
+        (d) DIRECTORY=${OPTARG} ;;
+        (h) HELP && exit 1 ;;
+        (z) ZERO=${OPTARG} ;;
+        (*) HELP && exit 1 ;;
+    esac
+done
+
+let power_of_ten=10**$((${ZERO} - 1))
+for file in $(find $DIRECTORY -maxdepth 1 \( -name "*.jpg" -o -name "*.png" -o -name "*.webp" \) | sort -V);
+do
+    extension="${file##*.}"
+    new_name=$DIRECTORY/"$PREPEND$(printf "%0${ZERO}d" $COUNT)$APPEND.$extension"
+    if [ "$file" != "$new_name" ] && [ ! -f "$new_name" ]; then
+        mv $file $new_name
+    fi
+    echo "$file -> $new_name"
+    ((COUNT++))
+done

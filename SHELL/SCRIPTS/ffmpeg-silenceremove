@@ -1,0 +1,16 @@
+#!/bin/bash
+# ffmpeg-silenceremove: wrapper for ffmpeg silenceremove
+
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+NC='\033[0m'
+
+if [ $# -lt 1 ]; then
+    echo -e "${RED}ERROR: no file.${NC}"
+    exit 1
+fi
+
+filename=$(basename -- "$1")
+ext=${filename##*.}
+echo -e "RUNNING: ${GREEN}ffmpeg -i "$1" -af silenceremove=1:0:-50dB ${1%%.*}-silenceremove.${ext}${NC}"
+ffmpeg -i "$1" -v quiet -loglevel error -af silenceremove=1:0:-50dB ${1%%.*}-silenceremove.${ext}

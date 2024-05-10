@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#happ: in conjunction with sadd, move jxl.cbz to proper directories
+
+# directories should be structured as follows:
+
+# Parent Directory                              <-- can run script from here
+#     L-->  JXL Directory                       <-- can run script from here
+#                 |--> FILE-1.JXL.CBZ
+#                 |--> FILE-2.JXL.CBZ
+#                 |--> FILE-3.JXL.CBZ
+#                 L--> Original Directory       *(NAMED "$TARGET")*
+#                           |--> FILE-1.CBZ (original)
+#                           |--> FILE-2.CBZ (original)
+#                           L--> FILE-3.CBZ (original)
+
+IFS=$'\n'
+set -e
+
+TARGET='original'
+OGS=$(find -L . -type d -name "$TARGET")
+
+for og in $OGS; do
+    JXLS=$(find -L . -type f -wholename "${og}/*.jxl.cbz")
+    for JXL in $JXLS; do
+        if [ -n "$JXL" ]; then
+            DIRNAME=$(dirname "$JXL")
+            PARENT=${DIRNAME%/*}
+            mv -v  "$JXL" "$PARENT"
+        fi
+    done
+done
+
+unset IFS

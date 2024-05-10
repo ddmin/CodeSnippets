@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DIR="/tmp/gimpshot"
+FILENAME="$DIR/`date +"gimpshot-%Y-%m-%d_%T.png"`"
+
+mkdir -p $DIR
+xfce4-screenshooter -r -s $FILENAME
+gimp $FILENAME & exit

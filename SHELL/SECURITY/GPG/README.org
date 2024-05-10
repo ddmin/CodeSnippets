@@ -1,5 +1,10 @@
 #+title: GPG
 
+* Verify Hashes
+#+begin_src bash
+sha256sum -c <FILE>.sha256
+#+end_src
+
 * GPG Keys
 ** Generate GPG key
 #+begin_src bash
@@ -17,7 +22,6 @@ gpg -r <YOUR IDENTITY> -e <FILE>
 #+begin_src bash
 gpg -d <FILE>.gpg
 #+end_src
-
 * Single File Encryption
 ** Encrypt File
 - -c [symmetric] --no-symkey-cache [don't cache password locally] --cipher-algo AES256
@@ -61,7 +65,7 @@ gpgtar --decrypt --directory [DIRECTORY] [INPUT].gpg
 *** Create tar file -> encrypt
 **** tar [(_C_)reate] [g(_Z_)ip] [save (_F_)ile]
 #+begin_src bash
-tar czf [OUTPUT].tar.tz [DIRECTORY]
+tar czf [OUTPUT].tar.gz [DIRECTORY]
 #+end_src
 
 **** Encrypt tar

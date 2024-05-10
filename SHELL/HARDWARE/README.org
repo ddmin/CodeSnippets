@@ -1,0 +1,11 @@
+#+title: Hardware
+
+* [[https://superuser.com/questions/460383/how-to-find-model-number-of-linux-disk-drive][Check drive properties]]
+#+begin_src bash
+lsblk -o MODEL,SERIAL,SIZE,STATE --nodeps
+#+end_src
+* [[https://wiki.archlinux.org/title/Solid_state_drive/NVMe][Check SSD health with SMART]]
+#+begin_src bash
+sudo nvme smart-log -H /dev/nvme0
+#+end_src
+** [[https://www.percona.com/blog/using-nvme-command-line-tools-to-check-nvme-flash-health/][Using NVMe Command Line Tools to Check NVMe Flash Health]]

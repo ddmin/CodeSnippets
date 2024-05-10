@@ -1,0 +1,5 @@
+#!/bin/bash
+opts="tile\nselect\nmaximize_with_gaps\nsmall_win_fifty\nsmall_win_seventy\ntiletwo\ntiletwol\ntiletwor\nstacktwo\ntilethree\ntilethreev\ncascade\nshowdesktop"
+
+selected=$(printf $opts |rofi -dmenu -p "Run: ")
+/bin/bash winfun $selected

@@ -1,0 +1,57 @@
+#!/bin/bash
+#sadd: seek and destroy - compress all cbz with 'sadd' into jxl
+
+set -e
+
+EFFORT=9
+DISTANCE=25
+
+usage() {
+    echo "USAGE: $(basename "$0") [DIR]"
+    echo
+    echo "Make sure to rename all cbz to be targeted."
+    echo "FILENAME.sadd.cbz"
+}
+
+# check if at least one argument
+dr="${1}"
+if [ $# -lt 1 ]; then
+    dr="${PWD}"
+fi
+
+# check if directory exists
+if [ ! -d "${dr}" ]; then
+    echo "ERROR: directory '${1}' doesn't exist."
+    usage
+    exit 1
+fi
+
+targets=$(find -L "${dr}" -type f -name "*.sadd.cbz")
+if [ -n "${targets}" ]; then
+    echo "$targets" | xargs -d '\n' -n1 -t cbz2jxl -e $EFFORT -d $DISTANCE
+fi
+
+IFS=$'\n'
+# rename sadd.cbz -> cbz
+sdcbz=$(find -L "${dr}" -type f -name '*.sadd.cbz')
+if [ -n "${sdcbz}" ]; then
+    for cbz in ${sdcbz}; do
+        if [ -f "${cbz}" ]; then
+            mv -v "${cbz}" "${cbz%.sadd.cbz*}.done.cbz"
+        fi
+    done
+    echo
+fi
+
+# rename sadd.jxl.cbz -> jxl.cbz
+sadds=$(find -L "${dr}" -type f -name '*.sadd.jxl.cbz')
+if [ -n "${sadds}" ]; then
+    for sadd in ${sadds}; do
+        if [ -f "${sadd}" ]; then
+            mv -v "${sadd}" "${sadd%.sadd.jxl.cbz*}.jxl.cbz"
+        fi
+    done
+    echo
+fi
+
+unset IFS

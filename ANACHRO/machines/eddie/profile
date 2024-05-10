@@ -12,16 +12,16 @@
 #     fi
 # fi
 
-BROWSER="librewolf"
+BROWSER="firefox-nightly"
 
 # rebind caps lock to escape
 setxkbmap -option caps:escape
 
+# https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+# xmodmap -e 'keycode 66 = Escape'
+
 # PAVLOV: rebind escape to another key
 xmodmap -e 'keycode 9 = F1'
-
-# keycode 67 f1
-# keycode 9 escape
 
 # turn off caps if it is on
 xset -q | grep -q "Caps Lock:\s*on" && xdotool key Caps_Lock
@@ -38,5 +38,12 @@ fi
 
 # emacs
 PATH="$PATH:/home/ddmin/.config/emacs/bin"
+
+# /usr
+PATH="$PATH:/usr/local/bin"
+
+# vim man pages
+export MANROFFOPT="-c"
+export MANPAGER="/bin/sh -c \"col -b | /usr/bin/vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma nonumber norelativenumber' -\""
 
 export PATH

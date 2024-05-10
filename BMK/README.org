@@ -1,0 +1,64 @@
+#+title: Badly Managed Kollections (BMK)
+#+description: Specifications for the BMK file type.
+
+* Motivation
++ Create a file type / syntax that I can store a bunch of bookmarks in
++ Links are organized into different files based on categories
+  + (akin to bookmark folders)
++ Create searchable links without relying on browser-based bookmarking software
++ Easily search and manipulate links with tools like =sed= and =grep=
++ Separate bookmarks based on categories (BMK files) and tags (=![TAG]=)
+
+* Specification
+BMK files can contain any / all of the following:
+
+#+begin_example
+#TITLE
+@LINK
+![TAG] DESCRIPTION
+
+vim nowrap clipboard=unnamedplus
+#+end_example
+
+Lines *MUST* begin with either =#=, =@=, or =!=. Any other line will be treated as a comment.
+
+=#TITLE= demarcates a single item group. Every element, with the exception of =#TITLE=, may be excluded or included more than once within a single item group. For instance:
+
+#+begin_example
+#TITLE 1
+@LINK 1
+![TAG 1] DESCRIPTION 1
+!DESCRIPTION 2
+!DESCRIPTION 3
+@LINK 2
+![TAG 1] [TAG 2] [TAG 2]
+
+#TITLE 2
+@LINK 1
+@LINK 2
+@LINK 3
+
+#TITLE 2
+!DESCRIPTION
+#+end_example
+
+** TITLE Marking Characters
+=#TITLE= may be marked by prepending any of the specially designated non-alphanumeric characters after =#=, but before =TITLE=.
+The _special marking characters_ include: =`=, =~=, =!=, =@=, =#=, =$=, =%=, =^=, =&=, =*=, =_=, =-=, =+=, ===, and =?=.
+To escape a marking character at the beginning of the title, use two =##=.
+
+*** TITLE marked with ~?~
+#+begin_example
+#?TITLE
+#+end_example
+
+*** Unmarked TITLE beginning with ~?~
+#+begin_example
+##?TITLE
+#+end_example
+
+* Scripts
+** Display links from all BMK files
+#+begin_example
+rg -. -g *.bmk '@'
+#+end_example

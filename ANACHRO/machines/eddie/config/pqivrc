@@ -1,0 +1,18 @@
+[keybindings]
+H { goto_file_relative(-1); }
+L { goto_file_relative(1); }
+J { set_scale_level_relative(0.83333) }
+K { set_scale_level_relative(1.2) }
+
+h { shift_x(150) }
+l { shift_x(-150) }
+j { shift_y(-150) }
+k { shift_y(150) }
+
+a { reset_scale_level(); set_shift_align_corner(NC) }
+s { set_scale_level_absolute(1.0) }
+f { toggle_fullscreen(0) }
+n { toggle_info_box() }
+i { toggle_negate_mode() }
+r { rotate_right() }
+G { jump_dialog() }

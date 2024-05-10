@@ -1,0 +1,13 @@
+#!/bin/bash
+
+html="./html"
+mkdir -p $html
+
+filename="$(basename $1)"
+filename="${filename%.*}"
+
+pandoc $1 -o "$html/$filename.html"
+
+# pdf="./pdf"
+# mkdir -p $pdf
+# pandoc "$html/$filename.html" -o "$pdf/$filename.pdf"

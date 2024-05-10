@@ -1,6 +1,69 @@
 #+TITLE: Encryption
 
 * Encrypt the System
+** Partition drives
+#+begin_src bash
+fdisk /dev/sda
+mkfs.fat -F32 /dev/sda1
+#+end_src
+** Create encrypted partition
+#+begin_src bash
+cryptsetup luksFormat /dev/sda2
+#+end_src
+** Create FS and mount encrypted partition
+#+begin_src bash
+cryptsetup open /dev/sda2 <MOUNT NAME>
+mkfs.btrfs /dev/mapper/<MOUNT NAME>
+mount /dev/mapper/<MOUNT NAME> /mnt
+#+end_src
+** Mount boot directory
+#+begin_src bash
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+#+end_src
+** Install system
+*** Arch
+#+begin_src bash
+pacstrap /mnt base base-devel linux linux-firmware grub networkmanager cryptsetup lvm2 vi vim
+#+end_src
+
+(install *efibootmgr* if UEFI)
+** Decrypt drive when booting
+Add ~encrypt~ and ~lvm2~ to ~HOOKS~ in =/etc/mkinitcpio.conf=
+#+begin_src bash
+HOOKS=(... encrypt lvm2)
+#+end_src
+
+Run ~mkinitcpio~
+#+begin_src bash
+mkinitcpio -p linux
+#+end_src
+
+** Tell GRUB how to unencrypt drives
+*** Get UUIDs from USB environment
+#+begin_src bash
+lsblk -f >> /mnt/etc/default/grub
+#+end_src
+*** Edit /etc/default/grub
+#+begin_src bash
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=<ENCRYPTED UUID>:<MOUNT NAME> root=UUID=<UNENCRYPTED UUID>"
+#+end_src
+*** Install GRUB
+**** BIOS
+#+begin_src bash
+grub-install /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+#+end_src
+
+** [[https://unix.stackexchange.com/a/401798][Automatically login]] (after installation)
+*** GNOME (GDM3)
+=/etc/gdm3/daemon.conf=
+#+begin_src bash
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=<USERNAME>
+#+end_src
+
 * Encrypt a Drive/USB with LUKS
 ** Run commands as root
 #+begin_src bash

@@ -1,14 +1,47 @@
 #!/bin/bash
 # cbz2jxl: convert cbz images to jxl then repack into cbz
 
+# DISTANCE 5 is decent even for color images (only smudges small details)
+
+RED='\033[1;31m'
+NC='\033[0m'
+
 EFFORT=9
-QUALITY=100
+DISTANCE=1
+
+POOL=0
+CLOSED=12
+
+USAGE() {
+    echo
+    echo "USAGE: $(basename "$0") -e [EFFORT] -d [DISTANCE] [CBZ]"
+}
 
 set -e
 
+while getopts ":e:d::" o; do
+    case "${o}" in
+        e)
+            EFFORT=${OPTARG}
+            ;;
+        d)
+            DISTANCE=${OPTARG}
+            ;;
+        *)
+            echo "ERROR: Unknown option."
+            USAGE
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+# Start Timing
+start_time=$(date +%s)
+
 if [ $# -lt 1 ]; then
-    echo "Please provide a cbz file."
-    echo "USAGE: $(basename $0) [CBZ]"
+    echo "ERROR: Please provide a cbz file."
+    USAGE
     exit
 fi
 
@@ -16,8 +49,8 @@ cbz="$@"
 filename=${cbz%.*}
 
 if [ "${cbz##*.}" != "cbz" ]; then
-    echo "Please provide a cbz file."
-    echo "USAGE: $(basename $0) [CBZ]"
+    echo "ERROR: Please provide a cbz file."
+    USAGE
     exit
 fi
 
@@ -25,22 +58,57 @@ fi
 tempdir="/tmp/cbz2jxl"
 
 rm -rf $tempdir
-mkdir -p $tempdir
 mkdir -p "$tempdir/jxl"
 
+echo -e "${RED}LET'S SEE WHAT'S HIDING.${NC}"
 unzip "$cbz" -d "$tempdir"
-echo ""
+echo
 
-for img in $(find "$tempdir" -maxdepth 1 \( -name "*.jpg" -o -name "*.png" \));
-do
-    imgname=$(basename $img)
-    imgname=${imgname%.*}
-    cjxl --lossless_jpeg=1 -e $EFFORT -q $QUALITY "$img" "$tempdir/jxl/${imgname%.*}.jxl"
-    echo ""
-done
+# FIX: convert webp to jpg (until they fix this)
+wps="$(find "$tempdir" -name "*.webp")"
+if [ -n "$wps" ]; then
+    echo -e "${RED}FILTHY WEBPS.${NC}"
+    find "$tempdir" -name "*.webp" -print0 | sort -zV | xargs -0 -P $CLOSED -I wp -t dwebp "wp" -o "wp.png"
+    echo
+fi
 
 IFS=$'\n'
-zip "$filename.jxl.zip" $(find "$tempdir/jxl" -maxdepth 1 -name "*.jxl")
+
+echo -e "${RED}LET'S GET THIS SHOW ON THE ROAD.${NC}"
+echo
+for img in $(find "$tempdir" \( -name "*.jpg" -o -name "*.png" \) | sort -V);
+do
+    echo "Converting '$img'..."
+    imgname=$(basename "$img")
+    imgname=${imgname%.*}
+    cjxl --lossless_jpeg=0 --quiet -e "$EFFORT" -d "$DISTANCE" "$img" "$tempdir/jxl/${imgname%.*}.jxl" &
+    POOL=$((POOL+1))
+    if [[ $POOL -ge $CLOSED ]]; then
+        echo
+        echo -e "${RED}THREAD POOL'S CLOSED.${NC}"
+        echo
+        wait
+        POOL=0
+    fi
+done
+wait
+
+echo
+
+echo -e "${RED}ZIP IT ALL UP.${NC}"
+zip -j "$filename.jxl.zip" $(find "$tempdir/jxl" -maxdepth 1 -name "*.jxl")
 unset IFS
 
 mv "$filename.jxl.zip" "$filename.jxl.cbz"
+
+# Record Timing
+end_time=$(date +%s)
+runtime=$((end_time-start_time))
+
+hours=$((runtime / 3600))
+minutes=$(( (runtime % 3600) / 60 ))
+seconds=$(( (runtime % 3600) % 60 ))
+
+echo
+printf "Finished in %02d:%02d:%02d" $hours $minutes $seconds
+echo
