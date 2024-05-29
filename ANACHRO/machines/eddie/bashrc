@@ -7,12 +7,8 @@
 # dt colorscript
 # colorscript -e $((RANDOM%21+1))
 
-# pokemon colorscript [https://github.com/emgns04/pokemon-colorscripts-mac]
-if [ $((RANDOM%512)) -eq 0 ]; then
-    pokemon-colorscripts -sr
-else
-    pokemon-colorscripts -r
-fi
+# pokemon colorscript [https://gitlab.com/phoneybadger/pokemon-colorscripts]
+pokemon-colorscripts -r
 
 PS1='[033];u,l@h:w007]: u,l@h:w; '
 
@@ -81,9 +77,6 @@ alias mkdir='mkdir -pv'
 # alias srm='srm -rfll'
 # alias bleachbit='bleachbit -s'
 
-# funnies
-alias please='sudo $(history -p !!)'
-
 # ocrmypdf
 alias ocrmypdf='ocrmypdf -l eng --deskew'
 
@@ -140,9 +133,6 @@ alacritty-opacity() {
         alacritty msg config window.opacity="$1"
     fi
 }
-
-# log nvme info
-alias nvme-log="date >> $HOME/Documents/nvme.log && sudo nvme smart-log -H /dev/nvme0 >> $HOME/Documents/nvme.log && echo -e '\n\n' >> $HOME/Documents/nvme.log"
 
 # starship: must be last line
 eval "$(starship init bash)"

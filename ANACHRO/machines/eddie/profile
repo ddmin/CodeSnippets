@@ -21,7 +21,7 @@ setxkbmap -option caps:escape
 # xmodmap -e 'keycode 66 = Escape'
 
 # PAVLOV: rebind escape to another key
-xmodmap -e 'keycode 9 = F1'
+# xmodmap -e 'keycode 9 = F1'
 
 # turn off caps if it is on
 xset -q | grep -q "Caps Lock:\s*on" && xdotool key Caps_Lock

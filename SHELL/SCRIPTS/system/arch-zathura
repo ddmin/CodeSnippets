@@ -1,0 +1,10 @@
+#!/bin/sh
+# distrobox_binary
+# name: archbtw
+if [ -z "${CONTAINER_ID}" ]; then
+	exec "/usr/local/bin/distrobox-enter"  -n archbtw  --  '/usr/sbin/zathura'  "$@"
+elif [ -n "${CONTAINER_ID}" ] && [ "${CONTAINER_ID}" != "archbtw" ]; then
+	exec distrobox-host-exec '/home/ddmin/.local/bin/zathura' "$@"
+else
+	exec '/usr/sbin/zathura' "$@"
+fi

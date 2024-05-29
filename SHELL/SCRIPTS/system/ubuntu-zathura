@@ -1,0 +1,16 @@
+#!/bin/bash
+# tabbed wrapper for zathura
+
+# remove any arguments
+while getopts ":" _; do
+    :
+done
+shift "$((OPTIND - 1))"
+
+XID=$(tabbed -cd -p s1)
+for pdf in "$@"; do
+    /usr/bin/zathura --fork -e ${XID} "$pdf"
+
+    # RACE CONDITION!?
+    sleep 0.1
+done

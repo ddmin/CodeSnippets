@@ -1,0 +1,36 @@
+#!/bin/bash
+# inherit: name files with parent directory name
+
+set -e
+
+usage() {
+    echo
+    echo "USAGE: $(basename "$0") [DIR]"
+}
+
+# check if at least one argument
+dr="${1}"
+if [ $# -lt 1 ]; then
+    dr="${PWD}"
+fi
+
+# check if directory exists
+if [ ! -d "${dr}" ]; then
+    echo "ERROR: directory '${1}' doesn't exist."
+    usage
+    exit 1
+fi
+
+IFS=$'\n'
+
+targets=$(find ${dr} -mindepth 1 -maxdepth 1 -type d)
+for target in ${targets}; do
+    bname=$(basename $target)
+    files=$(find ${target} -mindepth 1 -maxdepth 1 -type f)
+    for file in ${files}; do
+        fname=$(basename $file)
+        mv -v ${file} "${target}/${bname}_${fname}"
+    done
+done
+
+unset IFS

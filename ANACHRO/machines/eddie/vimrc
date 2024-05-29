@@ -4,6 +4,21 @@
 " | |_) | (_| \__ \ | (__   \ V /| | | | | | |
 " |_.__/ \__,_|___/_|\___|   \_/ |_|_| |_| |_|
 
+" Vim Plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
+call plug#begin()
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    Plug 'justinmk/vim-sneak'
+    Plug 'ap/vim-css-color'
+call plug#end()
+
 " Remap alt
     set <M-j>=j
     set <M-k>=k
@@ -13,6 +28,9 @@
 " Basics
     let mapleader = " "
     inoremap jk <ESC>
+    cnoremap jk <C-C>
+    cnoremap <C-k> <Up>
+    cnoremap <C-j> <Down>
 
     set number
     set relativenumber
@@ -21,6 +39,7 @@
 
     set nocompatible
     set encoding=utf-8
+    set nrformats=
     set showcmd
 
     syntax on
@@ -34,6 +53,10 @@
 
     set wildmenu
     set wildmode=longest:full,full
+    set history=200
+
+" Prevent escape / alt overlap
+    set ttimeoutlen=50
 
 " Fix splits
     set splitbelow splitright
@@ -51,6 +74,9 @@
     set nobackup
     set undodir=~/.vim/undodir
     set undofile
+
+" Move viminfo
+    set viminfo+=n~/.vim/viminfo
 
 " Tabs
     set tabstop=4
@@ -72,15 +98,6 @@
 
 " Open folds
     nnoremap <CR> za
-
-" Increment number
-    nnoremap <C-p> <C-a>
-
-" Toggle numbers
-    nmap <silent> <leader>n :set invnumber<CR>:set invrelativenumber<CR>
-
-" Toggle spell
-    nnoremap <silent> <leader>s :set invspell spelllang=en_us<cr>
 
 " Yank to end of line
     nnoremap Y y$
@@ -111,8 +128,25 @@
     vnoremap <M-j> :m '>+1<CR>gv=gv
     vnoremap <M-k> :m '<-2<CR>gv=gv
 
+" Toggle line numbers
+    nmap <silent> <leader>tl :set invnumber<CR>:set invrelativenumber<CR>
+
+" Toggle spell
+    nnoremap <silent> <leader>ts :set invspell spelllang=en_us<CR>
+
 " Terminal
-    map <Leader>t :term<CR>
+    map <silent> <leader>ot :terminal<CR>
+
+" Netrw
+    map <silent> <leader>dd :Explore<CR>
 
 " Ctrl + Backspace to Delete Word
     imap <C-H> <C-W>
+
+" Plugin Configs
+
+"   Sneak
+    map f <Plug>Sneak_f
+    map F <Plug>Sneak_F
+    map t <Plug>Sneak_t
+    map T <Plug>Sneak_T

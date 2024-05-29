@@ -3,7 +3,14 @@
 
 set -e
 
-EFFORT=9
+LOGFILE='sadd.log'
+
+RED='\033[1;31m'
+GRN='\033[1;32m'
+PRP='\033[1;35m'
+NC='\033[0m'
+
+EFFORT=10
 DISTANCE=25
 
 usage() {
@@ -12,6 +19,17 @@ usage() {
     echo "Make sure to rename all cbz to be targeted."
     echo "FILENAME.sadd.cbz"
 }
+
+# kill all cjxl processes on exit
+function cleanup {
+    echo
+    if [[ -n $(pgrep -f 'cjxl') ]]; then
+        echo -e "${GRN}Killing cjxl processes...${NC}"
+        pkill -f cjxl
+    fi
+}
+
+trap cleanup EXIT
 
 # check if at least one argument
 dr="${1}"
@@ -26,32 +44,63 @@ if [ ! -d "${dr}" ]; then
     exit 1
 fi
 
-targets=$(find -L "${dr}" -type f -name "*.sadd.cbz")
-if [ -n "${targets}" ]; then
-    echo "$targets" | xargs -d '\n' -n1 -t cbz2jxl -e $EFFORT -d $DISTANCE
+echo
+echo -e "${GRN}Searching for SADD.CBZ files...$total${NC}"
+
+targetn=$(find -L "${dr}" -type f -name "*.sadd.cbz" -print)
+
+# exit if no targets found
+if [ -z "$targetn" ]; then
+    echo -e "${RED}NO SADD.CBZ TARGETS FOUND.${NC}"
+    exit
 fi
+
+# sometimes they're symlinks, sometimes they're not...
+# remove the duplicates if symlinks point to same files
+targets=$(echo "$targetn" | grep -v '^$' | xargs -n1 -d $'\n' readlink -f | sort -uV)
+total=$(echo "$targets" | wc -l)
+
+echo -e "${RED}SADD.CBZ TARGETS FOUND: $total${NC}"
+
+echo
+echo -en "${PRP}[PRESS ENTER TO REVIEW]${NC}"
+read -r
+echo "$targets" | xargs -n1 -d $'\n' basename | batcat --file-name "SADD.CBZ Targets"
+
+echo
+echo -en "${RED}Continue? [Y/n] ${NC}"
+read -n 1 -r
+echo
+
+if [[ ! $REPLY =~ ^[Yy]$ ]] && [ -n "$REPLY" ]
+then
+    echo
+    echo -e "${PRP}Goodbye.${NC}"
+    exit 0
+fi
+
+# restart log file
+: > $LOGFILE
 
 IFS=$'\n'
-# rename sadd.cbz -> cbz
-sdcbz=$(find -L "${dr}" -type f -name '*.sadd.cbz')
-if [ -n "${sdcbz}" ]; then
-    for cbz in ${sdcbz}; do
-        if [ -f "${cbz}" ]; then
-            mv -v "${cbz}" "${cbz%.sadd.cbz*}.done.cbz"
-        fi
-    done
-    echo
-fi
+count=0
+for target in ${targets}; do
 
-# rename sadd.jxl.cbz -> jxl.cbz
-sadds=$(find -L "${dr}" -type f -name '*.sadd.jxl.cbz')
-if [ -n "${sadds}" ]; then
-    for sadd in ${sadds}; do
-        if [ -f "${sadd}" ]; then
-            mv -v "${sadd}" "${sadd%.sadd.jxl.cbz*}.jxl.cbz"
-        fi
-    done
     echo
-fi
+    count=$((count+1))
+
+    # run cbz2jxl
+    echo -e "${PRP}RUNNING: cbz2jxl -e $EFFORT -d $DISTANCE [$count / $total]${NC}"
+    cbz2jxl -e $EFFORT -d $DISTANCE "${target}" 2>&1 | tee -a $LOGFILE
+
+    # rename sadd.cbz -> cbz
+    echo -e "${PRP}RENAMING: mv -v ${target} ${target%.sadd.cbz}.done.cbz${NC}"
+    mv -v "${target}" "${target%.sadd.cbz}.done.cbz" 2>&1 | tee -a $LOGFILE
+
+    # rename sadd.jxl.cbz -> jxl.cbz
+    echo -e "${PRP}RENAMING: mv -v ${target%.sadd.cbz}.jxl ${target%.sadd.jxl.cbz}.jxl.cbz${NC}"
+    mv -v "${target%.sadd.cbz}.sadd.jxl.cbz" "${target%.sadd.cbz}.jxl.cbz" 2>&1 | tee -a $LOGFILE
+
+done
 
 unset IFS

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+    echo "chwal: No image supplied"
+    echo "Usage: chwal [image]"
+    exit
+fi
+
+ln -sf $1 $HOME/Pictures/wallpaper
+setwal

@@ -3,6 +3,7 @@
 # htm: unpack zip of webp into directory of jpg
 
 set -e
+THREADS=12
 
 if [ $# -lt 1 ]; then
     echo "Please provide a zip file."
@@ -30,3 +31,6 @@ mkdir -p "$tempdir"
 unzip "$zipfull" -d "$tempdir"
 
 mogrify -verbose -format jpg -path "$filename" "$tempdir/*.webp"
+
+wps="$(find "$tempdir" -name "*.webp")"
+find "$tempdir" -name "*.webp" | sort -V | xargs -d $'\n' -P $THREADS -I wp -t mogrify -verbose -format jpg -path "$filename" wp

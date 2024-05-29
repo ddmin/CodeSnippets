@@ -3,6 +3,8 @@ H { goto_file_relative(-1); }
 L { goto_file_relative(1); }
 J { set_scale_level_relative(0.83333) }
 K { set_scale_level_relative(1.2) }
+' { set_scale_level_relative(0.83333) }
+\; { set_scale_level_relative(1.2) }
 
 h { shift_x(150) }
 l { shift_x(-150) }

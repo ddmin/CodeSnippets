@@ -26,6 +26,7 @@ for og in $OGS; do
             DIRNAME=$(dirname "$JXL")
             PARENT=${DIRNAME%/*}
             mv -v  "$JXL" "$PARENT"
+            echo
         fi
     done
 done

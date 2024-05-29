@@ -90,9 +90,10 @@ mkfs.ext4 /dev/mapper/<MOUNT NAME>
 #+end_src
 *** Mount Drive
 #+begin_src bash
-mount /dev/mapper/<MOUNT NAME> /mnt/
+mount /dev/mapper/<MOUNT NAME> /mnt/<MOUNT>
 #+end_src
 *** Close
 #+begin_src bash
+umount /mnt/<MOUNT>
 cryptsetup close <MOUNT NAME>
 #+end_src

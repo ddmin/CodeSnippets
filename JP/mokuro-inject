@@ -56,7 +56,7 @@ INJECTION_PANZOOM = """pz = panzoom(pc, {
 
 WHEEL_INJECTION_SITE = "beforeWheel: function (e) {"
 INJECTION_WHEEL = """beforeWheel: function (e) {
-            let shouldIgnore = disablePanzoomOnElement(e.target) || !e.shiftKey;
+            let shouldIgnore = disablePanzoomOnElement(e.target) || !e.ctrlKey;
             return shouldIgnore;
         },"""
 
