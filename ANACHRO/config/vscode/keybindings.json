@@ -1,0 +1,35 @@
+[
+  { "key": "ctrl+t", "command": "workbench.action.terminal.focus" },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    // Unbind unconditional default
+    "key": "ctrl+.",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    // to ←
+    "key": "ctrl+.",
+    "when": "!sideBarFocus",
+    "command": "workbench.action.focusSideBar"
+  },
+  {
+    // from →
+    "key": "ctrl+.",
+    "when": "sideBarFocus",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.files.openFolder",
+    "when": "openFolderWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+k ctrl+o",
+    "command": "-workbench.action.files.openFolder",
+    "when": "openFolderWorkspaceSupport"
+  }
+]

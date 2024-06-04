@@ -1,0 +1,73 @@
+{
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#33941E", "#000"],
+  "vim.statusBarColors.insert": ["#24CCFF", "#000"],
+  "vim.statusBarColors.visual": ["#FFA914", "#000"],
+  "vim.statusBarColors.visualline": ["#FFA914", "#000"],
+  "vim.statusBarColors.visualblock": ["#FFA914", "#000"],
+  "vim.statusBarColors.replace": "#FF5252",
+  "vim.statusBarColors.commandlineinprogress": "#007ACC",
+  "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  "vim.statusBarColors.easymotionmode": "#007ACC",
+  "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  "vim.statusBarColors.surroundinputmode": "#007ACC",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#33941E",
+    "statusBar.noFolderBackground": "#33941E",
+    "statusBar.debuggingBackground": "#33941E",
+    "statusBar.foreground": "#000",
+    "statusBar.debuggingForeground": "#000"
+  },
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Iosevka",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "editor.fontLigatures": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.fontFamily": "monospace",
+  "workbench.iconTheme": "vscode-icons",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.confirmDragAndDrop": false,
+  "editor.lineNumbers": "relative",
+  "editor.fontSize": 18,
+  "git.confirmSync": false,
+  "vsicons.dontShowNewVersionMessage": true
+}

@@ -64,8 +64,7 @@ call plug#end()
 " Splits
     nnoremap <leader>w <C-w>
 
-" Enable word movement between separators
-    set iskeyword-=-
+" Remove '_' from word objects
     set iskeyword-=_
 
 " Undo Directory

@@ -21,7 +21,7 @@ for dir in `find $GITHUB -maxdepth 1 -mindepth 1 -type d`
 do
     echo -e "${GREEN}DIRECTORY: $dir$NC"
     cd $dir
-    git pull origin master
+    # git pull origin master
     git status $dir
     echo
 done
