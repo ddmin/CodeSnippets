@@ -5,6 +5,7 @@ set -e
 
 # REDLIB INSTANCES
 SITE=(
+    ""
     "https://l.opnxng.com"
     "https://libreddit.bus-hit.me"
     "https://reddit.idevicehacked.com"

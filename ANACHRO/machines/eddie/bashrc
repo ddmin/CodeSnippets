@@ -4,11 +4,17 @@
 # | |_) | (_| \__ \ | (__  | |_) | (_| \__ \ | | |
 # |_.__/ \__,_|___/_|\___| |_.__/ \__,_|___/_| |_|
 
-# dt colorscript
-# colorscript -e $((RANDOM%21+1))
+# memory-check: don't go senile
+MTEST=12
+if [ $((RANDOM % MTEST)) = 0 ]; then
+    memory-check
+fi
 
 # pokemon colorscript [https://gitlab.com/phoneybadger/pokemon-colorscripts]
 pokemon-colorscripts -r
+
+# dt colorscript
+# colorscript -e $((RANDOM%21+1))
 
 PS1='[033];u,l@h:w007]: u,l@h:w; '
 

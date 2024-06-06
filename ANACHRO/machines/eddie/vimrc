@@ -95,6 +95,10 @@ call plug#end()
 " Remove trailing white space on save
     autocmd BufWritePre * %s/\s\+$//e
 
+" Focus search results
+    nnoremap n nzz
+    nnoremap N Nzz
+
 " Open folds
     nnoremap <CR> za
 
