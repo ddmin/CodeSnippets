@@ -13,7 +13,9 @@
 BMK files can contain any / all of the following:
 
 #+begin_example
+~GLOBAL-LINK-PREFIX
 #TITLE
+^LINK-PREFIX
 @LINK
 ![TAG] DESCRIPTION
 
@@ -42,8 +44,19 @@ Lines *MUST* begin with either =#=, =@=, or =!=. Any other line will be treated 
 !DESCRIPTION
 #+end_example
 
+** Link Prefix
+=^LINK-PREFIX= can be used to specify a collection of items with the same URL base. Use =~GLOBAL-LINK-PREFIX= to indicate a global =LINK-PREFIX= for the entire file.
+
+#+begin_example
+#Reddit
+^https://reddit.com
+@/r/all
+@/r/popular
+@/r/popular/top?t=year
+#+end_example
+
 ** TITLE Marking Characters
-=#TITLE= may be marked by prepending any of the specially designated non-alphanumeric characters after =#=, but before =TITLE=.
+=#TITLE= may be marked by including any of the specially designated non-alphanumeric characters after =#=, but before =TITLE=.
 The _special marking characters_ include: =`=, =~=, =!=, =@=, =#=, =$=, =%=, =^=, =&=, =*=, =_=, =-=, =+=, ===, and =?=.
 To escape a marking character at the beginning of the title, use two =##=.
 
@@ -56,7 +69,6 @@ To escape a marking character at the beginning of the title, use two =##=.
 #+begin_example
 ##?TITLE
 #+end_example
-
 * Scripts
 ** Display links from all BMK files
 #+begin_example

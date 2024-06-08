@@ -75,6 +75,11 @@ sudo su
 fdisk /dev/<DRIVE>
 #+end_src
 
+*** [[https://superuser.com/a/505802][First sector begins at 2048]]
+#+begin_src bash
+fdisk -c=dos
+#+end_src
+
 ** cryptsetup
 *** Encrypt
 #+begin_src bash

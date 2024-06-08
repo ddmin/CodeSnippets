@@ -3,13 +3,15 @@
 # inspired by: https://github.com/kha-white/mokuro/issues/16#issuecomment-1690310509
 
 import sys
+import re
 
 
 # Default Settings
 BACKGROUND_COLOR = "232323"
 READING_MODE = "keep zoom, go to top"
 
-BACKGROUND_INJECTION_SITE = "backgroundColor: '#C4C3D0',"
+# BACKGROUND_INJECTION_SITE = "backgroundColor: '#C4C3D0',"
+BACKGROUND_INJECTION_SITE = r"backgroundColor: '#[A-Fa-f0-9]{6}',"
 INJECTION_BACKGROUND = f"backgroundColor: '#{BACKGROUND_COLOR}',"
 
 READING_MODE_INJECTION_SITE = "defaultZoomMode: 'fit to screen',"
@@ -141,8 +143,14 @@ INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e)
 });"""
 
 
-def inject(html, injection_site, injection, multiline=False, lines=1):
-    splits = html.split(injection_site)
+def inject(html, injection_site, injection, multiline=False, lines=1, regex=False):
+
+    # target different mokuro versions with regex
+    if regex:
+        splits = re.split(injection_site, html)
+    else:
+        splits = html.split(injection_site)
+
     if len(splits) != 2:
         print(f"{name()}: ERROR '{sys.argv[1]}' is likely not a mokuro html file.")
         exit(1)
@@ -186,8 +194,10 @@ def main():
     # ========================= default settings =============================
     # set default background color
     html = inject(
-        html, BACKGROUND_INJECTION_SITE, INJECTION_BACKGROUND, multiline=False
+        html, BACKGROUND_INJECTION_SITE, INJECTION_BACKGROUND, multiline=False, regex=True
     )
+
+    # set reading mode
     html = inject(
         html, READING_MODE_INJECTION_SITE, INJECTION_READING_MODE, multiline=False
     )

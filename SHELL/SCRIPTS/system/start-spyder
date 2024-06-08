@@ -1,7 +1,9 @@
 #!/bin/bash
 
+. $HOME/.env
+
 ANACONDA="$HOME/.anaconda3/bin"
 
 source "$ANACONDA/activate"
 conda activate spyder-env
-spyder &
+spyder -p "$SPYDER_DIR" &

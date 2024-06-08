@@ -1,0 +1,56 @@
+#!/bin/bash
+# replext: change file extension
+
+# TODO:
+#   skip validation flag
+#   adjust extension length (e.g. tar.gz instead of gz) to replace
+#   accept STDIN for multiple files
+
+validate() {
+    echo
+    echo -en "Continue? [y/N] "
+    read -n 1 -r
+    echo
+
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+        echo -e "Goodbye."
+        exit 0
+    fi
+}
+
+usage() {
+    echo
+    echo "USAGE: $(basename "$0") [FILE] [EXT]"
+}
+
+file="${1}"
+if [ $# -lt 1 ]; then
+    echo "ERROR: please provide a file."
+    usage
+    exit 1
+fi
+
+if [ ! -f "${file}" ]; then
+    echo "ERROR: file '${file}' does not exist!"
+    usage
+    exit 1
+fi
+
+ext="${2}"
+if [ $# -lt 2 ]; then
+    echo "ERROR: please provide an extension."
+    usage
+    exit 1
+fi
+
+newfile=$(echo -n "${file}" | awk -v ext="$ext" -F '.' \
+    '{printf("%s.", $1)} \
+    {for (i=2; i<=NF-1; i++) printf("%s.", $i)} \
+    {printf("%s", ext)}')
+
+echo "${file} -> ${newfile}"
+validate
+
+echo
+mv -v "${file}" "${newfile}"

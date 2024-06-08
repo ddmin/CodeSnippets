@@ -17,7 +17,7 @@ GITHUB_CONFIG="$GITHUB/dotfiles/config"
 # done
 
 # check for changes in remote/local
-for dir in `find $GITHUB -maxdepth 1 -mindepth 1 -type d`
+for dir in `find $GITHUB -maxdepth 1 -mindepth 1 -type d | sort -V`
 do
     echo -e "${GREEN}DIRECTORY: $dir$NC"
     cd $dir

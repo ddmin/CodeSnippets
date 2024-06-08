@@ -1,0 +1,103 @@
+#+title: Fiona 🐸
+
+* Fiona (👸)
+** Details
++ =OS:= Fedora Sericea
++ =WM:= sway
+** Post-Installation
+#+begin_src bash
+rpm-ostree update (--preview)
+#+end_src
+
+*** [[https://wiki.archlinux.org/title/SDDM#Autologin][Automatic Login]]
+=/etc/sddm.conf.d/autologin.conf=
+#+begin_src conf
+[Autologin]
+User=user
+Session=sway
+#+end_src
+
+*** Essential Applications
+Aren't offered as flatpaks and a pain to use through toolbox.
+Instead, install these via =rpm-ostree=:
+
+#+begin_src bash
+rpm-ostree install <APPLICATION>
+#+end_src
+
++ vim
++ ranger
+  + lf
+  + yazi
++ xsel
+
+
+** Reading List
+*** Fedora
+**** Fedora Documentation
++ [[https://docs.fedoraproject.org/en-US/emerging/][Atomic Desktops]]
+  + [[https://docs.fedoraproject.org/en-US/fedora-silverblue/][Silverblue]]
+  + [[https://docs.fedoraproject.org/en-US/fedora-sericea/][Sericea]]
+
+**** toolbox
++ [[https://containertoolbx.org/install/][Install]]
+
+**** Flatpak
++ [[https://docs.flatpak.org/en/latest/getting-started.html][Getting Started]]
+
+*** sway
++ [[https://github.com/swaywm/sway/wiki][Wiki]]
+
+**** Waybar
++ [[https://github.com/Alexays/Waybar][GitHub]]
+
+* Fiona (👹)
+** Details
++ =OS:= Fedora Silverblue
++ =WM:= GNOME
+
+*** Applications
++ =Browser:= Firefox
++ =Terminal:= GNOME Terminal
+** Post-Installation
+#+begin_example
+rpm-ostree update (--preview)
+#+end_example
+
+*** GNOME Tweaks
+#+begin_example
+rpm-ostree install gnome-tweaks
+#+end_example
+
+**** dconf Editor (Flatpak)
+
+*** [[https://unix.stackexchange.com/a/677879][Remap Super+<Num>]]
+#+begin_example shell
+for i in {1..9}; do
+    gsettings set "org.gnome.shell.keybindings" "switch-to-application-${i}" "[]"
+    gsettings set "org.gnome.desktop.wm.keybindings" "switch-to-workspace-${i}" "['<Super>${i}']"
+    gsettings set "org.gnome.desktop.wm.keybindings" "move-to-workspace-${i}" "['<Super><Shift>${i}']"
+    gsettings set "org.gnome.shell.extensions.dash-to-dock" "app-hotkey-${i}" "[]"
+done
+#+end_example
+
+*** Change Alt-Tab Behavior
+
+**** Default Behavior
++ =Alt-Tab= to move through all open windows
++ =Alt-`= to move through windows of the same application
+
+**** Use Alt-Tab to cycle through all windows
+#+begin_example shell
+gsettings set "org.gnome.desktop.wm.keybindings" "cycle-windows" "['<Alt>Tab']"
+gsettings set "org.gnome.desktop.wm.keybindings" "cycle-windows-backward" "['<Shift><Alt>Tab']"
+#+end_example
+
+***** Change old Alt-Tab behavior with Super-Tab
+#+begin_example shell
+gsettings set "org.gnome.desktop.wm.keybindings" "switch-applications" "['<Alt>Super']"
+gsettings set "org.gnome.desktop.wm.keybindings" "switch-applications-backward" "['<Shift><Alt>Super']"
+#+end_example
+
+
+*** Toolbx

@@ -30,8 +30,12 @@ threshold = 40
 style = "bold #ff7f00"
 
 [[battery.display]]
-threshold = 100
+threshold = 85
 style ="bold green"
+
+[[battery.display]]
+threshold = 100
+style ="bold blue"
 
 [character]
 error_symbol = "[✗](bold red)"

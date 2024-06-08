@@ -1,4 +1,4 @@
 #!/bin/bash
 # nvme-log: log nvme info
 
-date >> ~ddmin/Documents/nvme.log && sudo nvme smart-log -H /dev/nvme0 >> ~ddmin/Documents/nvme.log && echo -e '\n\n' >> ~ddmin/Documents/nvme.log
+date >> ~ddmin/Documents/share/nvme.log && sudo nvme smart-log -H /dev/nvme0 >> ~ddmin/Documents/share/nvme.log && echo -e '\n\n' >> ~ddmin/Documents/share/nvme.log

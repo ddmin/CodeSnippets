@@ -6,14 +6,14 @@ set -e
 # REDLIB INSTANCES
 SITE=(
     ""
-    "https://l.opnxng.com"
-    "https://libreddit.bus-hit.me"
-    "https://reddit.idevicehacked.com"
-    "https://redlib.catsarch.com"
-    "https://redlib.freedit.eu"
-    "https://redlib.perennialte.ch"
-    "https://redlib.tux.pizza"
-    "https://rl.bloat.cat"
+    "https://l.opnxng.com/"
+    "https://libreddit.bus-hit.me/"
+    "https://reddit.idevicehacked.com/"
+    "https://redlib.catsarch.com/"
+    "https://redlib.freedit.eu/"
+    "https://redlib.perennialte.ch/"
+    "https://redlib.tux.pizza/"
+    "https://rl.bloat.cat/"
 )
 
 # https://stackoverflow.com/a/28326129
@@ -55,8 +55,8 @@ subreddits=$(cat ${1} | grep -e '^@/r/' | sed 's/^@\/r\///')
 # choose RedLib instance
 choose "${SITE[@]}"
 
-# base URL with settings
-URL="${INST}/settings/restore/?theme=gruvboxdark&front_page=default&layout=card&wide=on&post_sort=hot&comment_sort=confidence&show_nsfw=on&use_hls=on&hide_hls_notification=off&hide_awards=off&fixed_navbar=on&filters%3d&subscriptions="
+# base URL with settings ($INST should contain trailing '/')
+URL="${INST}settings/restore/?theme=gruvboxdark&front_page=default&layout=card&wide=on&post_sort=hot&comment_sort=confidence&show_nsfw=on&use_hls=on&hide_hls_notification=off&hide_awards=off&fixed_navbar=on&filters%3d&subscriptions="
 
 # separator for subreddits
 SEPR="%2B"

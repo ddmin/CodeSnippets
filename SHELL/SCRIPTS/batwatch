@@ -1,0 +1,48 @@
+#!/bin/bash
+# batwatch: same battime, same batwatch
+
+# (Inspired by https://askubuntu.com/questions/603285/how-to-monitor-battery-condition-and-pop-up-notification)
+
+# kill previous instances (https://unix.stackexchange.com/a/491788)
+kill -9 $(pgrep -f ${BASH_SOURCE[0]} | grep -v $$) 2>/dev/null
+
+BATTERY1="/sys/class/power_supply/BAT1"
+BATTERY_LOWER_THRESHOLD=50
+BATTERY_UPPER_THRESHOLD=80
+
+# run the battery check every $SLEEP_EVERY seconds
+SLEEP_EVERY=$((5 * 60))
+
+# cooldown after displaying warning to check again
+SLEEP_COOLDOWN=$((20 * 60))
+
+# Check if the battery is connected
+if [ -e ${BATTERY1} ]; then
+
+    while :; do
+            # Get the capacity
+            BATTERY_CAPACITY=$(grep "POWER_SUPPLY_CAPACITY=" "${BATTERY1}/uevent" | cut -d'=' -f2)
+
+            # battery is discharging: warn if battery exceeds $BATTERY_LOWER_THRESHOLD
+            if [ "$(cat "$BATTERY1/status")" = "Discharging" ]; then
+
+                if (( BATTERY_CAPACITY <= BATTERY_LOWER_THRESHOLD )); then
+                    zenity --warning --text "🔋 <b>Battery Watch</b>\n\nCurrent Battery Percentage: ${BATTERY_CAPACITY}%\nConsider charging your device."
+                    sleep ${SLEEP_COOLDOWN}
+                fi
+
+            # battery is charging: warn if battery exceeds $BATTERY_UPPER_THRESHOLD
+            else [ "$(cat "$BATTERY1/status")" = "Charging" ]
+
+                if (( BATTERY_CAPACITY >= BATTERY_UPPER_THRESHOLD )); then
+                    zenity --warning --text "🔋 <b>Battery Watch</b>\n\nCurrent Battery Percentage: ${BATTERY_CAPACITY}%\nConsider unplugging your charger to maintain device health."
+                    sleep ${SLEEP_COOLDOWN}
+                fi
+
+            fi
+
+            sleep ${SLEEP_EVERY}
+
+    done
+
+fi

@@ -10,6 +10,8 @@
 # KEYFILE_ATTR="<Keyfile Attribute>"
 # DATABASE_ATTR="<Database Attribute>"
 
+killall keepassxc
+
 . $HOME/.env
 
 KEYFILE="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)-keyfile"
@@ -17,5 +19,5 @@ KEYFILE="/tmp/$(tr -cd 'a-f0-9' < /dev/urandom | head -c 32)-keyfile"
 notify-send "keepassxc" --icon=keepassxc "Starting keepassxc"
 
 secret-tool lookup "$KEYFILE_ATTR" "$KEYFILE_GPG" | gpg --batch --passphrase-fd 0 --decrypt "$KEYFILE_GPG" > "$KEYFILE"
-secret-tool lookup "$DATABASE_ATTR" "$DATABASE" | "$KEEPASSXC" --pw-stdin "$DATABASE" --keyfile "$KEYFILE"
+secret-tool lookup "$DATABASE_ATTR" "$DATABASE" | "$KEEPASSXC" --pw-stdin "$DATABASE" --keyfile "$KEYFILE" &
 # shred -vzun 3 "$KEYFILE"
