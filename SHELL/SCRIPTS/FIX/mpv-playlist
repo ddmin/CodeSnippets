@@ -1,0 +1,42 @@
+#!/bin/bash
+# .mpv-playlist: for rifle.conf, play video in playlist of current directory
+
+# Function to get version-sorted list of video files, including symlinks
+get_sorted_videos() {
+    find -L . -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mkv" -o -name "*.avi" \) | sort -V
+}
+
+# Get the sorted list of videos
+video_list=$(get_sorted_videos)
+
+# Check if a video file is provided as an argument
+if [ $# -eq 1 ]; then
+    input_video="$1"
+    # Check if the input video exists in the current directory
+    if [ ! -f "$input_video" ] && [ ! -L "$input_video" ]; then
+        echo "Error: The specified video file does not exist."
+        exit 1
+    fi
+    # Create a playlist starting from the input video
+    found_input=false
+    while IFS= read -r video; do
+        if [ "$video" = "$input_video" ] || [ "$found_input" = true ]; then
+            echo "$video" >> .mpv-playlist
+            found_input=true
+        fi
+    done <<< "$video_list"
+
+    if [ "$found_input" = false ]; then
+        echo "Error: The specified video was not found in the sorted list."
+        exit 1
+    fi
+else
+    # If no input is provided, use the entire sorted list
+    echo "$video_list" > .mpv-playlist
+fi
+
+# Play the playlist with mpv
+mpv --playlist=.mpv-playlist
+
+# Clean up the playlist file
+rm .mpv-playlist

@@ -1,0 +1,17 @@
+#!/bin/bash
+# last-update: I gave you my heart
+
+NC="\033[0m"
+F_BOLD="\033[1m"
+F_UNDERLINED="\033[4m"
+C_DARKVIOLET="\033[38;5;90m"
+C_DARKOLIVEGREEN1="\033[48;5;191m"
+
+LAST_UPDATE=$(tail -n1 /var/log/apt/history.log | awk '{print $2}')
+
+LU_TIMESTAMP=$(date -d "${LAST_UPDATE}" +%s)
+CURRENT_TIMESTAMP=$(date +%s)
+DIFFERENCE=$((CURRENT_TIMESTAMP - LU_TIMESTAMP))
+DIFFERENCE_DAYS=$((DIFFERENCE / 86400))
+
+echo -e "${F_BOLD}${F_UNDERLINED}${C_DARKVIOLET}${C_DARKOLIVEGREEN1}LAST UPDATED: ${LAST_UPDATE} [${DIFFERENCE_DAYS} DAY(S) AGO]${NC}\n"
