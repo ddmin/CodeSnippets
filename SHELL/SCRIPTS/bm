@@ -6,4 +6,4 @@ bookmark=`ls -1 $BOOKMARKS/* | tr '\n' '\0' | xargs -0 -n 1 basename | rofi -dme
 
 [[ -z $bookmark ]] && exit
 
-cat "$BOOKMARKS/$bookmark" | xsel -b
+cat "$BOOKMARKS/$bookmark" | xsel -b -t 10000

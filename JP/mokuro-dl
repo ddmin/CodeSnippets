@@ -18,28 +18,30 @@ from rich import print
 
 # get the url slug
 def get_slug(url):
-    return re.search(r'\/([^\/]*?)(\/?)$', unquote(url)).group(1)
+    return re.search(r"\/([^\/]*?)(\/?)$", unquote(url)).group(1)
 
 
 # create directory with dirname
 def create_directory(dirname):
-    if not os.path.isdir(f'./{dirname}'):
+    if not os.path.isdir(f"./{dirname}"):
         try:
-            os.mkdir(f'./{dirname}')
+            os.makedirs(f"./{dirname}")
         except OSError as error:
             return error
 
 
 # wrapper for wget
 def wget(link, savedir):
-    subprocess.run(['wget', '-P', savedir, link],
-                   stdout=subprocess.DEVNULL,
-                   stderr=subprocess.DEVNULL)
+    subprocess.run(
+        ["wget", "-P", savedir, link],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
 
 
 # check if url is a mokuro.moe url
 def is_valid_mokuro_url(url):
-    return url.startswith("https://mokuro.moe/manga/")
+    return "mokuro.moe/manga/" in url
 
 
 # collect all image directories and mokuro html files (including mobile)
@@ -50,29 +52,52 @@ def get_images_htmls(anchors):
 
     for a in anchors:
         # image directories
-        if re.search(r'(\/$)', a.get('href')) is not None:
+        if re.search(r"(\/$)", a.get("href")) is not None:
             all_image_directories.append(a)
 
         # htmls except mobile.html
-        elif re.search(r'^((?!mobile).)*\.html$', a.get('href')) is not None:
+        elif re.search(r"^((?!mobile).)*\.html$", a.get("href")) is not None:
             all_mokuro_htmls.append(a)
 
         # only mobile html
-        elif re.search(r'\.mobile\.html$', a.get('href')) is not None:
+        elif re.search(r"\.mobile\.html$", a.get("href")) is not None:
             all_mobile_htmls.append(a)
 
     # turn links (Tag) into strings
-    all_image_directories = list(map(lambda x: x.get('href'), all_image_directories))
-    all_mokuro_htmls = list(map(lambda x: x.get('href'), all_mokuro_htmls))
-    all_mobile_htmls = list(map(lambda x: x.get('href'), all_mobile_htmls))
+    all_image_directories = list(map(lambda x: x.get("href"), all_image_directories))
+    all_mokuro_htmls = list(map(lambda x: x.get("href"), all_mokuro_htmls))
+    all_mobile_htmls = list(map(lambda x: x.get("href"), all_mobile_htmls))
 
-    # remove backlink and _ocr/
-    if '../' in all_image_directories:
-        all_image_directories.remove('../')
-    if '_ocr/' in all_image_directories:
-        all_image_directories.remove('_ocr/')
+    # remove backlink
+    if "../" in all_image_directories:
+        all_image_directories.remove("../")
 
-    return all_image_directories, all_mokuro_htmls, all_mobile_htmls
+    # remove _ocr
+    ocr_exists = False
+    if "_ocr/" in all_image_directories:
+        all_image_directories.remove("_ocr/")
+        ocr_exists = True
+
+    return all_image_directories, all_mokuro_htmls, all_mobile_htmls, ocr_exists
+
+
+# collect all ocr directories
+def get_ocr(anchors):
+    ocr_directories = []
+
+    for a in anchors:
+        # add all directories on OCR page
+        if re.search(r"(\/$)", a.get("href")) is not None:
+            ocr_directories.append(a)
+
+    ocr_directories = list(map(lambda x: x.get("href"), ocr_directories))
+
+    # remove backlink
+    if "../" in ocr_directories:
+        ocr_directories.remove("../")
+
+    return ocr_directories
+
 
 # input EOF error handling
 def safe_input():
@@ -92,22 +117,22 @@ def sublist(lst, indx):
         return lst
 
     # if 0 select none
-    if indx == '0':
+    if indx == "0":
         return []
 
     sublist = []
 
     # remove whitespace
-    indx = indx.replace(' ', '')
+    indx = indx.replace(" ", "")
 
     # split by commas
-    indices = indx.split(',')
+    indices = indx.split(",")
 
     ranges = []
     # expand ranges first
     for index in indices:
-        if '-' in index:
-            subindex = index.split('-')
+        if "-" in index:
+            subindex = index.split("-")
             if len(subindex) != 2:
                 print("[bold red]Please include 2 numbers in a range.[/bold red]")
                 return None
@@ -117,26 +142,32 @@ def sublist(lst, indx):
                 n1 = int(subindex[0])
                 n2 = int(subindex[1])
             except:
-                print("[bold red]Please enter only integers, commas, and hyphens[/bold red]")
+                print(
+                    "[bold red]Please enter only integers, commas, and hyphens[/bold red]"
+                )
                 return None
 
             if n1 == n2:
                 print("[bold red]Ranges must include two different numbers.[/bold red]")
                 return None
             elif n1 > n2:
-                print("[bold red]The second number in a range must be larger than the first.[/bold red]")
+                print(
+                    "[bold red]The second number in a range must be larger than the first.[/bold red]"
+                )
                 return None
 
             # volume validation
             # NOTE: these are with the raw volume indices *NOT* the list indices
-            if (n1 > 0 and n1 < len(lst)+1) and (n2 > 0 and n2 < len(lst)+1):
-                ranges.extend(range(n1, n2+1))
+            if (n1 > 0 and n1 < len(lst) + 1) and (n2 > 0 and n2 < len(lst) + 1):
+                ranges.extend(range(n1, n2 + 1))
             else:
-                print("[bold red]Please enter ranges that are within the limits.[/bold red]")
+                print(
+                    "[bold red]Please enter ranges that are within the limits.[/bold red]"
+                )
                 return None
 
     # remove strings containing hyphens
-    indices = list(filter(lambda x: '-' not in x, indices))
+    indices = list(filter(lambda x: "-" not in x, indices))
 
     # convert strings to integers
     try:
@@ -157,7 +188,9 @@ def sublist(lst, indx):
         if index > -1 and index < len(lst):
             sublist.append(lst[index])
         else:
-            print("[bold red]Please enter volumes that are within the limits.[/bold red]")
+            print(
+                "[bold red]Please enter volumes that are within the limits.[/bold red]"
+            )
             return None
 
     return sublist
@@ -165,77 +198,142 @@ def sublist(lst, indx):
 
 # main tui loop
 def main():
-    print("[bold white]mokuro.moe URL:\n> [/bold white]", end='')
+    print("[bold white]mokuro.moe URL:\n> [/bold white]", end="")
     main_url = safe_input()
     while not is_valid_mokuro_url(main_url):
         print("[bold red]\nPlease enter a valid URL.\n[/bold red]")
-        print("[bold white]mokuro.moe URL:\n> [/bold white]", end='')
+        print("[bold white]mokuro.moe URL:\n> [/bold white]", end="")
         main_url = safe_input()
 
-    print(f"[bold white]\nSending request to mokuro.moe ...... [/bold white]", end='')
+    print(f"[bold white]\nSending request to mokuro.moe ...... [/bold white]", end="")
     sys.stdout.flush()
     raw_html = requests.get(main_url).text
-    print("[bold green][ DONE ]\n[/bold green]")
+    print("[bold green][ DONE ][/bold green]", end="")
 
     # remove trailing /
-    if main_url[-1] == '/':
+    if main_url[-1] == "/":
         main_url = main_url[:-1]
 
-    soup = BeautifulSoup(raw_html, 'lxml')
-    anchors = soup.find_all('a')
+    soup = BeautifulSoup(raw_html, "lxml")
+    anchors = soup.find_all("a")
 
     # remove HTML entities and get last part of url
     title = get_slug(main_url)
 
     # collect all image directories and mokuro html files
-    all_image_directories, all_mokuro_htmls, all_mobile_htmls = get_images_htmls(anchors)
+    all_image_directories, all_mokuro_htmls, all_mobile_htmls, ocr_exists = (
+        get_images_htmls(anchors)
+    )
+
+    ocr_link = ""
+    if ocr_exists:
+        ocr_link = main_url + "/_ocr/"
+
+    ocr_directories = []
+    if ocr_link:
+        print(
+            f"[bold white]\nRetrieving OCR directories ......... [/bold white]", end=""
+        )
+        sys.stdout.flush()
+        raw_ocr = requests.get(ocr_link).text
+        print("[bold green][ DONE ][/bold green]")
+
+        ocr_soup = BeautifulSoup(raw_ocr, "lxml")
+        ocr_anchors = ocr_soup.find_all("a")
+
+        ocr_directories = get_ocr(ocr_anchors)
+
+    print()
 
     # mokuro html selection
-    print(f'[bold yellow]Mokuro: {title}[/bold yellow]')
+    print(f"[bold yellow]Mokuro: {title}[/bold yellow]")
     for n, mokuro_html in enumerate(all_mokuro_htmls):
-        print(f'[bold cyan]  ({str(n+1).zfill(2)}) {unquote(mokuro_html)}[/bold cyan]')
+        print(f"[bold cyan]  ({str(n+1).zfill(2)}) {unquote(mokuro_html)}[/bold cyan]")
 
-    print("[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]", end='')
+    print(
+        "[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]",
+        end="",
+    )
     indx = safe_input()
     print()
 
     mokuro_htmls = sublist(all_mokuro_htmls, indx)
     while not mokuro_htmls and not len(mokuro_htmls) == 0:
-        print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
+        print(
+            "[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]",
+            end="",
+        )
         indx = safe_input()
         print()
 
         mokuro_htmls = sublist(all_mokuro_htmls, indx)
 
     # mobile html selection
-    print(f'[bold yellow]Mobile: {title}[/bold yellow]')
+    print(f"[bold yellow]Mobile: {title}[/bold yellow]")
     for n, mobile_html in enumerate(all_mobile_htmls):
-        print(f'[bold cyan]  ({str(n+1).zfill(2)}) {unquote(mobile_html)}[/bold cyan]')
+        print(f"[bold cyan]  ({str(n+1).zfill(2)}) {unquote(mobile_html)}[/bold cyan]")
 
-    print("[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]", end='')
+    print(
+        "[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]",
+        end="",
+    )
     indx = safe_input()
     print()
 
     mobile_htmls = sublist(all_mobile_htmls, indx)
     while not mobile_htmls and not len(mobile_htmls) == 0:
-        print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
+        print(
+            "[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]",
+            end="",
+        )
         indx = safe_input()
         print()
 
         mobile_htmls = sublist(all_mobile_htmls, indx)
 
-    # image gallery selection
-    print(f'[bold yellow]Manga: {title}[/bold yellow]')
-    for n, image_directory in enumerate(all_image_directories):
-        print(f'[bold cyan]  ({str(n+1).zfill(2)}) {unquote(image_directory)}[/bold cyan]')
+    # ocr selection
+    print(f"[bold yellow]OCR: {title}[/bold yellow]")
+    for n, ocr in enumerate(ocr_directories):
+        print(f"[bold cyan]  ({str(n+1).zfill(2)}) {unquote(ocr)}[/bold cyan]")
 
-    print("[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]", end='')
+    print(
+        "[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]",
+        end="",
+    )
+    indx = safe_input()
+    print()
+
+    ocr_dirs = sublist(ocr_directories, indx)
+    while not ocr_dirs and not len(ocr_dirs) == 0:
+        print(
+            "[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]",
+            end="",
+        )
+        indx = safe_input()
+        print()
+
+        ocr_dirs = sublist(ocr_directories, indx)
+
+    # image gallery selection
+    print(f"[bold yellow]Manga: {title}[/bold yellow]")
+    for n, image_directory in enumerate(all_image_directories):
+        print(
+            f"[bold cyan]  ({str(n+1).zfill(2)}) {unquote(image_directory)}[/bold cyan]"
+        )
+
+    print(
+        "[bold white]\nSelect the range to download (enter 0 to skip; leave empty to download all):\n> [/bold white]",
+        end="",
+    )
     indx = safe_input()
     print()
 
     image_directories = sublist(all_image_directories, indx)
     while not image_directories and not len(image_directories) == 0:
-        print("[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]", end='')
+        print(
+            "[bold white]\nSelect the range to download (leave empty to download all):\n> [/bold white]",
+            end="",
+        )
         indx = safe_input()
         print()
 
@@ -246,44 +344,80 @@ def main():
 
     # download mokuro htmls
     if mokuro_htmls:
-        for link in track(mokuro_htmls, description="[bold cyan]Downloading mokuro files[/bold cyan]"):
-            if re.search(r'^http', link) is None:
-                link = f'{main_url}/{link}'
-            wget(link, f'./{title}')
+        for link in track(
+            mokuro_htmls, description="[bold cyan]Downloading mokuro files[/bold cyan]"
+        ):
+            if re.search(r"^http", link) is None:
+                link = f"{main_url}/{link}"
+            wget(link, f"./{title}")
 
     # download mobile htmls
     if mobile_htmls:
-        for link in track(mobile_htmls, description="[bold cyan]Downloading mobile files[/bold cyan]"):
-            if re.search(r'^http', link) is None:
-                link = f'{main_url}/{link}'
-            wget(link, f'./{title}')
+        for link in track(
+            mobile_htmls, description="[bold cyan]Downloading mobile files[/bold cyan]"
+        ):
+            if re.search(r"^http", link) is None:
+                link = f"{main_url}/{link}"
+            wget(link, f"./{title}")
+
+    # download OCR
+    if ocr_dirs:
+        for directory in ocr_dirs:
+            if re.search(r"^http", directory) is None:
+                directory = f"{main_url}/_ocr/{directory}"
+
+            ocr_dir = get_slug(directory)
+            ocr_save_dir = f"./{title}/_ocr/{ocr_dir}"
+
+            # create OCR save directory
+            create_directory(ocr_save_dir)
+
+            ocr_raw_html = requests.get(directory).text
+
+            ocr_soup = BeautifulSoup(ocr_raw_html, "lxml")
+            ocr_anchors = ocr_soup.find_all("a")[1:]  # remove ../
+
+            # replace Tag with JSON link
+            ocr_anchors = list(map(lambda x: x.get("href"), ocr_anchors))
+
+            # download OCR
+            for ocr in track(
+                ocr_anchors,
+                description=f"[bold magenta]OCR {unquote(ocr_dir)}[/bold magenta]",
+            ):
+                if re.search(r"^http", ocr) is None:
+                    ocr = f"{directory}/{ocr}"
+                wget(ocr, ocr_save_dir)
 
     # download galleries
     if image_directories:
         for directory in image_directories:
-            if re.search(r'^http', directory) is None:
-                directory = f'{main_url}/{directory}'
+            if re.search(r"^http", directory) is None:
+                directory = f"{main_url}/{directory}"
 
             img_dir = get_slug(directory)
-            img_save_dir = f'./{title}/{img_dir}'
+            img_save_dir = f"./{title}/{img_dir}"
 
             # create image save directory
             create_directory(img_save_dir)
 
             img_raw_html = requests.get(directory).text
 
-            img_soup = BeautifulSoup(img_raw_html, 'lxml')
-            img_anchors = img_soup.find_all('a')[1:]
+            img_soup = BeautifulSoup(img_raw_html, "lxml")
+            img_anchors = img_soup.find_all("a")[1:]  # remove ../
 
             # replace Tag with image string
-            img_anchors = list(map(lambda x: x.get('href'), img_anchors))
+            img_anchors = list(map(lambda x: x.get("href"), img_anchors))
 
             # download images
-            for img in track(img_anchors, description=f"[bold magenta]Downloading {unquote(img_dir)}[/bold magenta]"):
-                if re.search(r'^http', img) is None:
-                    img = f'{directory}/{img}'
+            for img in track(
+                img_anchors,
+                description=f"[bold magenta]Downloading {unquote(img_dir)}[/bold magenta]",
+            ):
+                if re.search(r"^http", img) is None:
+                    img = f"{directory}/{img}"
                 wget(img, img_save_dir)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

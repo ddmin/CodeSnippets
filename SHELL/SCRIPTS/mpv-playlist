@@ -1,0 +1,16 @@
+#!/bin/bash
+# mpv-playlist: for rifle.conf, play video in playlist of current directory
+
+IFS=$'\n'
+
+vid="${@}"
+if [ $# -lt 1 ]; then
+    vid=""
+fi
+
+find ${PWD} -type f -exec file -N -i -- {} + | sed -n 's!: video/[^:]*$!!p' | sort -V | grep "${vid}" -A 100 > "/tmp/mpv-playlist"
+
+mpv --playlist="/tmp/mpv-playlist" --no-terminal &> /dev/null &
+
+unset IFS
+exit
