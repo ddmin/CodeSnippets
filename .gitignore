@@ -6,4 +6,5 @@ secrets.conf
 target/
 Cargo.lock
 __pycache__
+watch_later
 *.pyc
