@@ -9,8 +9,10 @@ if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
+. $HOME/.env
+
 # memory-check: don't go senile
-MTEST=10
+MTEST=8
 if [ $((RANDOM % MTEST)) = 0 ]; then
     memory-check
 fi
@@ -37,7 +39,7 @@ export TERM='xterm-256color'
 
 # browser
 # BROWSER="firefox-nightly"
-BROWSER="/home/ddmin/.local/drive/browsers/mullvad-browser/Browser/start-mullvad-browser"
+BROWSER="mullvad-browser"
 
 # set default editor
 export EDITOR='vim'
@@ -103,7 +105,9 @@ activate-venv () {
 # bind -m vi-command 'Control-l: clear-screen'
 # bind -m vi-insert 'Control-l: clear-screen'
 
-# navigate to directories with ranger
+# lf
+export OPENER='rifle'
+alias lf='lfub -last-dir-path=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # fzf
@@ -142,5 +146,8 @@ alias activate-nvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 
 # suspend system
 alias zzz='xfce4-session-logout --suspend'
+
+# play silent audio
+alias silent='mpv --loop $SILENT_AUDIO'
 
 eval "$(starship init bash)"

@@ -1,0 +1,6 @@
+#!/bin/bash
+# upgrade: general purpose upgrade script
+
+sudo apt update
+sudo apt upgrade
+doom upgrade
