@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf "$HOME/.cache/ranger/*"
+rm -f ~/.local/share/recently-used.xbel
