@@ -38,8 +38,8 @@ threshold = 100
 style ="bold blue"
 
 [character]
-error_symbol = "[✗](bold red)"
-success_symbol = "[❯](bold green)"
+error_symbol = "[違](bold #FF0000)"
+success_symbol = "[問](bold #00FFFF)"
 
 [git_commit]
 commit_hash_length = 8

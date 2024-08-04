@@ -9,7 +9,7 @@ C_DARKOLIVEGREEN1="\033[48;5;191m"
 
 LAST_UPDATE=$(tail -n1 /var/log/apt/history.log | awk '{print $2}')
 
-LU_TIMESTAMP=$(date -d "${LAST_UPDATE}" +%s)
+LU_TIMESTAMP=$(date -d "${LAST_UPDATE}" +%s || exit 0)
 CURRENT_TIMESTAMP=$(date +%s)
 DIFFERENCE=$((CURRENT_TIMESTAMP - LU_TIMESTAMP))
 DIFFERENCE_DAYS=$((DIFFERENCE / 86400))

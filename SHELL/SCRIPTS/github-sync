@@ -5,10 +5,11 @@ GREEN='\033[1;32m'
 NC='\033[0m'
 
 CONFIG="$HOME/.config"
-GITHUB="$HOME/.local/drive/code/GitHub"
-GITHUB_CONFIG="$GITHUB/dotfiles/config"
+GITHUB="$HOME/.local/drive/code"
 
 # I guess I can just make symlinks
+
+# GITHUB_CONFIG="$GITHUB/dotfiles/config"
 # sync files from local machine -> github directory
 # CONFIGS=("doom" "zathura" "ranger" "mpv")
 # for config in ${CONFIGS[@]}
@@ -17,8 +18,9 @@ GITHUB_CONFIG="$GITHUB/dotfiles/config"
 # done
 
 # check for changes in remote/local
-for dir in `find $GITHUB -maxdepth 1 -mindepth 1 -type d | sort -V`
+for gitdir in `find $GITHUB -name .git -type d -prune | sort -V`
 do
+    dir=$(dirname $gitdir)
     echo -e "${GREEN}DIRECTORY: $dir$NC"
     cd $dir
     # git pull origin master
