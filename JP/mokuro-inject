@@ -5,12 +5,12 @@
 import sys
 import re
 
-# Turn on debug messages
-DEBUG=False
+# Turn on verbose debug messages
+DEBUG=True
 
 # Default Settings
 BACKGROUND_COLOR = "232323"
-READING_MODE = "keep zoom, go to top"
+READING_MODE = "keep zoom level"
 
 # BACKGROUND_INJECTION_SITE = "backgroundColor: '#C4C3D0',"
 BACKGROUND_INJECTION_SITE = r"backgroundColor: '#[A-Fa-f0-9]{6}',"
@@ -144,6 +144,19 @@ INJECTION_KEYBOARD = """document.addEventListener("keydown", function onEvent(e)
     }
 });"""
 
+KEEP_ZOOM_SITE='        case "original size":'
+INJECTION_KEEP_ZOOM="""        case "original size":
+            zoomOriginal();
+            break;
+        case "keep zoom level":
+            zoomKeep();
+            break;
+    }
+}
+
+function zoomKeep() {
+    panAlign("center", "top");
+} """
 
 def inject(html, injection_site, injection, multiline=False, lines=1, regex=False):
 
@@ -208,6 +221,11 @@ def main():
     # set reading mode
     html = inject(
         html, READING_MODE_INJECTION_SITE, INJECTION_READING_MODE, multiline=False, regex=True
+    )
+
+    # fix reading mode keep zoom
+    html = inject(
+        html, KEEP_ZOOM_SITE, INJECTION_KEEP_ZOOM, multiline=True, lines=5, regex=True
     )
     # ========================================================================
 
